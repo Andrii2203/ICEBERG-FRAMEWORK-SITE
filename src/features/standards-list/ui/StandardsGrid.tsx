@@ -27,15 +27,15 @@ export const StandardsGrid = ({ list }: StandardsGridProps) => {
             {Object.entries(list).map(([key, label]) => (
                 <div
                     key={key}
-                    className="p-8 rounded-2xl border border-[#1E3A5F]/30 bg-[#0A1A2F]/40 backdrop-blur-sm group hover:border-[#38BDF8]/50 transition-all hover:-translate-y-1"
+                    className="p-8 rounded-2xl border border-border-brand/30 bg-surface-brand/40 backdrop-blur-sm group hover:border-accent-brand/50 transition-all hover:-translate-y-1"
                 >
-                    <div className="text-[#38BDF8] mb-6 group-hover:scale-110 transition-transform origin-left">
+                    <div className="text-accent-brand mb-6 group-hover:scale-110 transition-transform origin-left">
                         {icons[key as keyof typeof icons]}
                     </div>
-                    <h3 className="text-[#F8FAFC] text-xl font-bold mb-2">
+                    <h3 className="text-text-brand text-xl font-bold mb-2">
                         {label}
                     </h3>
-                    <div className="w-12 h-[2px] bg-[#1E3A5F] group-hover:w-full transition-all duration-500" />
+                    <div className="w-12 h-[2px] bg-border-brand group-hover:w-full transition-all duration-500" />
                 </div>
             ))}
         </div>

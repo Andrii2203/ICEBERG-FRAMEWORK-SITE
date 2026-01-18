@@ -20,15 +20,15 @@ export default async function ProtocolsPage({
     return (
         <main className="min-h-screen pt-40 pb-20 px-6 max-w-6xl mx-auto">
             <header className="mb-16">
-                <h1 className="text-5xl md:text-6xl font-bold tracking-tighter text-[#F8FAFC] mb-4">
+                <h1 className="text-5xl md:text-6xl font-bold tracking-tighter text-text-brand mb-4">
                     {dict.protocols.title}
                 </h1>
-                <p className="text-xl text-[#38BDF8] font-mono uppercase tracking-widest">
+                <p className="text-xl text-accent-brand font-mono uppercase tracking-widest">
                     {dict.protocols.subtitle}
                 </p>
             </header>
 
-            <p className="text-2xl text-[#CBD5E1] leading-relaxed mb-16 max-w-3xl border-l-4 border-[#38BDF8] pl-8">
+            <p className="text-2xl text-text-brand/80 leading-relaxed mb-16 max-w-3xl border-l-4 border-accent-brand pl-8">
                 {dict.protocols.description}
             </p>
 
@@ -36,15 +36,15 @@ export default async function ProtocolsPage({
                 {Object.entries(dict.protocols.list).map(([key, label]: [string, string]) => (
                     <div
                         key={key}
-                        className="p-10 rounded-2xl border border-[#1E3A5F]/30 bg-gradient-to-br from-[#0A1A2F]/60 to-transparent backdrop-blur-sm group hover:border-[#38BDF8]/50 transition-all"
+                        className="p-10 rounded-2xl border border-border-brand/30 bg-gradient-to-br from-surface-brand/60 to-transparent backdrop-blur-sm group hover:border-accent-brand/50 transition-all"
                     >
                         <div className="flex items-center gap-6">
-                            <div className="text-[#38BDF8] p-4 rounded-xl bg-[#0A1A2F] border border-[#1E3A5F] group-hover:scale-110 transition-transform">
+                            <div className="text-accent-brand p-4 rounded-xl bg-surface-brand border border-border-brand group-hover:scale-110 transition-transform">
                                 {icons[key as keyof typeof icons]}
                             </div>
                             <div>
-                                <div className="text-[#475569] font-mono text-xs uppercase mb-1">Protocol 0{Object.keys(dict.protocols.list).indexOf(key) + 1}</div>
-                                <h3 className="text-[#F8FAFC] text-2xl font-bold">
+                                <div className="text-text-brand/60 font-mono text-xs uppercase mb-1">Protocol 0{Object.keys(dict.protocols.list).indexOf(key) + 1}</div>
+                                <h3 className="text-text-brand text-2xl font-bold">
                                     {label}
                                 </h3>
                             </div>
@@ -53,7 +53,7 @@ export default async function ProtocolsPage({
                 ))}
             </div>
 
-            <div className="mt-20 p-8 rounded-2xl bg-[#0A1A2F]/20 border border-[#1E3A5F]/20 text-center italic text-[#475569]">
+            <div className="mt-20 p-8 rounded-2xl bg-surface-brand/20 border border-border-brand/20 text-center italic text-text-brand/60">
                 &quot;Standardization is the prerequisite for predictable outcome.&quot;
             </div>
         </main>

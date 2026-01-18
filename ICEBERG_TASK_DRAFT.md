@@ -171,4 +171,28 @@
 
 ### [2026-01-17 17:40] Next Steps:
 1. **Force Refresh/Browser Clean Test:** Use browser tool to visit manifest and check console.
-2. **Review Layout:** Ensure `manifest: "/manifest.json"` is definitely there.
+2. Review Layout: Ensure `manifest: "/manifest.json"` is definitely there.
+
+### [2026-01-18 11:55] PWA & Responsive Fixes Roadmap
+- **Task 1: Contact Sales Link**
+  - Update `src/app/[lang]/(marketing)/enterprise/page.tsx` to wrap button in link or change button to `<a>`.
+- **Task 2: Theme System (Light/Dark)**
+  - Define CSS variables in `src/app/globals.css`.
+  - Implement `.dark` class logic.
+  - Create `ThemeToggle` component in `src/features/navigation/ui/ThemeToggle.tsx`.
+  - Add `ThemeToggle` to `Navbar.tsx` (desktop + mobile).
+- **Task 3: Mobile Hero Title**
+  - Update `src/features/hero/ui/IcebergHero.tsx` with responsive font sizes and better scaling.
+- **Task 4: Mobile Footer & Icons**
+  - Update `src/features/hero/ui/IcebergHero.tsx` to move side footer blocks into a bottom mobile footer.
+  - Ensure GitHub/LinkedIn icons are visible on mobile.
+- **Task 5: PWA Improvements**
+  - Verify standalone mode layout.
+  - Ensure theme toggle works consistently.
+
+### [2026-01-18 11:58] Theme Variable Mapping
+- `--bg`: Polar Night (#020617) [Dark] / Iceberg White (#F8FAFC) [Light]
+- `--text`: Iceberg White (#F8FAFC) [Dark] / Polar Night (#020617) [Light]
+- `--surface`: Deep Ice Blue (#0A1A2F) [Dark] / Frozen Gray (#CBD5E1) [Light]
+- `--border`: Arctic Blue (#1E3A5F) [Dark] / Steel Blue (#475569) [Light]
+- `--accent`: Glacier Cyan (#38BDF8) [Always]

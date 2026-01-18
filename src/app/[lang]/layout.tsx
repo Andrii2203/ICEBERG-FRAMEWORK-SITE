@@ -55,14 +55,31 @@ export default async function RootLayout({
     const jsonLd = getJsonLd(lang);
 
     return (
-        <html lang={lang} className="scroll-smooth">
+        <html lang={lang} className="scroll-smooth" suppressHydrationWarning>
             <head>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 />
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (function() {
+                                try {
+                                    var theme = localStorage.getItem('theme');
+                                    var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                                    if (theme === 'dark' || (!theme && systemTheme === 'dark')) {
+                                        document.documentElement.classList.add('dark');
+                                    } else {
+                                        document.documentElement.classList.remove('dark');
+                                    }
+                                } catch (e) {}
+                            })();
+                        `,
+                    }}
+                />
             </head>
-            <body className="bg-[#020617] text-[#F8FAFC] antialiased" suppressHydrationWarning>
+            <body className="antialiased" suppressHydrationWarning>
                 <div className={inter.className}>
                     <Navbar dict={dict} />
                     {children}

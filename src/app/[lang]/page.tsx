@@ -10,13 +10,8 @@ export default async function Page({
     const dict = await getDictionary(lang);
 
     return (
-        <main className="relative bg-[#020617]">
+        <main className="relative bg-bg-brand">
             <IcebergHero dict={dict} />
-
-            {/* Scroll Hint */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
-                <div className="w-1 h-12 bg-gradient-to-b from-[#38BDF8] to-transparent rounded-full" />
-            </div>
 
             {/* Next sections will follow */}
         </main>
