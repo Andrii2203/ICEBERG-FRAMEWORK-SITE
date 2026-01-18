@@ -13,7 +13,7 @@ export default async function Page({
         <main className="relative bg-bg-brand">
             <IcebergHero dict={dict} />
 
-            {/* Next sections will follow */}
+            {/* Next sections will follow here*/}
         </main>
     );
 }
