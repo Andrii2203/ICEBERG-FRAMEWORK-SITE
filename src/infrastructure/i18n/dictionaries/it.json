@@ -1,0 +1,95 @@
+{
+    "common": {
+        "title": "Iceberg Framework",
+        "tagline": "Determinismo per lo sviluppo guidato dall'IA",
+        "cta": "Esplora gli standard"
+    },
+    "hero": {
+        "visibleTip": "Punta visibile (UI/Documentazione)",
+        "submergedMass": "Massa sommersa (Logica/Protocolli)",
+        "waterline": "Linea di galleggiamento",
+        "description": "Ciò che vedi è solo la superficie. Controlla l'IA. Controlla il risultato."
+    },
+    "nav": {
+        "philosophy": "Filosofia",
+        "methodology": "Metodologia",
+        "standards": "Standard",
+        "protocols": "Protocolli",
+        "enterprise": "Enterprise",
+        "language": "Lingua"
+    },
+    "philosophy": {
+        "title": "Filosofia di base",
+        "subtitle": "Determinismo sulla creatività",
+        "intro": "L'Iceberg Framework si basa su una convinzione fondamentale: lo sviluppo dell'IA deve essere deterministico, strutturato e prevedibile.",
+        "principles": {
+            "determinism": {
+                "title": "1. Determinismo",
+                "text": "Ogni azione e regola produce risultati prevedibili e riproducibili."
+            },
+            "structure": {
+                "title": "2. Struttura sulla creatività",
+                "text": "L'efficienza deriva da protocolli rigorosi, non dall'improvvisazione creativa."
+            },
+            "explicitness": {
+                "title": "3. Esplicitezza",
+                "text": "Tutto deve essere chiaramente definito. Zero ipotesi. Zero ambiguità."
+            }
+        }
+    },
+    "methodology": {
+        "title": "La Metodologia Iceberg",
+        "subtitle": "Un'architettura a tre strati",
+        "layers": {
+            "layer1": {
+                "name": "Strato 1: Iceberg Method",
+                "type": "Protocollo proprietario",
+                "description": "La logica di alto livello e la strategia per la governance dell'IA."
+            },
+            "layer2": {
+                "name": "Strato 2: Iceberg Framework",
+                "type": "Open Source (MIT)",
+                "description": "Standard tecnici rigorosi per codice, SEO e architettura."
+            },
+            "layer3": {
+                "name": "Strato 3: Enterprise Engines",
+                "type": "Moduli commerciali",
+                "description": "Strumenti automatizzati per l'esecuzione, la memoria e la validazione."
+            }
+        }
+    },
+    "standards": {
+        "title": "Standard Tecnici",
+        "subtitle": "Le regole del determinismo",
+        "description": "L'Iceberg Framework fornisce un insieme di standard rigorosi che garantiscono che ogni progetto sia di alta qualità, accessibile e ottimizzato per l'IA.",
+        "list": {
+            "architecture": "Standard di architettura",
+            "quality": "Standard di qualità web",
+            "seo": "Standard tecnico SEO",
+            "a11y": "Standard di accessibilità",
+            "pwa": "Standard di qualità PWA",
+            "api": "Standard di interazione API"
+        }
+    },
+    "protocols": {
+        "title": "Protocolli Operativi",
+        "subtitle": "Esecuzione passo dopo passo",
+        "description": "I protocolli definiscono come i compiti vengono eseguiti all'interno dell'ecosistema Iceberg. Nessuna improvvisazione, solo esecuzione.",
+        "list": {
+            "planning": "Protocollo di pianificazione deterministica",
+            "migration": "Protocollo di migrazione del sistema",
+            "execution": "Protocollo di esecuzione dell'IA",
+            "validation": "Protocollo di validazione della qualità"
+        }
+    },
+    "enterprise": {
+        "title": "Soluzioni Enterprise",
+        "subtitle": "Motori di esecuzione proprietari",
+        "description": "Porta Iceberg oltre con la governance automatizzata e l'esecuzione della memoria persistente.",
+        "modules": {
+            "executor": "Motore di esecuzione IA",
+            "memory": "Motore di memoria persistente",
+            "validation": "Motore di validazione e QA"
+        }
+    }
+}

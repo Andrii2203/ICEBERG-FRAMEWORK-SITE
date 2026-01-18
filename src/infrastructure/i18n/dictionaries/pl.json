@@ -1,0 +1,95 @@
+{
+    "common": {
+        "title": "Iceberg Framework",
+        "tagline": "Determinizm w programowaniu sterowanym przez AI",
+        "cta": "Poznaj standardy"
+    },
+    "hero": {
+        "visibleTip": "Widoczny wierzchołek (UI/Dokumentacja)",
+        "submergedMass": "Zatopiona masa (Logika/Protokoły)",
+        "waterline": "Linia wodna",
+        "description": "To, co widzisz, to tylko powierzchnia. Kontroluj AI. Kontroluj wynik."
+    },
+    "nav": {
+        "philosophy": "Filozofia",
+        "methodology": "Metodologia",
+        "standards": "Standardy",
+        "protocols": "Protokoły",
+        "enterprise": "Enterprise",
+        "language": "Język"
+    },
+    "philosophy": {
+        "title": "Podstawowa Filozofia",
+        "subtitle": "Determinizm ponad Kreatywność",
+        "intro": "Iceberg Framework opiera się na jednym kluczowym przekonaniu: rozwój AI musi бути deterministyczny, ustrukturyzowany i przewidywalny.",
+        "principles": {
+            "determinism": {
+                "title": "1. Determinizm",
+                "text": "Każde działanie i zasada przynoszą przewidywalne, powtarzalne wyniki."
+            },
+            "structure": {
+                "title": "2. Struktura ponad Kreatywność",
+                "text": "Efektywność wynika ze ścisłych protokołów, а nie z kreatywnej improwizacji."
+            },
+            "explicitness": {
+                "title": "3. Jawność",
+                "text": "Wszystko musi być jasno zdefiniowane. Zero założeń. Zero niejasności."
+            }
+        }
+    },
+    "methodology": {
+        "title": "Metodologia Iceberg",
+        "subtitle": "Trójwarstwowa Architektura",
+        "layers": {
+            "layer1": {
+                "name": "Warstwa 1: Iceberg Method",
+                "type": "Autorski Protokoł",
+                "description": "Logika wysokiego poziomu i strategia zarządzania AI."
+            },
+            "layer2": {
+                "name": "Warstwa 2: Iceberg Framework",
+                "type": "Open Source (MIT)",
+                "description": "Ścisłe standardy techniczne dotyczące kodu, SEO i architektury."
+            },
+            "layer3": {
+                "name": "Warstwa 3: Enterprise Engines",
+                "type": "Moduły Komercyjne",
+                "description": "Zautomatyzowane narzędzia do wykonywania, pamięci i walidacji."
+            }
+        }
+    },
+    "standards": {
+        "title": "Standardy Techniczne",
+        "subtitle": "Zasady Determinizmu",
+        "description": "Iceberg Framework zapewnia zestaw ścisłych standardów, które zapewniają wysoką jakość, dostępność i optymalizację pod kątem AI.",
+        "list": {
+            "architecture": "Standard Architektury",
+            "quality": "Standard Jakości Strony",
+            "seo": "Techniczny Standard SEO",
+            "a11y": "Standard Dostępności",
+            "pwa": "Standard Jakości PWA",
+            "api": "Standard Interakcji API"
+        }
+    },
+    "protocols": {
+        "title": "Protokoły Operacyjne",
+        "subtitle": "Krok po kroku",
+        "description": "Protokoły definiują sposób wykonywania zadań w ekosystemie Iceberg. Bez improwizacji, tylko realizacja.",
+        "list": {
+            "planning": "Protokół Deterministycznego Planowania",
+            "migration": "Protokół Migracji Systemu",
+            "execution": "Protokół Wykonywania AI",
+            "validation": "Protokół Walidacji Jakości"
+        }
+    },
+    "enterprise": {
+        "title": "Rozwiązania Enterprise",
+        "subtitle": "Autorskie Silniki Wykonawcze",
+        "description": "Pójdź dalej z Icebergiem dzięki zautomatyzowanemu zarządzaniu i trwałej pamięci.",
+        "modules": {
+            "executor": "Silnik Wykonawczy AI",
+            "memory": "Silnik Trwałej Pamięci",
+            "validation": "Silnik Walidacji i QA"
+        }
+    }
+}

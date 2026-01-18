@@ -1,0 +1,95 @@
+{
+    "common": {
+        "title": "Iceberg Framework",
+        "tagline": "Determinismus für KI-gesteuerte Entwicklung",
+        "cta": "Standards erkunden"
+    },
+    "hero": {
+        "visibleTip": "Sichtbare Spitze (UI/Dokumentation)",
+        "submergedMass": "Eingetauchte Masse (Logik/Protokolle)",
+        "waterline": "Wasserlinie",
+        "description": "Was Sie sehen, ist nur die Oberfläche. Kontrollieren Sie die KI. Kontrollieren Sie das Ergebnis."
+    },
+    "nav": {
+        "philosophy": "Philosophie",
+        "methodology": "Methodik",
+        "standards": "Standards",
+        "protocols": "Protokolle",
+        "enterprise": "Enterprise",
+        "language": "Sprache"
+    },
+    "philosophy": {
+        "title": "Kernphilosophie",
+        "subtitle": "Determinismus über Kreativität",
+        "intro": "Das Iceberg Framework basiert auf einer Überzeugung: KI-Entwicklung muss deterministisch, strukturiert und vorhersehbar sein.",
+        "principles": {
+            "determinism": {
+                "title": "1. Determinismus",
+                "text": "Jede Aktion und Regel erzeugt vorhersehbare, reproduzierbare Ergebnisse."
+            },
+            "structure": {
+                "title": "2. Struktur über Kreativität",
+                "text": "Effizienz kommt von strengen Protokollen, nicht von kreativer Improvisation."
+            },
+            "explicitness": {
+                "title": "3. Explizitheit",
+                "text": "Alles muss klar definiert sein. Null Annahmen. Null Mehrdeutigkeit."
+            }
+        }
+    },
+    "methodology": {
+        "title": "Die Iceberg-Methodik",
+        "subtitle": "Eine dreischichtige Architektur",
+        "layers": {
+            "layer1": {
+                "name": "Schicht 1: Iceberg Method",
+                "type": "Proprietäres Protokoll",
+                "description": "Die High-Level-Logik und Strategie für KI-Governance."
+            },
+            "layer2": {
+                "name": "Schicht 2: Iceberg Framework",
+                "type": "Open Source (MIT)",
+                "description": "Strenge technische Standards für Code, SEO und Architektur."
+            },
+            "layer3": {
+                "name": "Schicht 3: Enterprise Engines",
+                "type": "Kommerzielle Module",
+                "description": "Automatisierte Tools für Ausführung, Speicher und Validierung."
+            }
+        }
+    },
+    "standards": {
+        "title": "Technische Standards",
+        "subtitle": "Die Regeln des Determinismus",
+        "description": "Das Iceberg Framework bietet eine Reihe strenger Standards, die sicherstellen, dass jedes Projekt hochwertig, zugänglich und KI-optimiert ist.",
+        "list": {
+            "architecture": "Architekturstandard",
+            "quality": "Web-Qualitätsstandard",
+            "seo": "Technischer SEO-Standard",
+            "a11y": "Barrierefreiheitsstandard",
+            "pwa": "PWA-Qualitätsstandard",
+            "api": "API-Interaktionsstandard"
+        }
+    },
+    "protocols": {
+        "title": "Operationale Protokolle",
+        "subtitle": "Schritt-für-Schritt-Ausführung",
+        "description": "Protokolle definieren, wie Aufgaben im Iceberg-Ökosystem ausgeführt werden. Keine Improvisation, nur Ausführung.",
+        "list": {
+            "planning": "Deterministisches Planungsprotokoll",
+            "migration": "Systemmigrationsprotokoll",
+            "execution": "KI-Ausführungsprotokoll",
+            "validation": "Qualitätsvalidierungsprotokoll"
+        }
+    },
+    "enterprise": {
+        "title": "Enterprise-Lösungen",
+        "subtitle": "Proprietäre Ausführungs-Engines",
+        "description": "Gehen Sie mit Iceberg weiter dank automatisierter Governance und persistentem Speicher.",
+        "modules": {
+            "executor": "KI-Ausführungs-Engine",
+            "memory": "Persistente Speicher-Engine",
+            "validation": "Validierungs- & QA-Engine"
+        }
+    }
+}

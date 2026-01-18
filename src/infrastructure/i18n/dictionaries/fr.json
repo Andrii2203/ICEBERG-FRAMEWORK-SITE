@@ -1,0 +1,95 @@
+{
+    "common": {
+        "title": "Iceberg Framework",
+        "tagline": "Déterminisme pour le développement piloté par l'IA",
+        "cta": "Explorer les standards"
+    },
+    "hero": {
+        "visibleTip": "Pointe visible (UI/Documentation)",
+        "submergedMass": "Masse submergée (Logique/Protocoles)",
+        "waterline": "Ligne de flottaison",
+        "description": "Ce que vous voyez n'est que la surface. Contrôlez l'IA. Contrôlez le résultat."
+    },
+    "nav": {
+        "philosophy": "Philosophie",
+        "methodology": "Méthodologie",
+        "standards": "Standards",
+        "protocols": "Protocoles",
+        "enterprise": "Entreprise",
+        "language": "Langue"
+    },
+    "philosophy": {
+        "title": "Philosophie de base",
+        "subtitle": "Le déterminisme plutôt que la créativité",
+        "intro": "L'Iceberg Framework repose sur une conviction fondamentale : le développement de l'IA doit être déterministe, structuré et prévisible.",
+        "principles": {
+            "determinism": {
+                "title": "1. Déterminisme",
+                "text": "Chaque action et chaque règle produisent des résultats prévisibles et reproductibles."
+            },
+            "structure": {
+                "title": "2. Structure plutôt que créativité",
+                "text": "L'efficacité provient de protocoles stricts, et non d'une improvisation créative."
+            },
+            "explicitness": {
+                "title": "3. Explicitation",
+                "text": "Tout doit être clairement défini. Zéro hypothèse. Zéro ambiguïté."
+            }
+        }
+    },
+    "methodology": {
+        "title": "La Méthodologie Iceberg",
+        "subtitle": "Une architecture à trois couches",
+        "layers": {
+            "layer1": {
+                "name": "Couche 1 : Iceberg Method",
+                "type": "Protocole propriétaire",
+                "description": "La logique de haut niveau et la stratégie de gouvernance de l'IA."
+            },
+            "layer2": {
+                "name": "Couche 2 : Iceberg Framework",
+                "type": "Open Source (MIT)",
+                "description": "Des standards techniques stricts pour le code, le SEO et l'architecture."
+            },
+            "layer3": {
+                "name": "Couche 3 : Enterprise Engines",
+                "type": "Modules commerciaux",
+                "description": "Outils automatisés pour l'exécution, la mémoire et la validation."
+            }
+        }
+    },
+    "standards": {
+        "title": "Standards Techniques",
+        "subtitle": "Les règles du déterminisme",
+        "description": "L'Iceberg Framework fournit un ensemble de standards stricts qui garantissent que chaque projet est de haute qualité, accessible et optimisé pour l'IA.",
+        "list": {
+            "architecture": "Standard d'architecture",
+            "quality": "Standard de qualité web",
+            "seo": "Standard technique SEO",
+            "a11y": "Standard d'accessibilité",
+            "pwa": "Standard de qualité PWA",
+            "api": "Standard d'interaction API"
+        }
+    },
+    "protocols": {
+        "title": "Protocoles Opérationnels",
+        "subtitle": "Exécution étape par étape",
+        "description": "Les protocoles définissent comment les tâches sont exécutées au sein de l'écosystème Iceberg. Pas d'improvisation, seulement de l'exécution.",
+        "list": {
+            "planning": "Protocole de planification déterministe",
+            "migration": "Protocole de migration de système",
+            "execution": "Protocole d'exécution de l'IA",
+            "validation": "Protocole de validation de la qualité"
+        }
+    },
+    "enterprise": {
+        "title": "Solutions Entreprise",
+        "subtitle": "Moteurs d'exécution propriétaires",
+        "description": "Allez plus loin avec Iceberg grâce à une gouvernance automatisée et une exécution en mémoire persistante.",
+        "modules": {
+            "executor": "Moteur d'exécution IA",
+            "memory": "Moteur de mémoire persistante",
+            "validation": "Moteur de validation et QA"
+        }
+    }
+}

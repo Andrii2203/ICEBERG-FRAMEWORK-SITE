@@ -1,0 +1,95 @@
+{
+    "common": {
+        "title": "Iceberg Framework",
+        "tagline": "Determinism for AI‑Driven Development",
+        "cta": "Explore Standards"
+    },
+    "hero": {
+        "visibleTip": "Visible Tip (UI/Docs)",
+        "submergedMass": "Submerged Mass (Logic/Protocols)",
+        "waterline": "Waterline",
+        "description": "What you see is only the surface. Control the AI. Control the Outcome."
+    },
+    "nav": {
+        "philosophy": "Philosophy",
+        "methodology": "Methodology",
+        "standards": "Standards",
+        "protocols": "Protocols",
+        "enterprise": "Enterprise",
+        "language": "Language"
+    },
+    "philosophy": {
+        "title": "Core Philosophy",
+        "subtitle": "Determinism over Creativity",
+        "intro": "The Iceberg Framework is built on one core belief: AI development must be deterministic, structured, and predictable.",
+        "principles": {
+            "determinism": {
+                "title": "1. Determinism",
+                "text": "Every action and rule produces predictable, reproducible results."
+            },
+            "structure": {
+                "title": "2. Structure over Creativity",
+                "text": "Efficiency comes from strict protocols, not creative improvisation."
+            },
+            "explicitness": {
+                "title": "3. Explicitness",
+                "text": "Everything must be clearly defined. Zero assumptions. Zero ambiguity."
+            }
+        }
+    },
+    "methodology": {
+        "title": "The Iceberg Methodology",
+        "subtitle": "A Three-Layered Architecture",
+        "layers": {
+            "layer1": {
+                "name": "Layer 1: Iceberg Method",
+                "type": "Proprietary Protocol",
+                "description": "The high-level logic and strategy for AI governance."
+            },
+            "layer2": {
+                "name": "Layer 2: Iceberg Framework",
+                "type": "Open Source (MIT)",
+                "description": "Strict technical standards for code, SEO, and architecture."
+            },
+            "layer3": {
+                "name": "Layer 3: Enterprise Engines",
+                "type": "Commercial Modules",
+                "description": "Automated tools for execution, memory, and validation."
+            }
+        }
+    },
+    "standards": {
+        "title": "Technical Standards",
+        "subtitle": "The Rules of Determinism",
+        "description": "Iceberg Framework provides a set of strict standards that ensure every project is high-quality, accessible, and AI-optimized.",
+        "list": {
+            "architecture": "Architecture Standard",
+            "quality": "Website Quality Standard",
+            "seo": "SEO Technical Standard",
+            "a11y": "Accessibility Standard",
+            "pwa": "PWA Quality Standard",
+            "api": "API Interaction Standard"
+        }
+    },
+    "protocols": {
+        "title": "Operational Protocols",
+        "subtitle": "Step-by-Step Execution",
+        "description": "Protocols define how tasks are executed within the Iceberg ecosystem. No improvisation, only execution.",
+        "list": {
+            "planning": "Deterministic Planning Protocol",
+            "migration": "System Migration Protocol",
+            "execution": "AI Execution Protocol",
+            "validation": "Quality Validation Protocol"
+        }
+    },
+    "enterprise": {
+        "title": "Enterprise Solutions",
+        "subtitle": "Proprietary Execution Engines",
+        "description": "Take Iceberg further with automated governance and persistent memory execution.",
+        "modules": {
+            "executor": "AI Execution Engine",
+            "memory": "Persistent Memory Engine",
+            "validation": "Validation & QA Engine"
+        }
+    }
+}

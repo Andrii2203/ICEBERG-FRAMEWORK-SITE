@@ -1,0 +1,18 @@
+import { MetadataRoute } from "next";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+    const baseUrl = "https://iceberg-framework.com";
+    const locales = ["en", "ua", "pl", "de", "es", "fr", "it", "pt"];
+    const pages = ["", "/philosophy", "/methodology", "/standards", "/protocols", "/enterprise"];
+
+    const routes = locales.flatMap((lang) =>
+        pages.map((page) => ({
+            url: `${baseUrl}/${lang}${page}`,
+            lastModified: new Date(),
+            changeFrequency: "weekly" as const,
+            priority: page === "" ? 1 : 0.8,
+        }))
+    );
+
+    return routes;
+}

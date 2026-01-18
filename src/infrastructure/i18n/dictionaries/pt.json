@@ -1,0 +1,95 @@
+{
+    "common": {
+        "title": "Iceberg Framework",
+        "tagline": "Determinismo para o desenvolvimento impulsionado por IA",
+        "cta": "Explorar padrões"
+    },
+    "hero": {
+        "visibleTip": "Ponta visível (UI/Documentação)",
+        "submergedMass": "Massa submersa (Lógica/Protocolos)",
+        "waterline": "Linha de água",
+        "description": "O que você vê é apenas a superfície. Controle a IA. Controle o resultado."
+    },
+    "nav": {
+        "philosophy": "Filosofia",
+        "methodology": "Metodologia",
+        "standards": "Padrões",
+        "protocols": "Protocolos",
+        "enterprise": "Enterprise",
+        "language": "Idioma"
+    },
+    "philosophy": {
+        "title": "Filosofia Central",
+        "subtitle": "Determinismo sobre Criatividade",
+        "intro": "O Iceberg Framework baseia-se numa crença fundamental: o desenvolvimento de IA deve ser determinístico, estruturado e previsível.",
+        "principles": {
+            "determinism": {
+                "title": "1. Determinismo",
+                "text": "Cada ação e regra produz resultados previsíveis e reproduzíveis."
+            },
+            "structure": {
+                "title": "2. Estrutura sobre Criatividade",
+                "text": "A eficiência vem de protocolos rigorosos, não de improvisação criativa."
+            },
+            "explicitness": {
+                "title": "3. Explicitude",
+                "text": "Tudo deve estar claramente definido. Zero suposições. Zero ambiguidade."
+            }
+        }
+    },
+    "methodology": {
+        "title": "A Metodologia Iceberg",
+        "subtitle": "Uma arquitetura de três camadas",
+        "layers": {
+            "layer1": {
+                "name": "Camada 1: Iceberg Method",
+                "type": "Protocolo proprietário",
+                "description": "A lógica de alto nível e a estratégia para a governação da IA."
+            },
+            "layer2": {
+                "name": "Camada 2: Iceberg Framework",
+                "type": "Código aberto (MIT)",
+                "description": "Padrões técnicos rigorosos para código, SEO e arquitetura."
+            },
+            "layer3": {
+                "name": "Camada 3: Enterprise Engines",
+                "type": "Módulos comerciais",
+                "description": "Ferramentas automatizadas para execução, memória e validação."
+            }
+        }
+    },
+    "standards": {
+        "title": "Padrões Técnicos",
+        "subtitle": "As regras do determinismo",
+        "description": "O Iceberg Framework fornece um conjunto de padrões rigorosos que garantem que cada projeto seja de alta qualidade, acessível e otimizado para a IA.",
+        "list": {
+            "architecture": "Padrão de arquitetura",
+            "quality": "Padrão de qualidade web",
+            "seo": "Padrão técnico de SEO",
+            "a11y": "Padrão de acessibilidade",
+            "pwa": "Padrão de qualidade PWA",
+            "api": "Padrão de interação API"
+        }
+    },
+    "protocols": {
+        "title": "Protocolos Operacionais",
+        "subtitle": "Execução passo a passo",
+        "description": "Os protocolos definem como as tarefas são executadas dentro do ecossistema Iceberg. Sem improvisação, apenas execução.",
+        "list": {
+            "planning": "Protocolo de planeamento determinístico",
+            "migration": "Protocolo de migração de sistema",
+            "execution": "Protocolo de execução de IA",
+            "validation": "Protocolo de validação de qualidade"
+        }
+    },
+    "enterprise": {
+        "title": "Soluções Enterprise",
+        "subtitle": "Motores de execução proprietários",
+        "description": "Vá mais longe com o Iceberg através de governação automatizada e execução de memória persistente.",
+        "modules": {
+            "executor": "Motor de execução IA",
+            "memory": "Motor de memória persistente",
+            "validation": "Motor de validação e QA"
+        }
+    }
+}

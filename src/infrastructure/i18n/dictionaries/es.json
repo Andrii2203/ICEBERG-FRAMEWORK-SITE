@@ -1,0 +1,95 @@
+{
+    "common": {
+        "title": "Iceberg Framework",
+        "tagline": "Determinismo para el desarrollo impulsado por IA",
+        "cta": "Explorar estándares"
+    },
+    "hero": {
+        "visibleTip": "Punta visible (UI/Documentación)",
+        "submergedMass": "Masa sumergida (Lógica/Protocolos)",
+        "waterline": "Línea de flotación",
+        "description": "Lo que ves es solo la superficie. Controla la IA. Controla el resultado."
+    },
+    "nav": {
+        "philosophy": "Filosofía",
+        "methodology": "Metodología",
+        "standards": "Estándares",
+        "protocols": "Protocolos",
+        "enterprise": "Enterprise",
+        "language": "Idioma"
+    },
+    "philosophy": {
+        "title": "Filosofía principal",
+        "subtitle": "Determinismo sobre Creatividad",
+        "intro": "El Iceberg Framework se basa en una creencia fundamental: el desarrollo de IA debe ser determinista, estructurado y predecible.",
+        "principles": {
+            "determinism": {
+                "title": "1. Determinismo",
+                "text": "Cada acción y regla produce resultados previsibles y reproducibles."
+            },
+            "structure": {
+                "title": "2. Estructura sobre Creatividad",
+                "text": "La eficiencia proviene de protocolos estrictos, no de la improvisación creativa."
+            },
+            "explicitness": {
+                "title": "3. Explicitud",
+                "text": "Todo debe estar claramente definido. Cero suposiciones. Cero ambigüedad."
+            }
+        }
+    },
+    "methodology": {
+        "title": "La Metodología Iceberg",
+        "subtitle": "Una arquitectura de tres capas",
+        "layers": {
+            "layer1": {
+                "name": "Capa 1: Iceberg Method",
+                "type": "Protocolo patentado",
+                "description": "La lógica de alto nivel y la estrategia para el gobierno de la IA."
+            },
+            "layer2": {
+                "name": "Capa 2: Iceberg Framework",
+                "type": "Código abierto (MIT)",
+                "description": "Estándares técnicos estrictos para código, SEO y arquitectura."
+            },
+            "layer3": {
+                "name": "Capa 3: Enterprise Engines",
+                "type": "Módulos comerciales",
+                "description": "Herramientas automatizadas para ejecución, memoria y validación."
+            }
+        }
+    },
+    "standards": {
+        "title": "Estándares Técnicos",
+        "subtitle": "Las reglas del determinismo",
+        "description": "Iceberg Framework proporciona un conjunto de estándares estrictos que garantizan que cada proyecto sea de alta calidad, accesible y optimizado para la IA.",
+        "list": {
+            "architecture": "Estándar de arquitectura",
+            "quality": "Estándar de calidad web",
+            "seo": "Estándar técnico de SEO",
+            "a11y": "Estándar de accesibilidad",
+            "pwa": "Estándar de calidad PWA",
+            "api": "Estándar de interacción API"
+        }
+    },
+    "protocols": {
+        "title": "Protocolos Operativos",
+        "subtitle": "Ejecución paso a paso",
+        "description": "Los protocolos definen cómo se ejecutan las tareas dentro del ecosistema Iceberg. Sin improvisación, solo ejecución.",
+        "list": {
+            "planning": "Protocolo de planificación determinista",
+            "migration": "Protocolo de migración del sistema",
+            "execution": "Protocolo de ejecución de IA",
+            "validation": "Protocolo de validación de calidad"
+        }
+    },
+    "enterprise": {
+        "title": "Soluciones Enterprise",
+        "subtitle": "Motores de ejecución patentados",
+        "description": "Lleva a Iceberg más allá con gobernanza automatizada y ejecución de memoria persistente.",
+        "modules": {
+            "executor": "Motor de ejecución de IA",
+            "memory": "Motor de memoria persistente",
+            "validation": "Motor de validación y QA"
+        }
+    }
+}
