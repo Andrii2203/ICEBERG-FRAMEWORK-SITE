@@ -2,7 +2,7 @@
 The official Iceberg Framework landing website (multilingual, PWA, Next.js):
 
 - Repo: https://github.com/Andrii2203/ICEBERG-FRAMEWORK-SITE
-- Live: https://iceberg-six.vercel.app/en
+- Live: https://iceberg-framework-site.vercel.app/en
 
 
 ## 🌐 Overview
@@ -144,7 +144,7 @@ The project supports static export (`next export`) and can be deployed to any st
 ---
 
 ## 🔗 Useful Links
-- **Live Website:** https://iceberg-six.vercel.app/en
+- **Live Website:** https://iceberg-framework-site.vercel.app/en
 - **Iceberg Framework:** https://github.com/Andrii2203/ICEBERG-FRAMEWORK  
 - **Author (Andrii):**  
   - GitHub: https://github.com/Andrii2203/  
