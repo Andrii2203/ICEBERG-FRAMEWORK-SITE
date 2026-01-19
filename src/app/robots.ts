@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
             userAgent: "*",
             allow: "/",
         },
-        sitemap: "https://iceberg-framework.com/sitemap.xml",
+        sitemap: "https://iceberg-framework-site.vercel.app/sitemap.xml",
     };
 }
