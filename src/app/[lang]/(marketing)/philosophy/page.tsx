@@ -1,4 +1,21 @@
 import { getDictionary } from "@/infrastructure/i18n/dictionaries";
+import { generatePageMetadata } from "@/shared/utils/seo/generatePageMetadata";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+    const { lang } = await params;
+    const dict = await getDictionary(lang);
+    return generatePageMetadata(
+        lang,
+        "philosophy",
+        dict.philosophy.title,
+        dict.philosophy.subtitle
+    );
+}
 
 export default async function PhilosophyPage({
     params,

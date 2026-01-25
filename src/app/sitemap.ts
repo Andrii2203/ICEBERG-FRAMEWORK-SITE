@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = "https://iceberg-framework-site.vercel.app/";
+    const baseUrl = "https://iceberg-framework-site.vercel.app";
     const locales = ["en", "ua", "pl", "de", "es", "fr", "it", "pt"];
     const pages = ["", "/philosophy", "/methodology", "/standards", "/protocols", "/enterprise"];
 

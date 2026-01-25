@@ -1,6 +1,23 @@
 import React from 'react';
 import { getDictionary } from "@/infrastructure/i18n/dictionaries";
 import { Shield, Layers, Box } from "lucide-react";
+import { generatePageMetadata } from "@/shared/utils/seo/generatePageMetadata";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+    const { lang } = await params;
+    const dict = await getDictionary(lang);
+    return generatePageMetadata(
+        lang,
+        "methodology",
+        dict.methodology.title,
+        dict.methodology.subtitle
+    );
+}
 
 export default async function MethodologyPage({
     params,

@@ -1,6 +1,23 @@
 import { getDictionary } from "@/infrastructure/i18n/dictionaries";
 import { StandardsGrid } from "@/features/standards-list/ui/StandardsGrid";
+import { generatePageMetadata } from "@/shared/utils/seo/generatePageMetadata";
+import type { Metadata } from "next";
 import React from 'react';
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+    const { lang } = await params;
+    const dict = await getDictionary(lang);
+    return generatePageMetadata(
+        lang,
+        "standards",
+        dict.standards.title,
+        dict.standards.description
+    );
+}
 
 export default async function StandardsPage({
     params,

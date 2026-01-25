@@ -6,30 +6,10 @@ import { Navbar } from "@/features/navigation/ui/Navbar";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
-export async function generateMetadata({
-    params,
-}: {
-    params: Promise<{ lang: string }>;
-}): Promise<Metadata> {
-    const { lang } = await params;
-    const dict = await getDictionary(lang);
-
+export async function generateMetadata(): Promise<Metadata> {
     return {
-        title: dict.common.title,
-        description: dict.common.tagline,
+        metadataBase: new URL("https://iceberg-framework-site.vercel.app"),
         manifest: "/manifest.webmanifest",
-        alternates: {
-            canonical: `/${lang}`,
-            languages: {
-                en: "/en",
-                pl: "/pl",
-                de: "/de",
-                es: "/es",
-                fr: "/fr",
-                it: "/it",
-                pt: "/pt",
-            },
-        },
     };
 }
 

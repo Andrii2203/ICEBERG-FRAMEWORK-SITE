@@ -1,6 +1,23 @@
 import { getDictionary } from "@/infrastructure/i18n/dictionaries";
 import { ClipboardList, FastForward, Play, ShieldCheck } from "lucide-react";
+import { generatePageMetadata } from "@/shared/utils/seo/generatePageMetadata";
+import type { Metadata } from "next";
 import React from 'react';
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+    const { lang } = await params;
+    const dict = await getDictionary(lang);
+    return generatePageMetadata(
+        lang,
+        "protocols",
+        dict.protocols.title,
+        dict.protocols.subtitle
+    );
+}
 
 export default async function ProtocolsPage({
     params,

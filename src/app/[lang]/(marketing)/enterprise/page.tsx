@@ -1,5 +1,22 @@
 import { getDictionary } from "@/infrastructure/i18n/dictionaries";
 import { Cpu, Database, CheckCircle } from "lucide-react";
+import { generatePageMetadata } from "@/shared/utils/seo/generatePageMetadata";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+    const { lang } = await params;
+    const dict = await getDictionary(lang);
+    return generatePageMetadata(
+        lang,
+        "enterprise",
+        dict.enterprise.title,
+        dict.enterprise.subtitle
+    );
+}
 
 export default async function EnterprisePage({
     params,
