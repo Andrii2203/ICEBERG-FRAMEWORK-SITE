@@ -28,6 +28,57 @@ This document ensures code consistency, quality, and maintainability across the 
 - **Adapters:** Use adapters to convert raw API data to domain models.
 - **No DTOs in UI:** UI components receive only domain models.
 
+## 6. IMPORT RULES (Iceberg Canonical Paths)
+**MANDATORY:** All imports MUST use canonical paths from the 5-layer architecture:
+
+### ✅ Allowed Import Patterns:
+```typescript
+// Config layer
+import { config } from "@/config/env";
+
+// Domain layer (pure business logic, models, errors)
+import { IcebergError } from "@/domain/errors/IcebergError";
+import type { User } from "@/domain/models/User";
+
+// Features layer (self-contained business features)
+import { AIService } from "@/features/ai/services/ai.service";
+import { AuditService } from "@/features/audit/services/audit.service";
+import { StripeService } from "@/features/payments/services/stripe.service";
+
+// Infrastructure layer (external integrations)
+import { TelegramService } from "@/infrastructure/notifications/telegram.service";
+import { getDictionary } from "@/infrastructure/i18n/dictionaries";
+
+// Shared layer (reusable utilities and UI primitives)
+import { cleanBase64 } from "@/shared/utils/base64/base64.utils";
+import { ZipService } from "@/shared/utils/zip/zip.service";
+import { Button } from "@/shared/ui/Button";
+```
+
+### ❌ FORBIDDEN Import Patterns:
+```typescript
+// NEVER use these paths - they are legacy and will break compliance
+import { config } from "@/core/config/env";        // ❌ NO
+import { AIService } from "@/modules/ai/...";      // ❌ NO
+import { cleanBase64 } from "@/lib/base64/...";    // ❌ NO
+```
+
+## 7. FOLDER PLACEMENT RULES
+**When adding new code, follow this decision tree:**
+
+1. **Environment Config?** → `config/`
+2. **Pure Business Model/Error?** → `domain/`
+3. **Self-Contained Feature Logic?** → `features/[feature-name]/`
+4. **External API Integration?** → `infrastructure/`
+5. **Reusable Utility/UI?** → `shared/utils/` or `shared/ui/`
+6. **Route/Page?** → `app/`
+
+**Examples:**
+- Payment processing logic → `features/payments/services/stripe.service.ts`
+- Telegram bot integration → `infrastructure/notifications/telegram.service.ts`
+- Base64 utility → `shared/utils/base64/base64.utils.ts`
+- Error model → `domain/errors/IcebergError.ts`
+
 ---
 
 ## STOP‑CHECK

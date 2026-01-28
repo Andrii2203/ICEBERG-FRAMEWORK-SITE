@@ -66,3 +66,11 @@ export default async function PhilosophyPage({
         </main>
     );
 }
+
+
+
+
+
+
+
+

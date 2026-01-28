@@ -27,3 +27,11 @@ export const config = {
         "/((?!api|_next/static|_next/image|favicon.ico|assets|icons|images|manifest.json|manifest.webmanifest|manifest.ts|sw.js|robots.txt|sitemap.xml).*)",
     ],
 };
+
+
+
+
+
+
+
+

@@ -182,3 +182,11 @@ export const Navbar = ({ dict }: NavbarProps) => {
         </header>
     );
 };
+
+
+
+
+
+
+
+

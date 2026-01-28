@@ -1,7 +1,7 @@
 
 import { Groq } from "groq-sdk";
-import { config } from "@/core/config/env";
-import { IcebergError } from "@/core/errors/IcebergError";
+import { config } from "@/config/env";
+import { IcebergError } from "@/domain/errors/IcebergError";
 
 // Initialize Groq client
 const groq = new Groq({
@@ -120,3 +120,11 @@ export class GroqClient {
         }
     }
 }
+
+
+
+
+
+
+
+

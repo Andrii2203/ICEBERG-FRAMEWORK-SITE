@@ -1,6 +1,6 @@
 
 import { NextRequest, NextResponse } from "next/server";
-import { StripeService } from "@/modules/payments/services/stripe.service";
+import { StripeService } from "@/features/payments/services/stripe.service";
 
 export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);

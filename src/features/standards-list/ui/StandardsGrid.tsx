@@ -41,3 +41,11 @@ export const StandardsGrid = ({ list }: StandardsGridProps) => {
         </div>
     );
 };
+
+
+
+
+
+
+
+

@@ -1,8 +1,8 @@
 
-import { GroqClient, DetectionResult, FreeAuditResult } from "@/modules/ai/clients/groq.client";
-import { ClaudeClient, AuditFiles } from "@/modules/ai/clients/claude.client";
-import { IcebergError } from "@/core/errors/IcebergError";
-import { TelegramService } from "@/modules/notifications/services/telegram.service";
+import { GroqClient, DetectionResult, FreeAuditResult } from "../clients/groq.client";
+import { ClaudeClient, AuditFiles } from "../clients/claude.client";
+import { IcebergError } from "@/domain/errors/IcebergError";
+import { TelegramService } from "@/infrastructure/notifications/telegram.service";
 
 export class AIService {
     private groq: GroqClient;

@@ -9,3 +9,11 @@ export default function robots(): MetadataRoute.Robots {
         sitemap: "https://iceberg-framework-site.vercel.app/sitemap.xml",
     };
 }
+
+
+
+
+
+
+
+

@@ -1,8 +1,9 @@
 
 import { NextRequest, NextResponse } from "next/server";
-import { AuditService } from "@/modules/audit/services/audit.service";
-import { StripeService } from "@/modules/payments/services/stripe.service";
-import { IcebergError } from "@/core/errors/IcebergError";
+import { IcebergError } from "@/domain/errors/IcebergError";
+import { StripeService } from "@/features/payments/services/stripe.service";
+import { AuditService } from "@/features/audit/services/audit.service";
+
 
 export const maxDuration = 300; // Allow 5 minutes for deep Claude 4.5 analysis
 

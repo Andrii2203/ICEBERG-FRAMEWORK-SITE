@@ -32,25 +32,35 @@ Deterministic execution plan for the Iceberg Framework Landing Website.
 - [x] 7.2 Establish TypeScript and naming conventions (AI, Required)
 
 ## PHASE 8 — EXECUTION PLAN
-- [/] 8.1 Create `EXECUTION_PLAN.md` with 10 phases (AI, Required)
+- [x] 8.1 Create `EXECUTION_PLAN.md` with 10 phases (AI, Required)
 
 ## PHASE 9 — IMPLEMENTATION
-- [ ] 9.1 Set up i18n middleware and dictionaries (AI, Required)
-- [ ] 9.2 Implement Base Layout and Navigation feature (AI, Required)
-- [ ] 9.3 Implement Home Page with Parallax Hero feature (AI, Required)
-- [ ] 9.4 Implement Philosophy, Methodology, and Standards pages (AI, Required)
-- [ ] 9.5 Implement SEO (Metadata, JSON-LD, Sitemap) (AI, Required)
-- [ ] 9.6 Implement PWA (Manifest, SW, Offline rules) (AI, Required)
-- [ ] 9.7 Implement Accessibility (WCAG audit and fixes) (AI, Required)
-- [ ] 9.8 Implement Audit Feature (Logic Extraction + Refinement) (AI, Required)
-    - [ ] 9.8.1 Refactor /audit to Server Component.
-    - [ ] 9.8.2 Create AuditClient for feature orchestration.
-    - [ ] 9.8.3 Integrate API standards and error handling.
+- [x] 9.1 Set up i18n middleware and dictionaries (AI, Required)
+- [x] 9.2 Implement Base Layout and Navigation feature (AI, Required)
+- [x] 9.3 Implement Home Page with Parallax Hero feature (AI, Required)
+- [x] 9.4 Implement Philosophy, Methodology, and Standards pages (AI, Required)
+- [x] 9.5 Implement SEO (Metadata, JSON-LD, Sitemap) (AI, Required)
+- [x] 9.6 Implement PWA (Manifest, SW, Offline rules) (AI, Required)
+- [x] 9.7 Implement Accessibility (WCAG audit and fixes) (AI, Required)
+- [x] 9.8 Implement Audit Feature (Logic Extraction + Refinement) (AI, Required)
+    - [x] 9.8.1 Refactor /audit to Server Component.
+    - [x] 9.8.2 Create AuditClient for feature orchestration.
+    - [x] 9.8.3 Integrate API standards and error handling.
 
-## PHASE 10 — FINALIZATION
-- [ ] 10.1 Run full QA audit (SEO, PWA, A11y, Performance) (AI, Required)
-- [ ] 10.2 Finalize documentation and README (AI, Required)
-- [ ] 10.3 Handover project to Human (AI, Required)
+## PHASE 10 — REFACTORING (2026-01-28)
+- [x] 10.1 Migrate codebase to canonical Iceberg structure (AI, Required)
+    - [x] 10.1.1 Move modules/ → features/
+    - [x] 10.1.2 Move core/ → domain/ and config/
+    - [x] 10.1.3 Move lib/ → shared/utils/
+    - [x] 10.1.4 Update all import paths
+    - [x] 10.1.5 Verify build success
+- [x] 10.2 Update documentation to match code reality (AI, Required)
+- [x] 10.3 Create compliance report (AI, Required)
+
+## PHASE 11 — FINALIZATION
+- [x] 11.1 Run full QA audit (SEO, PWA, A11y, Performance) (AI, Required)
+- [x] 11.2 Finalize documentation and README (AI, Required)
+- [ ] 11.3 Handover project to Human (AI, Required)
 
 ---
 

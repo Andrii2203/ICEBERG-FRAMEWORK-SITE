@@ -124,3 +124,11 @@ export interface Dictionary {
         };
     };
 }
+
+
+
+
+
+
+
+

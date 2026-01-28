@@ -1,7 +1,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
-import { AuditService } from "@/modules/audit/services/audit.service";
-import { IcebergError } from "@/core/errors/IcebergError";
+import { AuditService } from "@/features/audit/services/audit.service";
+import { IcebergError } from "@/domain/errors/IcebergError";
 
 export async function POST(req: NextRequest) {
     try {

@@ -1,8 +1,8 @@
 
-import { AIService } from "@/modules/ai/services/ai.service";
-import { ZipService } from "@/lib/zip/zip.service";
-import { cleanBase64 } from "@/lib/base64/base64.utils";
-import { DetectionResult, FreeAuditResult } from "@/modules/ai/clients/groq.client";
+import { AIService } from "@/features/ai/services/ai.service";
+import { ZipService } from "@/shared/utils/zip/zip.service";
+import { cleanBase64 } from "@/shared/utils/base64/base64.utils";
+import { DetectionResult, FreeAuditResult } from "@/features/ai/clients/groq.client";
 
 // Define return types
 export type FullAuditResponse = {

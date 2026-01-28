@@ -97,3 +97,11 @@ export function extractImageData(
 //     const regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
 //     return regex.test(cleanBase64(input));
 // }
+
+
+
+
+
+
+
+

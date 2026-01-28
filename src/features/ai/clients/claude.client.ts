@@ -1,16 +1,16 @@
 
 import Anthropic from "@anthropic-ai/sdk";
-import { config } from "@/core/config/env";
-import { IcebergError } from "@/core/errors/IcebergError";
+import { config } from "@/config/env";
+import { IcebergError } from "@/domain/errors/IcebergError";
 import fs from "fs";
 import path from "path";
 
-import { extractImageData, isValidBase64Image } from "@/lib/base64/base64.utils";
+import { extractImageData, isValidBase64Image } from "@/shared/utils/base64/base64.utils";
 
 // Helper to read standards
 const getStandard = (fileName: string) => {
     try {
-        const filePath = path.join(process.cwd(), "src/modules/ai/standards", fileName);
+        const filePath = path.join(process.cwd(), "src/features/ai/standards", fileName);
         return fs.readFileSync(filePath, "utf-8");
     } catch (err) {
         console.error(`[ClaudeClient] Failed to read standard: ${fileName}`, err);
@@ -51,8 +51,8 @@ export class ClaudeClient {
 
         const { mediaType, base64Data } = extractImageData(imageBase64);
 
-        if (!mediaType.startsWith("image/")) { 
-            throw new Error("Uploaded file is not an image"); 
+        if (!mediaType.startsWith("image/")) {
+            throw new Error("Uploaded file is not an image");
         }
 
         if (!config.claude.apiKey) {
@@ -91,8 +91,21 @@ export class ClaudeClient {
       - STRICTLY follow the ICEBERG AUDIT FILE STANDARD.
       - DO NOT add new files.
       - DO NOT invent UI elements not visible in the screenshot.
-      - Return the result as a JSON object where keys are filenames and values are file contents.
-      - audit.json must be a valid JSON string matching the findings in markdown files.
+      
+      OUTPUT FORMAT:
+      You MUST return the content using the following format for EACH file:
+
+      ===FILE: filename.ext===
+      [...file content goes here...]
+      ===END===
+
+      Example:
+      ===FILE: EXPERIMENT.md===
+      # Experiment
+      This is content.
+      ===END===
+      
+      Do not wrap the whole response in JSON. Just list the files one by one using the delimiter format above.
       `;
 
             console.log("[ClaudeClient] System prompt length:", systemPrompt.length);
@@ -103,6 +116,7 @@ export class ClaudeClient {
                 max_tokens: 16384, // Increased to handle very large audit responses
                 temperature: 0,
                 system: systemPrompt,
+                // response_format: { type: "json" }, // Removed: Not supported in this SDK version
                 messages: [
                     {
                         role: "user",
@@ -117,7 +131,7 @@ export class ClaudeClient {
                             },
                             {
                                 type: "text",
-                                text: "Generate the 6 audit files now. Return JSON: { \"UI_UX_AUDIT.md\": \"...content...\", ... }",
+                                text: "Generate the 6 audit files now using the ===FILE: name=== format.",
                             },
                         ],
                     },
@@ -133,28 +147,32 @@ export class ClaudeClient {
 
             console.log("[ClaudeClient] Raw response preview:", content.substring(0, 200) + "...");
 
-            console.log("[ClaudeClient] Cleaning response for JSON parsing...");
+            console.log("[ClaudeClient] Parsing response with custom delimiters...");
+            const files: AuditFiles = {} as AuditFiles;
 
-            let jsonString = content.trim();
+            // Regex to capture ===FILE: filename=== content ===END===
+            const fileRegex = /===FILE:\s*(.*?)===\n([\s\S]*?)===END===/g;
+            let match;
+            let count = 0;
 
-            const firstBrace = jsonString.indexOf("{");
-            const lastBrace = jsonString.lastIndexOf("}");
-
-            if (firstBrace !== -1 && lastBrace !== -1) {
-                jsonString = jsonString.substring(firstBrace, lastBrace + 1);
-                console.log("[ClaudeClient] JSON object extracted via brace markers. Length:", jsonString.length);
+            while ((match = fileRegex.exec(content)) !== null) {
+                const filename = match[1].trim();
+                const fileContent = match[2].trim();
+                if (filename && fileContent) {
+                    files[filename] = fileContent;
+                    count++;
+                }
             }
 
-            console.log("[ClaudeClient] Parsing response JSON (first 100 chars):", jsonString.substring(0, 100).replace(/\n/g, "\\n"));
+            console.log(`[ClaudeClient] Extracted ${count} files.`);
 
-            let files: AuditFiles;
-            try {
-                files = JSON.parse(jsonString) as AuditFiles;
-                console.log("[ClaudeClient] JSON parse successful. Filenames:", Object.keys(files));
-            } catch (parseError) {
-                console.error("[ClaudeClient] JSON Parse failed. Length:", jsonString.length);
-                console.error("[ClaudeClient] String end:", jsonString.substring(jsonString.length - 100));
-                throw parseError;
+            // Fallback for potential audit.json if strictly required but passed as markdown code block
+            if (!files["audit.json"] && content.includes("```json")) {
+                console.log("[ClaudeClient] Attempting to extract audit.json from code block fallback...");
+                const jsonMatch = content.match(/```json\n([\s\S]*?)\n```/);
+                if (jsonMatch && jsonMatch[1]) {
+                    files["audit.json"] = jsonMatch[1];
+                }
             }
 
             // Validate file count and names
@@ -167,11 +185,13 @@ export class ClaudeClient {
                 "audit.json",
             ];
 
-            for (const file of requiredFiles) {
-                if (!files[file as keyof AuditFiles]) {
-                    console.error("[ClaudeClient] Missing required file in response:", file);
-                    throw new Error(`Missing required file: ${file}`);
-                }
+            const missingFiles = requiredFiles.filter(f => !files[f]);
+
+            if (missingFiles.length > 0) {
+                console.error("[ClaudeClient] Missing required files:", missingFiles);
+                // Optional: don't throw, just return what we have? Or throw. 
+                // The user needs all files for the showcase.
+                throw new Error(`Missing required files: ${missingFiles.join(", ")}`);
             }
 
             console.log("[ClaudeClient] Audit generation fully verified and complete.");
@@ -183,3 +203,6 @@ export class ClaudeClient {
         }
     }
 }
+
+
+

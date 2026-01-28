@@ -1,6 +1,6 @@
 
 import JSZip from "jszip";
-import { IcebergError } from "@/core/errors/IcebergError";
+import { IcebergError } from "@/domain/errors/IcebergError";
 
 export class ZipService {
     /**

@@ -55,3 +55,11 @@ export class TelegramService {
         await this.sendMessage(text.trim());
     }
 }
+
+
+
+
+
+
+
+

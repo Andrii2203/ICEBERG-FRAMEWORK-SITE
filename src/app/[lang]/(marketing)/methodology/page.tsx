@@ -84,3 +84,11 @@ export default async function MethodologyPage({
         </main>
     );
 }
+
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
-import { config } from "@/core/config/env";
+import { config } from "@/config/env";
 import { headers } from "next/headers";
 
 // Mark route as dynamic to prevent build-time execution
@@ -45,3 +45,11 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json({ status: "success" });
 }
+
+
+
+
+
+
+
+

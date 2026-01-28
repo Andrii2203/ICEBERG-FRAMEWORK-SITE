@@ -1,7 +1,7 @@
 
 import Stripe from "stripe";
-import { config } from "@/core/config/env";
-import { IcebergError } from "@/core/errors/IcebergError";
+import { config } from "@/config/env";
+import { IcebergError } from "@/domain/errors/IcebergError";
 
 export class StripeService {
   private stripe: Stripe;
@@ -61,3 +61,11 @@ export class StripeService {
     }
   }
 }
+
+
+
+
+
+
+
+

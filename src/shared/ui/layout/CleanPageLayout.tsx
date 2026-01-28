@@ -19,3 +19,11 @@ export function CleanPageLayout({ dict, children }: CleanPageLayoutProps) {
         </>
     );
 }
+
+
+
+
+
+
+
+
