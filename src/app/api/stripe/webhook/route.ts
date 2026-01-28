@@ -4,10 +4,19 @@ import Stripe from "stripe";
 import { config } from "@/core/config/env";
 import { headers } from "next/headers";
 
-const stripe = new Stripe(config.stripe.secretKey || "", {
-  apiVersion: "2025-12-15.clover",
-  typescript: true,
-});
+// Mark route as dynamic to prevent build-time execution
+export const dynamic = 'force-dynamic';
+
+// Lazy initialization to avoid errors during build
+function getStripeInstance(): Stripe {
+  if (!config.stripe.secretKey) {
+    throw new Error("Stripe secret key is not configured");
+  }
+  return new Stripe(config.stripe.secretKey, {
+    apiVersion: "2025-12-15.clover",
+    typescript: true,
+  });
+}
 
 export async function POST(req: NextRequest) {
   const body = await req.text();
@@ -16,6 +25,7 @@ export async function POST(req: NextRequest) {
   let event: Stripe.Event;
 
   try {
+    const stripe = getStripeInstance();
     event = stripe.webhooks.constructEvent(
       body,
       signature,
