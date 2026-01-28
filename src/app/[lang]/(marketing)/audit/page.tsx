@@ -8,10 +8,6 @@ import type { Metadata } from "next";
 import path from "path";
 import { promises as fs } from "fs";
 
-interface AuditPageProps {
-    params: { lang: string };
-}
-
 async function getCaseStudyFiles() {
     const docsPath = path.join(process.cwd(), "docs", "ICEBERG_AUDIT_1769538584665");
     const filenames = [
@@ -36,10 +32,10 @@ async function getCaseStudyFiles() {
     return files;
 }
 
-export async function generateMetadata({
-    params,
-}: AuditPageProps): Promise<Metadata> {
-    const { lang } = params;
+export async function generateMetadata(
+    { params }: { params: Promise<{ lang: string }> },
+): Promise<Metadata> {
+    const { lang } = await params;
     const dict = await getDictionary(lang as SupportedLanguage);
     return generatePageMetadata(
         lang,
@@ -49,8 +45,8 @@ export async function generateMetadata({
     );
 }
 
-export default async function AuditPage({ params }: AuditPageProps) {
-    const { lang } = params;
+export default async function AuditPage({ params }: { params: Promise<{ lang: string }> }) {
+    const { lang } = await params;
     const dict = await getDictionary(lang as SupportedLanguage);
     const caseStudyFiles = await getCaseStudyFiles();
 
