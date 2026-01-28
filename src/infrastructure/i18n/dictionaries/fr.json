@@ -2,7 +2,8 @@
     "common": {
         "title": "Iceberg Framework",
         "tagline": "Déterminisme pour le développement piloté par l'IA",
-        "cta": "Explorer les standards"
+        "cta": "Explorer les standards",
+        "auditCta": "Lancer l'audit"
     },
     "hero": {
         "visibleTip": "Pointe visible (UI/Documentation)",
@@ -16,6 +17,7 @@
         "standards": "Standards",
         "protocols": "Protocoles",
         "enterprise": "Entreprise",
+        "audit": "Audit",
         "language": "Langue"
     },
     "philosophy": {
@@ -90,6 +92,36 @@
             "executor": "Moteur d'exécution IA",
             "memory": "Moteur de mémoire persistante",
             "validation": "Moteur de validation et QA"
+        }
+    },
+    "audit":{
+        "title":"Audit Iceberg",
+        "subtitle":"Analyse UI/UX déterministe",
+        "description":"Téléchargez une capture d''écran et obtenez un audit complet.",
+        "form":{
+            "uploadLabel":"Déposez ici",
+            "auditTypeLabel":"Type",
+            "freeAudit":"Gratuit",
+            "paidAudit":"Complet",
+            "submitButton":"Démarrer",
+            "processing":"Traitement..."
+        },
+        "status":{
+            "detecting":"Détection...",
+            "analyzing":"Analyse...",
+            "zipping":"ZIP...",
+            "success":"Terminé!",
+            "error":"Erreur."
+        },
+        "results":{
+            "downloadZip":"Télécharger ZIP",
+            "freeResultTitle":"Rapport",
+            "backToForm":"Nouvel"
+        },
+        "errors":{
+            "nonUi":"Pas UI",
+            "paymentRequired":"Paiement requis",
+            "generic":"Erreur"
         }
     }
 }

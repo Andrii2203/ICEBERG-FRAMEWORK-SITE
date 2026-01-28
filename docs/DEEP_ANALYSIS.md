@@ -55,6 +55,41 @@ Technical and business analysis for the Iceberg Framework Landing Website pages.
 
 ---
 
+## AUDIT PAGE
+
+### 1. Business Logic
+- Multi-step UI audit process (Upload -> Detection -> Result).
+- Dynamic feedback based on image classification (UI, Non-UI, Chaos).
+- Monetization boundary for full reports (Stripe).
+
+### 2. Minimal Required Functionality
+- Drag-and-drop file upload.
+- Real-time classification via `/api/detect-ui`.
+- Deterministic branching:
+    - Non-UI: Error message + "Try again".
+    - Chaos: Free "Chaos Audit" CTA.
+    - UI: Premium "Full Audit" CTA + Stripe Checkout.
+
+### 3. Logic Split
+- **Server:** Page composition, dictionary injection, SEO metadata.
+- **Client:** State management for steps, file handling, API orchestration, and UI updates.
+
+### 4. Component Structure
+- `AuditClient`: Main orchestrator for client logic.
+- `UploadZone`: Reusable file upload handler.
+- `DetectionStatus`: Visual feedback for analysis phase.
+- `AuditResultCard`: Dynamic display of analysis outcome.
+
+### 5. Reusability
+- `UploadZone` can be reused in future specialized audits.
+- Shared `CleanPageLayout` for consistent page structure.
+
+### 6. Legacy Antipatterns
+- Mixed concerns in a single file (Server + Client + API).
+- Inline prompts/logic (to be moved to services).
+
+---
+
 ## STOP‑CHECK
 - [x] All mandatory categories filled for Home and Methodology
 - [x] No assumptions

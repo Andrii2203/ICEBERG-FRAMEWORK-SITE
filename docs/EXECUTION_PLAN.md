@@ -42,6 +42,10 @@ Deterministic execution plan for the Iceberg Framework Landing Website.
 - [ ] 9.5 Implement SEO (Metadata, JSON-LD, Sitemap) (AI, Required)
 - [ ] 9.6 Implement PWA (Manifest, SW, Offline rules) (AI, Required)
 - [ ] 9.7 Implement Accessibility (WCAG audit and fixes) (AI, Required)
+- [ ] 9.8 Implement Audit Feature (Logic Extraction + Refinement) (AI, Required)
+    - [ ] 9.8.1 Refactor /audit to Server Component.
+    - [ ] 9.8.2 Create AuditClient for feature orchestration.
+    - [ ] 9.8.3 Integrate API standards and error handling.
 
 ## PHASE 10 — FINALIZATION
 - [ ] 10.1 Run full QA audit (SEO, PWA, A11y, Performance) (AI, Required)

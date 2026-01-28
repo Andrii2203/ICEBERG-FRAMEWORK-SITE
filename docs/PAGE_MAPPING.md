@@ -43,6 +43,13 @@ The website is a multi-page Next.js application designed to explain the Iceberg 
   - src/app/enterprise/page.tsx
 - **Short Description:** Information about proprietary commercial modules (AI Executor, Memory Engine, etc.).
 
+### Audit Page
+- **URL:** /audit
+- **Files:**  
+  - src/app/audit/page.tsx
+  - src/features/audit/ui/AuditClient.tsx
+- **Short Description:** UI/UX audit tool with automated analysis using Groq and Claude.
+
 ## 3. ROUTE TREE
 
 ```
@@ -52,6 +59,7 @@ The website is a multi-page Next.js application designed to explain the Iceberg 
   /standards
   /protocols
   /enterprise
+  /audit
 ```
 
 ---

@@ -32,8 +32,17 @@ Content structure definition for the Iceberg Framework Landing Website.
 ### Protocols Page
 - **List:** Planning, Migration, AI Execution, Validation.
 
-### Enterprise Page
-- **Modules:** AI Executor, Persistent Memory Engine, Validation Engine.
+### Audit Page
+- **Hero:**
+  - Title: "Automatic UI Analysis"
+  - Subtitle: "Detect UI Chaos vs Structure"
+- **Form:**
+  - `uploadLabel`: "Drop UI screenshot here"
+  - `submitButton`: "Unlock Full Audit"
+- **Statuses:**
+  - `detecting`: "AI is scanning visual hierarchy..."
+  - `chaosFound`: "Chaos Mode: Unstructured UI Detected."
+  - `uiValid`: "Valid UI: Ready for Deep Audit."
 
 ## 3. MEDIA ASSETS
 - `/public/images/iceberg-symbol.svg` (parallax layers)

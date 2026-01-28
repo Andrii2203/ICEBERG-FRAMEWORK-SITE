@@ -244,3 +244,41 @@
   4. Fix sitemap.
   5. Create add-page workflow.
 - **STOP-CHECK:** Each code change must be followed by a verification of generated HTML.
+
+### [2026-01-26 19:45] Build Fixes & Stripe Pricing Update
+- **Action:** Resolved AuditFiles type mismatch for ZIP generation.
+- **Action:** Updated Stripe pricing to 29 EUR in StripeService.
+- **Action:** Synchronized Stripe API version across webhook and service.
+- **Status:** COMPLIANT. Ready for build check.
+
+### [2026-01-26 21:30] Audit Resumption & Middleware Fix
+- **Action:** Fixed `src/middleware.ts` to preserve search parameters during locale redirection.
+- **Action:** Created `src/app/api/audit/verify/route.ts` for payment status verification.
+- **Action:** Updated `AuditClient.tsx` to recover pending audits after Stripe redirection using session verification and session storage.
+- **Result:** Full flow (Upload -> Paid Audit -> ZIP Download) is now theoretically stable across redirects.
+- **Next:** Manual verification of the complete payment-to-download loop.
+
+### [2026-01-27 18:30] Claude Client Import Fix
+- **Action:** Refactored `claude.client.ts` to use `fs.readFileSync` for standards.
+- **Reason:** TypeScript cannot resolve `.md` files as modules without custom loaders. `fs` is the deterministic "Iceberg way".
+- **Path:** Files moved/verified in `src/modules/ai/standards/`.
+### [2026-01-27 18:50] Granular Logging System
+- **Action:** Added comprehensive `console.log` statements to `AuditClient`, `detect-ui`, `analyze-ui`, `AuditService`, `AIService`, and AI clients.
+- **Reason:** User requested visibility into the data flow at every minor step.
+- **Coverage:** Frontend lifecycle, API request validation, payment verification, AI prompt construction, and result parsing.
+- **Status:** COMPLIANT. Ready for full flow monitoring.
+
+### [2026-01-27 19:10] Robust JSON Regex Extraction
+- **Issue:** Previous `indexOf` logic failed to clean markdown backticks correctly.
+- **Action:** 
+  1. Switched to aggressive regex ` /\{[\s\S]*\}/ ` to extract only the outermost JSON object.
+  2. Enhanced logging to show the first 50 chars of the cleaned string.
+- **Status:** COMPLIANT. Highly confident this solves the parsing error.
+
+### [2026-01-27 20:35] Success Path State Cleanup
+- **Issue:** The audit image remained in `sessionStorage` after a successful audit, causing it to re-run on page refresh.
+- **Action:** Added `sessionStorage.removeItem("audit_image")` to the success handler in `AuditClient.tsx`.
+- **Status:** COMPLIANT. Workflow is now idempotent.
+
+
+

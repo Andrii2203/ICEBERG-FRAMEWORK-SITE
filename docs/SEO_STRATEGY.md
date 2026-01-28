@@ -24,7 +24,12 @@ This function is the "Single Source of Truth" for metadata generation.
 #### Page Implementation
 Every route in `src/app/[lang]` (e.g., `/standards`, `/philosophy`, etc.) must implement its own `generateMetadata` function and call the shared utility.
 
-## 3. SEO Consistency Checklist
+## 4. AUDIT PAGE SEO SPECIFICS
+- **Slug**: `audit`
+- **Supported Languages**: 8 (EN, UA, PL, DE, ES, FR, IT, PT)
+- **Canonical**: `https://icebergframework.co/audit` (absolute per language via `generatePageMetadata`)
+
+## 5. SEO Consistency Checklist
 1. **Absolute URLs**: No relative paths in canonical/hreflang.
 2. **Double Slashes**: baseUrl must NOT end with a slash if paths start with one.
 3. **Language Parity**: All 8 languages (`en`, `ua`, `pl`, `de`, `es`, `fr`, `it`, `pt`) must be present in every page's alternates.

@@ -2,7 +2,8 @@
     "common": {
         "title": "Iceberg Framework",
         "tagline": "Determinismus für KI-gesteuerte Entwicklung",
-        "cta": "Standards erkunden"
+        "cta": "Standards erkunden",
+        "auditCta": "Audit starten"
     },
     "hero": {
         "visibleTip": "Sichtbare Spitze (UI/Dokumentation)",
@@ -16,6 +17,7 @@
         "standards": "Standards",
         "protocols": "Protokolle",
         "enterprise": "Enterprise",
+        "audit": "Audit",
         "language": "Sprache"
     },
     "philosophy": {
@@ -90,6 +92,36 @@
             "executor": "KI-Ausführungs-Engine",
             "memory": "Persistente Speicher-Engine",
             "validation": "Validierungs- & QA-Engine"
+        }
+    },
+    "audit": {
+        "title": "Iceberg Audit",
+        "subtitle": "Deterministische UI/UX-Analyse",
+        "description": "Laden Sie einen Screenshot hoch und erhalten Sie ein vollständiges Audit.",
+        "form": {
+            "uploadLabel": "Screenshot hier ablegen",
+            "auditTypeLabel": "Audit-Typ",
+            "freeAudit": "Kostenloses Audit",
+            "paidAudit": "Vollständiges Audit",
+            "submitButton": "Audit starten",
+            "processing": "Verarbeitung..."
+        },
+        "status": {
+            "detecting": "Erkennung...",
+            "analyzing": "Analyse...",
+            "zipping": "ZIP wird generiert...",
+            "success": "Abgeschlossen!",
+            "error": "Fehler."
+        },
+        "results": {
+            "downloadZip": "ZIP herunterladen",
+            "freeResultTitle": "Bericht",
+            "backToForm": "Neues Audit"
+        },
+        "errors": {
+            "nonUi": "Kein UI-Screenshot",
+            "paymentRequired": "Zahlung erforderlich",
+            "generic": "Fehler"
         }
     }
 }

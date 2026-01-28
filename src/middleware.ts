@@ -15,15 +15,15 @@ export default function proxy(request: NextRequest) {
     if (pathnameIsMissingLocale) {
         const locale = defaultLocale; // In a real app, logic for locale detection from headers would go here
 
-        return NextResponse.redirect(
-            new URL(`/${locale}${pathname}`, request.url)
-        );
+        const nextUrl = request.nextUrl.clone();
+        nextUrl.pathname = `/${locale}${pathname}`;
+        return NextResponse.redirect(nextUrl);
     }
 }
 
 export const config = {
     matcher: [
         // Skip all internal paths (_next, api, assets, and root static files)
-        "/((?!api|_next/static|_next/image|favicon.ico|icons|images|manifest.json|manifest.webmanifest|manifest.ts|sw.js|robots.txt|sitemap.xml).*)",
+        "/((?!api|_next/static|_next/image|favicon.ico|assets|icons|images|manifest.json|manifest.webmanifest|manifest.ts|sw.js|robots.txt|sitemap.xml).*)",
     ],
 };

@@ -2,7 +2,8 @@
     "common": {
         "title": "Iceberg Framework",
         "tagline": "Determinizm w programowaniu sterowanym przez AI",
-        "cta": "Poznaj standardy"
+        "cta": "Poznaj standardy",
+        "auditCta": "Uruchom Audyt"
     },
     "hero": {
         "visibleTip": "Widoczny wierzchołek (UI/Dokumentacja)",
@@ -16,6 +17,7 @@
         "standards": "Standardy",
         "protocols": "Protokoły",
         "enterprise": "Enterprise",
+        "audit": "Audyt",
         "language": "Język"
     },
     "philosophy": {
@@ -90,6 +92,36 @@
             "executor": "Silnik Wykonawczy AI",
             "memory": "Silnik Trwałej Pamięci",
             "validation": "Silnik Walidacji i QA"
+        }
+    },
+    "audit": {
+        "title": "Audyt Iceberg",
+        "subtitle": "Deterministyczna analiza UI/UX",
+        "description": "Prześlij zrzut ekranu i otrzymaj pełny audyt swojego interfejsu.",
+        "form": {
+            "uploadLabel": "Przeciągnij zrzut ekranu tutaj",
+            "auditTypeLabel": "Typ audytu",
+            "freeAudit": "Bezpłatny audyt",
+            "paidAudit": "Pełny audyt",
+            "submitButton": "Rozpocznij audyt",
+            "processing": "Przetwarzanie..."
+        },
+        "status": {
+            "detecting": "Wykrywanie UI...",
+            "analyzing": "Analiza...",
+            "zipping": "Generowanie ZIP...",
+            "success": "Gotowe!",
+            "error": "Błąd."
+        },
+        "results": {
+            "downloadZip": "Pobierz ZIP",
+            "freeResultTitle": "Raport",
+            "backToForm": "Nowy audyt"
+        },
+        "errors": {
+            "nonUi": "To nie jest UI",
+            "paymentRequired": "Wymagana płatność",
+            "generic": "Błąd"
         }
     }
 }

@@ -16,6 +16,7 @@ interface NavbarProps {
             standards: string;
             protocols: string;
             enterprise: string;
+            audit: string;
             language: string;
         };
     };
@@ -62,6 +63,7 @@ export const Navbar = ({ dict }: NavbarProps) => {
         { href: `/${currentLang}/standards`, label: dict.nav.standards },
         { href: `/${currentLang}/protocols`, label: dict.nav.protocols },
         { href: `/${currentLang}/enterprise`, label: dict.nav.enterprise },
+        { href: `/${currentLang}/audit`, label: dict.nav.audit },
     ];
 
     return (

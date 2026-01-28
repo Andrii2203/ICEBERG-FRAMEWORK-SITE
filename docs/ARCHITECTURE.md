@@ -69,6 +69,23 @@ src/
 - **Feature Blocks:** Logical sections in `features/`.
 - **Page Layouts:** Structural wrappers in `app/`.
 
+## 5. AUDIT PIPELINE
+The `/audit` feature uses an orchestrator pattern to manage the UI analysis workflow:
+
+```mermaid
+graph TD
+    User[/audit/] --> |Upload Screenshot| Orchestrator[/api/audit/]
+    Orchestrator --> |Groq Vision| Detection[UI Detection]
+    Detection --> |Non-UI| Error[Return Error]
+    Detection --> |Chaos| FreeAudit[Groq Text: Free Audit]
+    Detection --> |UI| StripeCheck{Paid Audit?}
+    StripeCheck --> |Yes| Stripe[Stripe Checkout]
+    Stripe --> |Success| Claude[Claude 3.5: Full Audit]
+    Claude --> |Generate 6 Files| Zip[Zip Service]
+    Zip --> |Return ZIP| User
+    StripeCheck --> |No| Error2[Paid Only for Full Audit]
+```
+
 ---
 
 ## STOP‑CHECK

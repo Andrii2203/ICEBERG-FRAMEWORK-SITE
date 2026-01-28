@@ -2,7 +2,8 @@
     "common": {
         "title": "Iceberg Framework",
         "tagline": "Determinism for AI‑Driven Development",
-        "cta": "Explore Standards"
+        "cta": "Explore Standards",
+        "auditCta": "Run UI Audit"
     },
     "hero": {
         "visibleTip": "Visible Tip (UI/Docs)",
@@ -16,6 +17,7 @@
         "standards": "Standards",
         "protocols": "Protocols",
         "enterprise": "Enterprise",
+        "audit": "Audit",
         "language": "Language"
     },
     "philosophy": {
@@ -90,6 +92,36 @@
             "executor": "AI Execution Engine",
             "memory": "Persistent Memory Engine",
             "validation": "Validation & QA Engine"
+        }
+    },
+    "audit": {
+        "title": "Iceberg Audit",
+        "subtitle": "Deterministic UI/UX Analysis",
+        "description": "Upload a screenshot and get a complete audit of your interface, structured, professional, and AI-powered.",
+        "form": {
+            "uploadLabel": "Drop screenshot here or click to upload",
+            "auditTypeLabel": "Audit Type",
+            "freeAudit": "Free Audit (Chaos Detection)",
+            "paidAudit": "Full Audit (6-File Pack)",
+            "submitButton": "Start Audit",
+            "processing": "Processing Audit..."
+        },
+        "status": {
+            "detecting": "Detecting UI structure...",
+            "analyzing": "Analyzing components and UX...",
+            "zipping": "Generating delivery package...",
+            "success": "Audit complete!",
+            "error": "Audit failed."
+        },
+        "results": {
+            "downloadZip": "Download Audit Response (ZIP)",
+            "freeResultTitle": "Audit Analysis Report",
+            "backToForm": "New Audit"
+        },
+        "errors": {
+            "nonUi": "The uploaded image is not a valid UI screenshot.",
+            "paymentRequired": "Payment is required for a Full Audit.",
+            "generic": "An unexpected error occurred. Please try again."
         }
     }
 }

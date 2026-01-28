@@ -2,7 +2,8 @@
     "common": {
         "title": "Iceberg Framework",
         "tagline": "Детермінізм для розробки на базі AI",
-        "cta": "Дослідити Стандарти"
+        "cta": "Дослідити Стандарти",
+        "auditCta": "Запустити Аудит"
     },
     "hero": {
         "visibleTip": "Видима Верхівка (UI/Документація)",
@@ -15,7 +16,8 @@
         "methodology": "Методологія",
         "standards": "Стандарти",
         "protocols": "Протоколи",
-        "enterprise": "Enterprise",
+        "enterprise": "Ентерпрайз",
+        "audit": "Аудит",
         "language": "Мова"
     },
     "philosophy": {
@@ -90,6 +92,36 @@
             "executor": "AI Execution Engine",
             "memory": "Persistent Memory Engine",
             "validation": "Validation & QA Engine"
+        }
+    },
+    "audit": {
+        "title": "Аудит Iceberg",
+        "subtitle": "Детермінований UI/UX аналіз",
+        "description": "Завантажте скріншот і отримайте повний аудит вашого інтерфейсу.",
+        "form": {
+            "uploadLabel": "Перетягніть скріншот сюди",
+            "auditTypeLabel": "Тип аудиту",
+            "freeAudit": "Безкоштовний аудит",
+            "paidAudit": "Повний аудит",
+            "submitButton": "Почати аудит",
+            "processing": "Обробка..."
+        },
+        "status": {
+            "detecting": "Виявлення UI...",
+            "analyzing": "Аналіз...",
+            "zipping": "Генерація ZIP...",
+            "success": "Готово!",
+            "error": "Помилка."
+        },
+        "results": {
+            "downloadZip": "Завантажити ZIP",
+            "freeResultTitle": "Звіт",
+            "backToForm": "Новий аудит"
+        },
+        "errors": {
+            "nonUi": "Не UI скріншот",
+            "paymentRequired": "Потрібна оплата",
+            "generic": "Помилка"
         }
     }
 }

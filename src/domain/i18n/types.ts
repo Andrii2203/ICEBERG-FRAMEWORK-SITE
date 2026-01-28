@@ -16,6 +16,7 @@ export interface Dictionary {
         standards: string;
         protocols: string;
         enterprise: string;
+        audit: string;
         language: string;
     };
     philosophy: {
@@ -90,6 +91,36 @@ export interface Dictionary {
             executor: string;
             memory: string;
             validation: string;
+        };
+    };
+    audit: {
+        title: string;
+        subtitle: string;
+        description: string;
+        form: {
+            uploadLabel: string;
+            auditTypeLabel: string;
+            freeAudit: string;
+            paidAudit: string;
+            submitButton: string;
+            processing: string;
+        };
+        status: {
+            detecting: string;
+            analyzing: string;
+            zipping: string;
+            success: string;
+            error: string;
+        };
+        results: {
+            downloadZip: string;
+            freeResultTitle: string;
+            backToForm: string;
+        };
+        errors: {
+            nonUi: string;
+            paymentRequired: string;
+            generic: string;
         };
     };
 }

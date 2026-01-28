@@ -1,0 +1,234 @@
+{
+  "screen_overview": "Kanban-style project management board showing sprint 2023-06-30T12:31:54+0000 for PLAT board under Platform Development. Contains 3 columns (TO DO, IN PROGRESS, DONE) with 9 task cards distributed across them. Header includes navigation, sprint controls, and team member avatars. Toolbar provides search, filters, and insights access.",
+  "components": [
+    {
+      "name": "Breadcrumb Navigation",
+      "type": "navigation",
+      "role": "Show hierarchical location",
+      "states": ["default"]
+    },
+    {
+      "name": "Sprint Title",
+      "type": "heading",
+      "role": "Display sprint identifier",
+      "states": ["default"]
+    },
+    {
+      "name": "Sprint Goal Text",
+      "type": "text",
+      "role": "Display sprint objective",
+      "states": ["default"]
+    },
+    {
+      "name": "Complete Sprint Button",
+      "type": "button",
+      "role": "Primary action to complete sprint",
+      "states": ["default"]
+    },
+    {
+      "name": "Search Bar",
+      "type": "input",
+      "role": "Search within board",
+      "states": ["default"]
+    },
+    {
+      "name": "Avatar Group",
+      "type": "avatar",
+      "role": "Display team members",
+      "states": ["default"]
+    },
+    {
+      "name": "Only My Issues Filter",
+      "type": "button",
+      "role": "Filter to show user's tasks",
+      "states": ["default"]
+    },
+    {
+      "name": "Recently Updated Filter",
+      "type": "button",
+      "role": "Filter recently modified tasks",
+      "states": ["default"]
+    },
+    {
+      "name": "Insights Button",
+      "type": "button",
+      "role": "Access board analytics",
+      "states": ["default"]
+    },
+    {
+      "name": "Column Header - TO DO",
+      "type": "header",
+      "role": "Label for backlog tasks",
+      "states": ["default"]
+    },
+    {
+      "name": "Column Header - IN PROGRESS",
+      "type": "header",
+      "role": "Label for active tasks",
+      "states": ["default"]
+    },
+    {
+      "name": "Column Header - DONE",
+      "type": "header",
+      "role": "Label for completed tasks",
+      "states": ["default"]
+    },
+    {
+      "name": "Task Card",
+      "type": "card",
+      "role": "Display task information",
+      "states": ["default"]
+    },
+    {
+      "name": "Label Badge",
+      "type": "badge",
+      "role": "Categorize task type",
+      "states": ["default"]
+    },
+    {
+      "name": "Status Icon",
+      "type": "icon",
+      "role": "Indicate task status",
+      "states": ["default"]
+    },
+    {
+      "name": "Numeric Badge",
+      "type": "badge",
+      "role": "Display count metric",
+      "states": ["default"]
+    },
+    {
+      "name": "Task ID Link",
+      "type": "link",
+      "role": "Unique task identifier",
+      "states": ["default"]
+    },
+    {
+      "name": "Assignee Avatar",
+      "type": "avatar",
+      "role": "Show task assignee",
+      "states": ["default"]
+    },
+    {
+      "name": "Timer Badge",
+      "type": "badge",
+      "role": "Display sprint time remaining",
+      "states": ["default"]
+    }
+  ],
+  "issues": [
+    {
+      "id": "ISS-001",
+      "severity": "critical",
+      "description": "Numeric indicators (2, 3, 4, 5, 6, 8) appear without labels or tooltips, making their meaning unclear to users",
+      "recommendation": "Add tooltips to all numeric badges explaining what they represent (e.g., comments, subtasks, story points). Consider adding small icon prefixes to provide visual context."
+    },
+    {
+      "id": "ISS-002",
+      "severity": "critical",
+      "description": "No help documentation, tooltips, or legend visible anywhere on the interface",
+      "recommendation": "Implement comprehensive tooltip system for all interactive elements. Add help icon in header linking to documentation. Create legend for icons, colors, and metrics."
+    },
+    {
+      "id": "ISS-003",
+      "severity": "critical",
+      "description": "Warning icons appear on cards without explanation of the issue or how to resolve it",
+      "recommendation": "Add descriptive tooltips to warning icons explaining the specific problem. Provide actionable steps for resolution. Consider adding a problems panel."
+    },
+    {
+      "id": "ISS-004",
+      "severity": "high",
+      "description": "Label badge colors don't follow consistent semantic system (red used for both CLOUD and PRODUCTS, no clear categorization)",
+      "recommendation": "Establish semantic color system based on task categories. Document color meanings. Ensure colors are used consistently across the application."
+    },
+    {
+      "id": "ISS-005",
+      "severity": "high",
+      "description": "Task cards are information-dense with 7+ data points, creating cognitive overload and reducing scanning efficiency",
+      "recommendation": "Implement progressive disclosure - show only essential info by default (title, label, assignee). Reveal additional details on hover. Add compact/detailed view toggle."
+    },
+    {
+      "id": "ISS-006",
+      "severity": "high",
+      "description": "Avatar border colors vary (blue, purple, green) without documented meaning or clear pattern",
+      "recommendation": "Standardize avatar border colors with clear semantic meaning (e.g., role, status, team). Document the system in help resources."
+    },
+    {
+      "id": "ISS-007",
+      "severity": "high",
+      "description": "Icon meanings must be memorized - no recognition aids provided (checkmarks, trends, warnings)",
+      "recommendation": "Add tooltips to all icons. Create icon legend accessible from toolbar. Use more descriptive icons or add text labels for clarity."
+    },
+    {
+      "id": "ISS-008",
+      "severity": "medium",
+      "description": "Sprint deadline '0 days remaining' shown in small text without visual urgency indicators",
+      "recommendation": "Increase size and prominence of deadline indicator. Add color coding (red for urgent). Include progress bar showing sprint timeline. Consider countdown timer."
+    },
+    {
+      "id": "ISS-009",
+      "severity": "medium",
+      "description": "Avatar group in toolbar has significant overlap, making individual team members difficult to identify",
+      "recommendation": "Reduce overlap percentage. Add tooltip showing all team members on hover. Consider expandable avatar list for better visibility."
+    },
+    {
+      "id": "ISS-010",
+      "severity": "medium",
+      "description": "No visible keyboard shortcuts or efficiency features for power users",
+      "recommendation": "Implement keyboard shortcuts for common actions. Add quick actions on card hover. Enable bulk selection. Provide keyboard shortcut reference."
+    },
+    {
+      "id": "ISS-011",
+      "severity": "medium",
+      "description": "Filter button states don't clearly indicate whether they are active or inactive",
+      "recommendation": "Add visual highlighting to active filters. Show filter count when active. Add 'Clear all filters' button when filters are applied."
+    },
+    {
+      "id": "ISS-012",
+      "severity": "medium",
+      "description": "Cards are tightly packed vertically with minimal spacing, reducing visual breathing room",
+      "recommendation": "Increase vertical spacing between cards to 16-20px. Add more padding within cards. Consider adding subtle separators."
+    },
+    {
+      "id": "ISS-013",
+      "severity": "low",
+      "description": "Timestamp format (2023-06-30T12:31:54+0000) is technical and not user-friendly",
+      "recommendation": "Show relative dates alongside technical timestamp (e.g., 'Sprint ending today'). Use more readable date format for primary display."
+    },
+    {
+      "id": "ISS-014",
+      "severity": "low",
+      "description": "No confirmation dialog visible for potentially destructive 'Complete sprint' action",
+      "recommendation": "Add confirmation dialog showing summary of incomplete tasks before completing sprint. Warn about consequences of action."
+    },
+    {
+      "id": "ISS-015",
+      "severity": "low",
+      "description": "IN PROGRESS column appears overloaded with 5 tasks, suggesting potential workflow bottleneck",
+      "recommendation": "Add WIP (Work In Progress) limits to columns. Highlight when limits are exceeded. Provide visual indicators for column load."
+    }
+  ],
+  "hierarchy": {
+    "primary": [
+      "Sprint Title",
+      "Complete Sprint Button",
+      "Column Headers",
+      "Task Card Titles"
+    ],
+    "secondary": [
+      "Sprint Goal Text",
+      "Label Badges",
+      "Timer Badge",
+      "Task IDs",
+      "Assignee Avatars",
+      "Status Icons",
+      "Numeric Badges"
+    ]
+  },
+  "score": {
+    "ui_quality": 6,
+    "ux_quality": 5,
+    "accessibility": 4,
+    "overall": 5.5
+  }
+}

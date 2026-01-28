@@ -11,6 +11,8 @@ const dictionaries = {
     pt: () => import("./dictionaries/pt.json").then((module) => module.default as Dictionary),
 };
 
+export type SupportedLanguage = keyof typeof dictionaries;
+
 export const getDictionary = async (locale: string): Promise<Dictionary> => {
     return dictionaries[locale as keyof typeof dictionaries]?.() ?? dictionaries.en();
 };
