@@ -39,7 +39,7 @@ async function getCaseStudyFiles() {
 export async function generateMetadata({
     params,
 }: AuditPageProps): Promise<Metadata> {
-    const { lang } = await params;
+    const { lang } = params;
     const dict = await getDictionary(lang as SupportedLanguage);
     return generatePageMetadata(
         lang,
@@ -50,7 +50,7 @@ export async function generateMetadata({
 }
 
 export default async function AuditPage({ params }: AuditPageProps) {
-    const { lang } = await params;
+    const { lang } = params;
     const dict = await getDictionary(lang as SupportedLanguage);
     const caseStudyFiles = await getCaseStudyFiles();
 
