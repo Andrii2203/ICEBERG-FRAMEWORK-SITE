@@ -17,7 +17,7 @@ export default function proxy(request: NextRequest) {
 
         const nextUrl = request.nextUrl.clone();
         nextUrl.pathname = `/${locale}${pathname}`;
-        return NextResponse.redirect(nextUrl);
+        return NextResponse.redirect(nextUrl, 308);
     }
 }
 

@@ -226,7 +226,8 @@ export function AuditClient({ featureDict }: AuditClientProps) {
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
 
                 {/* THE CORE SPLIT VIEW */}
-                <div className="flex flex-col md:flex-row h-full divide-y md:divide-y-0 md:divide-x divide-border-brand/20 dark:divide-white/5 relative z-10">
+                <div {...getRootProps()} className="flex cursor-pointer flex-col md:flex-row h-full divide-y md:divide-y-0 md:divide-x divide-border-brand/20 dark:divide-white/5 relative z-10">
+                    <input {...getInputProps()} />
 
                     {/* LEFT PANEL: Media/Preview (Stack on mobile, 42% on desktop) */}
                     <div className="w-full md:w-[42%] shrink-0 relative overflow-hidden bg-slate-50/50 dark:bg-black/40 p-6 md:p-8 flex flex-col h-[300px] md:h-auto border-b md:border-b-0 border-slate-600/20 dark:border-white/5">
@@ -302,12 +303,11 @@ export function AuditClient({ featureDict }: AuditClientProps) {
 
                         {/* STATE: INITIAL UPLOAD / DROPZONE */}
                         {step === "upload" && (
-                            <div {...getRootProps()} className="h-full">
+                            <div  className="h-full">
                                 <div
                                     key="upload-pane"
-                                    className="h-full flex flex-col justify-center cursor-pointer group/drop"
+                                    className="h-full flex flex-col justify-center group/drop"
                                 >
-                                    <input {...getInputProps()} />
                                     <div className="space-y-6">
                                         <div className="space-y-3">
                                             <h3 className="text-4xl font-black text-slate-950 dark:text-white leading-tight">
@@ -319,7 +319,6 @@ export function AuditClient({ featureDict }: AuditClientProps) {
                                         </div>
                                     </div>
 
-                                    <div className={`absolute inset-0 bg-cyan-500/5 transition-opacity duration-500 ${isDragActive ? 'opacity-100' : 'opacity-0'}`} />
                                 </div>
                             </div>
                         )
@@ -417,6 +416,7 @@ export function AuditClient({ featureDict }: AuditClientProps) {
                             </div>
                         )}
                     </div>
+                    <div className={`absolute inset-0 bg-cyan-500/5 transition-opacity duration-500 ${isDragActive ? 'opacity-100' : 'opacity-0'}`} />
                 </div>
             </div>
         </div>
