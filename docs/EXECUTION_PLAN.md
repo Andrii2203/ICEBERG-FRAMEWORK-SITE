@@ -62,6 +62,16 @@ Deterministic execution plan for the Iceberg Framework Landing Website.
 - [x] 11.2 Finalize documentation and README (AI, Required)
 - [ ] 11.3 Handover project to Human (AI, Required)
 
+## PHASE 12 — STYLING & UX (2026-01-29)
+- [x] 12.1 Migrate Tailwind-in-JSX to `.module.scss` per component (AI, Required)
+    - [x] All 15 TSX components migrated to SCSS modules
+- [x] 12.2 Theme persistence and no-flash on language switch (AI, Required)
+    - [x] Inline theme script in layout head (class + background color)
+    - [x] ThemeSync client component for route-change re-apply
+- [x] 12.3 Active link in header (AI, Required)
+    - [x] Navbar desktop and mobile active state; `aria-current="page"`
+- [x] 12.4 Document changes in `docs/CHANGELOG.md` and styling docs (AI, Required)
+
 ---
 
 ## STOP‑CHECK

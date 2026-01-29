@@ -1,0 +1,7 @@
+// CleanPageLayout — migrated from Tailwind (styling audit)
+// Uses CSS var from globals.css: --bg
+
+.main {
+  min-height: 100vh; // min-h-screen
+  background-color: var(--bg);
+}

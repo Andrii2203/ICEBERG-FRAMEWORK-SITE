@@ -1,0 +1,416 @@
+// IcebergHero — migrated from Tailwind (styling audit)
+// Uses CSS vars from globals.css: --bg, --text, --surface, --border, --accent
+
+.root {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--bg);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.topLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in srgb, var(--accent) 50%, transparent),
+    transparent
+  );
+}
+
+.orbLeft {
+  position: absolute;
+  top: 25%;
+  left: -25%;
+  width: 50%;
+  height: 50%;
+  background-color: color-mix(in srgb, var(--surface) 10%, transparent);
+  border-radius: 9999px;
+  filter: blur(150px);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.orbRight {
+  position: absolute;
+  bottom: 25%;
+  right: -25%;
+  width: 50%;
+  height: 50%;
+  background-color: color-mix(in srgb, var(--accent) 5%, transparent);
+  border-radius: 9999px;
+  filter: blur(150px);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.heroText {
+  position: relative;
+  z-index: 20;
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 56rem;
+  width: 100%;
+}
+
+.tagline {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  background-color: color-mix(in srgb, var(--surface) 30%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  color: var(--accent);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(12px);
+}
+
+.title {
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  line-height: 0.8;
+  filter: drop-shadow(0 0 30px rgba(248, 250, 252, 0.1));
+  word-break: break-word;
+
+  @media (min-width: 640px) { font-size: clamp(4rem, 12vw, 6rem); }
+  @media (min-width: 768px) { font-size: clamp(5rem, 14vw, 7rem); }
+  @media (min-width: 1024px) { font-size: clamp(6rem, 16vw, 9rem); }
+}
+
+.titleAccent {
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(
+    to bottom,
+    var(--text),
+    color-mix(in srgb, var(--accent) 50%, transparent)
+  );
+}
+
+.vizWrap {
+  position: relative;
+  width: 100%;
+  max-width: 64rem;
+  height: 400px;
+  margin-top: 3rem;
+  perspective: 1000px;
+
+  @media (min-width: 768px) { height: 500px; }
+}
+
+.vizInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.floatWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shapeWrap {
+  position: relative;
+  width: 280px;
+  height: 400px;
+
+  @media (min-width: 768px) {
+    width: 300px;
+    height: 450px;
+  }
+}
+
+.svgTip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  filter: drop-shadow(0 -5px 15px rgba(56, 189, 248, 0.2));
+}
+
+.svgTipPath {
+  opacity: 0.9;
+}
+
+.svgTipPathInner {
+  opacity: 0.5;
+}
+
+.waterlineGlow {
+  position: absolute;
+  top: 148px;
+  left: -100px;
+  right: -100px;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent),
+    transparent
+  );
+  box-shadow: 0 0 20px var(--accent);
+  z-index: 30;
+  opacity: 0.5;
+}
+
+.svgSubmerged {
+  position: absolute;
+  top: 150px;
+  left: -20px;
+  width: 320px;
+  height: 250px;
+
+  @media (min-width: 768px) {
+    width: 340px;
+    height: 300px;
+  }
+}
+
+.svgSubmergedPath {
+  opacity: 0.6;
+}
+
+.svgSubmergedPathAccent1 {
+  opacity: 0.05;
+}
+
+.svgSubmergedPathAccent2 {
+  opacity: 0.1;
+}
+
+.submergedContent {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.visibleTipLabelWrap {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.visibleTipLabel {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  color: var(--bg);
+  background-color: var(--text);
+}
+
+.waterlineLabelWrap {
+  position: absolute;
+  top: 140px;
+  right: -140px;
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+
+  @media (min-width: 640px) { display: flex; }
+}
+
+.waterlineLine {
+  width: 3rem;
+  height: 1px;
+  background-color: var(--accent);
+}
+
+.waterlineText {
+  color: var(--accent);
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.submergedLabelWrap {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    top: 220px;
+    width: 20rem;
+  }
+}
+
+.submergedMass {
+  display: block;
+  color: color-mix(in srgb, var(--accent) 40%, transparent);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.description {
+  color: color-mix(in srgb, var(--text) 80%, transparent);
+  font-size: 0.75rem;
+  line-height: 1.625;
+  font-weight: 300;
+
+  @media (min-width: 768px) { font-size: 0.875rem; }
+}
+
+.bubble {
+  position: absolute;
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: 9999px;
+}
+
+.scrollHint {
+  position: absolute;
+  bottom: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  @media (min-width: 768px) { bottom: 2.5rem; }
+}
+
+.scrollHintText {
+  color: var(--border);
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.scrollHintLine {
+  width: 1px;
+  height: 2rem;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+
+  @media (min-width: 768px) { height: 3rem; }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: linear-gradient(
+    to top,
+    var(--bg),
+    color-mix(in srgb, var(--bg) 80%, transparent),
+    transparent
+  );
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.footerText {
+  text-align: center;
+
+  @media (min-width: 768px) { text-align: left; }
+}
+
+.copyright {
+  color: var(--border);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.625;
+}
+
+.copyrightBr {
+  @media (min-width: 768px) { display: none; }
+}
+
+.version {
+  @media (min-width: 768px) { margin-left: 0.5rem; }
+  color: color-mix(in srgb, var(--accent) 50%, transparent);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  @media (min-width: 768px) { gap: 1.5rem; }
+}
+
+.socialLink {
+  color: var(--border);
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--accent);
+  }
+
+  &:hover .socialIcon {
+    transform: scale(1.1);
+  }
+}
+
+.socialIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.2s ease;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

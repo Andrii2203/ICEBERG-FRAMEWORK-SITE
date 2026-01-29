@@ -1,10 +1,21 @@
 "use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FileText, Database, ShieldCheck, BarChart3, ListTree, Search, CheckCircle2, ArrowRight } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import React, { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+    FileText,
+    Database,
+    ShieldCheck,
+    BarChart3,
+    ListTree,
+    Search,
+    CheckCircle2,
+    ArrowRight,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { cn } from "@/shared/utils/cn";
+import styles from "./AuditShowcase.module.scss";
 
 interface AuditShowcaseProps {
     caseStudyFiles: Record<string, string>;
@@ -20,92 +31,152 @@ const FILE_ICONS: Record<string, LucideIcon> = {
 };
 
 export const AuditShowcase = ({ caseStudyFiles }: AuditShowcaseProps) => {
-    // Ensure we have keys to map over
-    const fileNames = Object.keys(FILE_ICONS).filter(name => caseStudyFiles[name]);
+    const fileNames = Object.keys(FILE_ICONS).filter((name) => caseStudyFiles[name]);
     const [activeFile, setActiveFile] = useState<string>(fileNames[0] || "SUMMARY.md");
 
     if (!caseStudyFiles || fileNames.length === 0) return null;
 
-    return (
-        <section className="py-12 md:py-24 relative overflow-hidden bg-gradient-to-br from-slate-200/50 to-slate-50 dark:from-black/10 dark:to-transparent rounded-[2rem] md:rounded-[3rem] border border-slate-600/30 dark:border-white/5 my-8 md:my-12">
-            <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-                <div className="flex flex-col gap-10 md:gap-16">
+    const renderContent = () => {
+        if (activeFile.endsWith(".json")) {
+            return (
+                <div className={styles.jsonBlock}>
+                    {caseStudyFiles[activeFile]}
+                </div>
+            );
+        }
 
-                    {/* Top Section: Header and Case Study Image */}
-                    <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-center lg:items-start text-center lg:text-left">
-                        <div className="lg:w-1/2 space-y-6">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wider mx-auto lg:mx-0">
+        const lines = caseStudyFiles[activeFile]?.split("\n") ?? [];
+        return lines.map((line, i) => {
+            if (line.startsWith("# "))
+                return (
+                    <h1 key={i} className={styles.contentH1}>
+                        {line.replace("# ", "")}
+                    </h1>
+                );
+            if (line.startsWith("## "))
+                return (
+                    <h2 key={i} className={styles.contentH2}>
+                        <div className={styles.contentH2Dot} />
+                        {line.replace("## ", "")}
+                    </h2>
+                );
+            if (line.startsWith("### "))
+                return (
+                    <h3 key={i} className={styles.contentH3}>
+                        {line.replace("### ", "")}
+                    </h3>
+                );
+            if (line.startsWith("**"))
+                return (
+                    <p key={i} className={styles.contentBold}>
+                        {line}
+                    </p>
+                );
+            if (line.startsWith("- "))
+                return (
+                    <div key={i} className={styles.contentLi}>
+                        <div className={styles.contentLiDot} />
+                        {line.replace("- ", "")}
+                    </div>
+                );
+            if (line.startsWith("|"))
+                return (
+                    <div key={i} className={styles.contentTable}>
+                        {line}
+                    </div>
+                );
+            if (line.trim() === "")
+                return <div key={i} className={styles.contentSpacer} />;
+            return (
+                <p key={i} className={styles.contentP}>
+                    {line}
+                </p>
+            );
+        });
+    };
+
+    return (
+        <section className={styles.root}>
+            <div className={styles.container}>
+                <div className={styles.inner}>
+                    <div className={styles.topSection}>
+                        <div className={cn(styles.topContent, styles.spaceY6)}>
+                            <div className={styles.badge}>
                                 CASE STUDY: PLATFORM DEVELOPMENT BOARD
                             </div>
 
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-950 dark:text-white leading-tight">
+                            <h2 className={styles.title}>
                                 Deep UI/UX <br />
-                                <span className="text-blue-500">Audit Showcase</span>
+                                <span className={styles.titleAccent}>Audit Showcase</span>
                             </h2>
 
-                            <p className="text-slate-600 dark:text-white/40 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-                                This is a real report generated by Iceberg Audit AI.
-                                We analyzed 6 major vectors of UI quality to help the developers
-                                identify critical bottlenecks.
+                            <p className={styles.description}>
+                                This is a real report generated by Iceberg Audit AI. We
+                                analyzed 6 major vectors of UI quality to help the
+                                developers identify critical bottlenecks.
                             </p>
 
-                            <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
-                                <div className="flex items-center gap-2 text-slate-600 dark:text-white/60 text-sm bg-slate-50 border border-slate-600/30 dark:bg-white/5 dark:border-white/10 px-4 py-2 rounded-xl">
-                                    <CheckCircle2 className="w-4 h-4 text-green-500" />
+                            <div className={styles.checkRow}>
+                                <div className={styles.checkItem}>
+                                    <CheckCircle2 className={styles.checkIcon} />
                                     6 Comprehensive Files
                                 </div>
-                                <div className="flex items-center gap-2 text-slate-600 dark:text-white/60 text-sm bg-slate-50 border border-slate-600/30 dark:bg-white/5 dark:border-white/10 px-4 py-2 rounded-xl">
-                                    <CheckCircle2 className="w-4 h-4 text-green-500" />
+                                <div className={styles.checkItem}>
+                                    <CheckCircle2 className={styles.checkIcon} />
                                     100% Automated Analysis
                                 </div>
                             </div>
                         </div>
 
-                        <div className="lg:w-1/2 relative w-full">
-                            <div className="absolute -inset-4 bg-blue-500/5 blur-3xl rounded-full" />
-                            <div className="relative group rounded-3xl overflow-hidden border border-white/10 bg-white/5 p-2 shadow-2xl">
+                        <div className={styles.imageWrap}>
+                            <div className={styles.imageGlow} />
+                            <div className={styles.imageCard}>
                                 <Image
                                     src="/assets/audit/photo_2026-01-24_12-37-01.jpg"
                                     alt="Platform Board UI"
                                     width={800}
                                     height={400}
-                                    className="rounded-2xl transition-all duration-700 w-full h-auto object-cover max-h-[400px]"
+                                    className={styles.image}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8 text-left">
+                                <div className={styles.imageOverlay}>
                                     <div>
-                                        <p className="text-[10px] uppercase tracking-widest text-white/40 mb-1">Source Image</p>
-                                        <p className="text-white font-medium text-lg">Jira-style Kanban Board</p>
+                                        <p className={styles.imageCaptionLabel}>
+                                            Source Image
+                                        </p>
+                                        <p className={styles.imageCaption}>
+                                            Jira-style Kanban Board
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* Bottom Section: Report Reader */}
-                    <div className="flex flex-col bg-slate-50 dark:bg-[#050505] rounded-[2.5rem] border border-slate-600/20 dark:border-white/10 shadow-2xl overflow-hidden min-h-[700px]">
-                        {/* Improved Tabs Navigation */}
-                        <div className="flex flex-wrap gap-2 p-4 bg-slate-50 dark:bg-white/[0.02] border-b border-slate-600/10 dark:border-white/10 text-left">
+                    <div className={styles.reader}>
+                        <div className={styles.tabs}>
                             {fileNames.map((fileName) => {
                                 const Icon = FILE_ICONS[fileName];
                                 const isActive = activeFile === fileName;
                                 return (
                                     <button
                                         key={fileName}
+                                        type="button"
                                         onClick={() => setActiveFile(fileName)}
-                                        className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${isActive
-                                            ? 'bg-sky-400/10 text-slate-950 dark:text-white border border-sky-400/30'
-                                            : 'text-slate-500 dark:text-white/40 hover:text-slate-950 dark:hover:text-white/70 hover:bg-slate-200 dark:hover:bg-white/5 border border-transparent hover:border-white/5'
-                                            }`}
+                                        className={cn(
+                                            styles.tab,
+                                            isActive ? styles.tabActive : styles.tabInactive
+                                        )}
                                     >
-                                        <Icon className="w-4 h-4" />
+                                        <Icon className={styles.tabIcon} />
                                         {fileName}
                                     </button>
                                 );
                             })}
                         </div>
 
-                        {/* File Content Area */}
-                        <div className="flex-1 p-8 lg:p-12 font-mono text-base overflow-y-auto max-h-[850px] bg-slate-50 dark:bg-black/20 custom-scrollbar text-left">
+                        <div
+                            className={cn(styles.content, styles.customScrollbar)}
+                        >
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={activeFile}
@@ -113,65 +184,37 @@ export const AuditShowcase = ({ caseStudyFiles }: AuditShowcaseProps) => {
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.99 }}
                                     transition={{ duration: 0.2 }}
-                                    className="whitespace-pre-wrap text-slate-600 dark:text-white/70 leading-relaxed max-w-4xl mx-auto"
+                                    className={styles.contentInner}
                                 >
-                                    {activeFile.endsWith('.json') ? (
-                                        <div className="bg-blue-950/20 p-8 rounded-3xl border border-blue-500/20 text-blue-300 font-mono text-sm">
-                                            {caseStudyFiles[activeFile]}
-                                        </div>
-                                    ) : (
-                                        caseStudyFiles[activeFile]?.split('\n').map((line, i) => {
-                                            if (line.startsWith('# ')) return <h1 key={i} className="text-4xl font-black text-slate-950 dark:text-white mb-10 border-b border-slate-600/20 dark:border-white/10 pb-6 tracking-tight">{line.replace('# ', '')}</h1>;
-                                            if (line.startsWith('## ')) return <h2 key={i} className="text-2xl font-bold text-slate-900 dark:text-white mt-12 mb-6 flex items-center gap-3"><div className="w-1.5 h-6 rounded-full bg-sky-400" />{line.replace('## ', '')}</h2>;
-                                            if (line.startsWith('### ')) return <h3 key={i} className="text-xl font-bold text-sky-600 dark:text-blue-400 mt-8 mb-4">{line.replace('### ', '')}</h3>;
-                                            if (line.startsWith('**')) return <p key={i} className="text-slate-800 dark:text-white/90 font-bold my-4 text-lg">{line}</p>;
-                                            if (line.startsWith('- ')) return <li key={i} className="ml-6 mb-2 list-none flex items-start gap-3 text-slate-600 dark:text-white/50"><div className="w-1.5 h-1.5 rounded-full bg-sky-400/40 mt-2 shrink-0 border border-sky-400/20" />{line.replace('- ', '')}</li>;
-                                            if (line.startsWith('|')) return <div key={i} className="bg-slate-100 dark:bg-white/5 p-6 rounded-2xl font-mono text-sm text-slate-600 dark:text-blue-100/60 my-6 border border-slate-600/20 dark:border-white/10 shadow-inner overflow-x-auto">{line}</div>;
-                                            if (line.trim() === '') return <div key={i} className="h-4" />;
-                                            return <p key={i} className="mb-4 opacity-70 leading-loose">{line}</p>;
-                                        })
-                                    )}
+                                    {renderContent()}
                                 </motion.div>
                             </AnimatePresence>
                         </div>
 
-                        {/* Context Footer */}
-                        <div className="p-8 bg-slate-50 dark:bg-black border-t border-slate-600/20 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 text-left">
-                            <div className="flex flex-col gap-1">
-                                <h4 className="text-slate-950 dark:text-white font-bold">This is a showcase of the Iceberg Full Audit.</h4>
-                                <p className="text-slate-500 dark:text-white/30 text-sm">You will receive these exact 6 files for your UI in a single ZIP.</p>
+                        <div className={styles.footer}>
+                            <div className={styles.footerText}>
+                                <h4 className={styles.footerTitle}>
+                                    This is a showcase of the Iceberg Full Audit.
+                                </h4>
+                                <p className={styles.footerDesc}>
+                                    You will receive these exact 6 files for your UI in a
+                                    single ZIP.
+                                </p>
                             </div>
                             <button
-                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                                className="group flex items-center gap-3 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-black rounded-full font-bold hover:bg-sky-500 hover:text-white transition-all transform active:scale-95"
+                                type="button"
+                                onClick={() =>
+                                    window.scrollTo({ top: 0, behavior: "smooth" })
+                                }
+                                className={styles.ctaButton}
                             >
                                 Test Your Own Site
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                <ArrowRight className={styles.ctaIcon} />
                             </button>
                         </div>
                     </div>
-
                 </div>
             </div>
-
-            <style jsx>{`
-                .custom-scrollbar::-webkit-scrollbar {
-                    width: 10px;
-                }
-                .custom-scrollbar::-webkit-scrollbar-track {
-                    background: transparent;
-                }
-                .custom-scrollbar::-webkit-scrollbar-thumb {
-                    background: rgba(255, 255, 255, 0.05);
-                    border-radius: 20px;
-                    border: 3px solid transparent;
-                    background-clip: content-box;
-                }
-                .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-                    background: rgba(255, 255, 255, 0.1);
-                    background-clip: content-box;
-                }
-            `}</style>
         </section>
     );
 };

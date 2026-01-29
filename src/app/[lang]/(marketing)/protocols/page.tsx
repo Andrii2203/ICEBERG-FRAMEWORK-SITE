@@ -1,8 +1,14 @@
 import { getDictionary } from "@/infrastructure/i18n/dictionaries";
-import { ClipboardList, FastForward, Play, ShieldCheck } from "lucide-react";
+import {
+    ClipboardList,
+    FastForward,
+    Play,
+    ShieldCheck,
+} from "lucide-react";
 import { generatePageMetadata } from "@/shared/utils/seo/generatePageMetadata";
 import type { Metadata } from "next";
-import React from 'react';
+import React from "react";
+import styles from "./page.module.scss";
 
 export async function generateMetadata({
     params,
@@ -28,59 +34,53 @@ export default async function ProtocolsPage({
     const dict = await getDictionary(lang);
 
     const icons = {
-        planning: <ClipboardList className="w-10 h-10" />,
-        migration: <FastForward className="w-10 h-10" />,
-        execution: <Play className="w-10 h-10" />,
-        validation: <ShieldCheck className="w-10 h-10" />
+        planning: <ClipboardList className={styles.cardIcon} />,
+        migration: <FastForward className={styles.cardIcon} />,
+        execution: <Play className={styles.cardIcon} />,
+        validation: <ShieldCheck className={styles.cardIcon} />,
     };
 
     return (
-        <main className="min-h-screen pt-40 pb-20 px-6 max-w-6xl mx-auto">
-            <header className="mb-16">
-                <h1 className="text-5xl md:text-6xl font-bold tracking-tighter text-text-brand mb-4">
-                    {dict.protocols.title}
-                </h1>
-                <p className="text-xl text-accent-brand font-mono uppercase tracking-widest">
-                    {dict.protocols.subtitle}
-                </p>
+        <main className={styles.main}>
+            <header className={styles.header}>
+                <h1 className={styles.title}>{dict.protocols.title}</h1>
+                <p className={styles.subtitle}>{dict.protocols.subtitle}</p>
             </header>
 
-            <p className="text-2xl text-text-brand/80 leading-relaxed mb-16 max-w-3xl border-l-4 border-accent-brand pl-8">
+            <p className={styles.description}>
                 {dict.protocols.description}
             </p>
 
-            <div className="grid md:grid-cols-2 gap-8">
-                {Object.entries(dict.protocols.list).map(([key, label]: [string, string]) => (
-                    <div
-                        key={key}
-                        className="p-10 rounded-2xl border border-border-brand/30 bg-gradient-to-br from-surface-brand/60 to-transparent backdrop-blur-sm group hover:border-accent-brand/50 transition-all"
-                    >
-                        <div className="flex items-center gap-6">
-                            <div className="text-accent-brand p-4 rounded-xl bg-surface-brand border border-border-brand group-hover:scale-110 transition-transform">
-                                {icons[key as keyof typeof icons]}
+            <div className={styles.grid}>
+                {Object.entries(dict.protocols.list).map(
+                    ([key, label]: [string, string]) => {
+                        const idx =
+                            Object.keys(dict.protocols.list).indexOf(key) + 1;
+                        return (
+                            <div key={key} className={styles.card}>
+                                <div className={styles.cardInner}>
+                                    <div className={styles.cardIconWrap}>
+                                        {icons[key as keyof typeof icons]}
+                                    </div>
+                                    <div>
+                                        <div className={styles.cardMeta}>
+                                            Protocol 0{idx}
+                                        </div>
+                                        <h3 className={styles.cardTitle}>
+                                            {label}
+                                        </h3>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <div className="text-text-brand/60 font-mono text-xs uppercase mb-1">Protocol 0{Object.keys(dict.protocols.list).indexOf(key) + 1}</div>
-                                <h3 className="text-text-brand text-2xl font-bold">
-                                    {label}
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                ))}
+                        );
+                    }
+                )}
             </div>
 
-            <div className="mt-20 p-8 rounded-2xl bg-surface-brand/20 border border-border-brand/20 text-center italic text-text-brand/60">
-                &quot;Standardization is the prerequisite for predictable outcome.&quot;
+            <div className={styles.quote}>
+                &quot;Standardization is the prerequisite for predictable
+                outcome.&quot;
             </div>
         </main>
     );
 }
-
-
-
-
-
-
-
-

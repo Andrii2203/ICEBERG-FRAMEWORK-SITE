@@ -1,0 +1,14 @@
+// Layout — migrated from Tailwind (styling audit)
+
+.htmlRoot {
+  scroll-behavior: smooth;
+}
+
+.bodyRoot {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+  /* Font class applied via inter.className in TSX */
+}

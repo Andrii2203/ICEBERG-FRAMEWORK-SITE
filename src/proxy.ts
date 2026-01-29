@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 const locales = ["en", "ua", "pl", "de", "es", "fr", "it", "pt"];
 const defaultLocale = "en";
 
-export default function proxy(request: NextRequest) {
+export function proxy(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
 
     // Check if the pathname is missing a locale
@@ -27,11 +27,3 @@ export const config = {
         "/((?!api|_next/static|_next/image|favicon.ico|assets|icons|images|manifest.json|manifest.webmanifest|manifest.ts|sw.js|robots.txt|sitemap.xml).*)",
     ],
 };
-
-
-
-
-
-
-
-

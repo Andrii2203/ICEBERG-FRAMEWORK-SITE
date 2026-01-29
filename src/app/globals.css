@@ -1,4 +1,9 @@
-@import "tailwindcss";
+/* Minimal base (Tailwind removed; styles are in .module.scss and CSS vars) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 :root {
   --bg: #F8FAFC;
@@ -16,16 +21,6 @@
   --text: #F8FAFC;
   --surface: #0A1A2F;
   --border: #1E3A5F;
-}
-
-@theme inline {
-  --color-bg-brand: var(--bg);
-  --color-text-brand: var(--text);
-  --color-surface-brand: var(--surface);
-  --color-border-brand: var(--border);
-  --color-accent-brand: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 body {

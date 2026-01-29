@@ -79,6 +79,12 @@ import { cleanBase64 } from "@/lib/base64/...";    // ❌ NO
 - Base64 utility → `shared/utils/base64/base64.utils.ts`
 - Error model → `domain/errors/IcebergError.ts`
 
+## 8. STYLING RULES
+
+**Styling standards are defined in a separate document.** All UI styling (SCSS modules, CSS variables, class names, dark mode) must follow:
+
+- **`docs/STYLING_RULES.md`** — SCSS modules, design tokens, dark mode, no Tailwind in JSX, use of `cn()`.
+
 ---
 
 ## STOP‑CHECK

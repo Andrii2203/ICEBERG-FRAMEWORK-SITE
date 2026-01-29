@@ -1,0 +1,256 @@
+// Navbar — migrated from Tailwind (styling audit)
+// Uses CSS vars from globals.css: --bg, --text, --surface, --border, --accent
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+  padding-top: 1.5rem;   // py-6
+  padding-bottom: 1.5rem;
+}
+
+.headerScrolled {
+  background-color: color-mix(in srgb, var(--bg) 80%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: color-mix(in srgb, var(--border) 30%, transparent);
+  padding-top: 1rem;    // py-4
+  padding-bottom: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoLink {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.025em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:hover .logoBox {
+    transform: rotate(12deg);
+  }
+}
+
+.logoBox {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--accent);
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.logoText {
+  display: none;
+
+  @media (min-width: 640px) {
+    display: inline;
+  }
+}
+
+.desktopNav {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.navLink {
+  color: color-mix(in srgb, var(--text) 70%, transparent);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+.navLinkActive {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.langWrapper {
+  position: relative;
+}
+
+.langTrigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: color-mix(in srgb, var(--text) 70%, transparent);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--text);
+  }
+}
+
+.globeIcon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--accent);
+}
+
+.langCode {
+  text-transform: uppercase;
+}
+
+.chevronIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  margin-top: 1rem;
+  width: 12rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  overflow: hidden;
+}
+
+.dropdownInner {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.localeButton {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.localeButtonActive {
+  background-color: color-mix(in srgb, var(--border) 50%, transparent);
+  color: var(--accent);
+}
+
+.localeButtonInactive {
+  color: color-mix(in srgb, var(--text) 70%, transparent);
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--border) 20%, transparent);
+    color: var(--text);
+  }
+}
+
+.localeDot {
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: var(--accent);
+  border-radius: 9999px;
+}
+
+.mobileMenuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: color-mix(in srgb, var(--text) 70%, transparent);
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+
+  &:hover {
+    color: var(--text);
+  }
+}
+
+.mobileMenuIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mobileMenu {
+  display: block;
+  background-color: var(--bg);
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 30%, transparent);
+  overflow: hidden;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.mobileMenuInner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.mobileNavLink {
+  color: color-mix(in srgb, var(--text) 70%, transparent);
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+.mobileNavLinkActive {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.logoLabel {
+  color: #000;
+  font-weight: 800;
+  font-size: 0.75rem;
+}

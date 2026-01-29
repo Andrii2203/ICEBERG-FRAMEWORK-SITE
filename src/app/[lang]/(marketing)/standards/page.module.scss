@@ -1,0 +1,41 @@
+// Standards page — migrated from Tailwind (styling audit)
+// Uses CSS vars from globals.css: --text, --accent
+
+.main {
+  min-height: 100vh;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--accent);
+  font-family: var(--font-mono), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.description {
+  font-size: 1.5rem;
+  color: color-mix(in srgb, var(--text) 80%, transparent);
+  line-height: 1.625;
+  margin-bottom: 4rem;
+  max-width: 48rem;
+}

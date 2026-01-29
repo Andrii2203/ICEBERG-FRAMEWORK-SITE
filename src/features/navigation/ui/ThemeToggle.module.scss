@@ -1,0 +1,29 @@
+// ThemeToggle — migrated from Tailwind (styling audit)
+// Uses CSS vars from globals.css: --bg, --text, --surface, --border, --accent
+
+.placeholder {
+  width: 2.25rem;   // w-9
+  height: 2.25rem;  // h-9
+}
+
+.root {
+  padding: 0.5rem;   // p-2
+  border-radius: 0.5rem; // rounded-lg
+  transition: all 0.2s ease;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+
+  &:hover {
+    color: var(--accent);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.icon {
+  width: 1rem;   // w-4
+  height: 1rem; // h-4
+}

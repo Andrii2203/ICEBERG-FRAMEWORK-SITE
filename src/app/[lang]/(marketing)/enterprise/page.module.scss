@@ -1,0 +1,161 @@
+// Enterprise page — migrated from Tailwind (styling audit)
+// Uses CSS vars: --text, --surface, --border, --accent, --bg
+
+.main {
+  min-height: 100vh;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--accent);
+  font-family: var(--font-mono), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.grid {
+  display: grid;
+  gap: 3rem;
+  margin-top: 5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+.iconWrap {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 1.5rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--border);
+  margin-bottom: 2rem;
+  transition: all 0.5s ease;
+}
+
+.card:hover .iconWrap {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 50%, transparent);
+  transform: rotate(6deg);
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.cardTitle {
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.line {
+  height: 4px;
+  width: 3rem;
+  background-color: var(--border);
+  transition: all 0.2s ease;
+}
+
+.card:hover .line {
+  width: 6rem;
+}
+
+.ctaSection {
+  margin-top: 8rem;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, var(--surface), var(--bg));
+  border: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: linear-gradient(var(--accent) 1px, transparent 1px),
+    linear-gradient(90deg, var(--accent) 1px, transparent 1px);
+  background-size: 20px 20px;
+  mask-image: radial-gradient(white, transparent);
+}
+
+.ctaTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.ctaDesc {
+  color: color-mix(in srgb, var(--text) 70%, transparent);
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 10;
+}
+
+.ctaButton {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  background-color: var(--accent);
+  color: #000;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--accent) 80%, transparent);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

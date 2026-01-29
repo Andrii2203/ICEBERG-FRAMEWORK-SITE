@@ -1,5 +1,13 @@
-import React from 'react';
-import { FileCode, Globe, Search, Accessibility, Smartphone, Zap } from "lucide-react";
+import React from "react";
+import {
+    FileCode,
+    Globe,
+    Search,
+    Accessibility,
+    Smartphone,
+    Zap,
+} from "lucide-react";
+import styles from "./StandardsGrid.module.scss";
 
 interface StandardsGridProps {
     list: {
@@ -9,43 +17,30 @@ interface StandardsGridProps {
         a11y: string;
         pwa: string;
         api: string;
-    }
+    };
 }
 
 export const StandardsGrid = ({ list }: StandardsGridProps) => {
     const icons = {
-        architecture: <FileCode className="w-8 h-8" />,
-        quality: <Globe className="w-8 h-8" />,
-        seo: <Search className="w-8 h-8" />,
-        a11y: <Accessibility className="w-8 h-8" />,
-        pwa: <Smartphone className="w-8 h-8" />,
-        api: <Zap className="w-8 h-8" />
+        architecture: <FileCode className={styles.icon} />,
+        quality: <Globe className={styles.icon} />,
+        seo: <Search className={styles.icon} />,
+        a11y: <Accessibility className={styles.icon} />,
+        pwa: <Smartphone className={styles.icon} />,
+        api: <Zap className={styles.icon} />,
     };
 
     return (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className={styles.grid}>
             {Object.entries(list).map(([key, label]) => (
-                <div
-                    key={key}
-                    className="p-8 rounded-2xl border border-border-brand/30 bg-surface-brand/40 backdrop-blur-sm group hover:border-accent-brand/50 transition-all hover:-translate-y-1"
-                >
-                    <div className="text-accent-brand mb-6 group-hover:scale-110 transition-transform origin-left">
+                <div key={key} className={styles.card}>
+                    <div className={styles.iconWrap}>
                         {icons[key as keyof typeof icons]}
                     </div>
-                    <h3 className="text-text-brand text-xl font-bold mb-2">
-                        {label}
-                    </h3>
-                    <div className="w-12 h-[2px] bg-border-brand group-hover:w-full transition-all duration-500" />
+                    <h3 className={styles.title}>{label}</h3>
+                    <div className={styles.line} />
                 </div>
             ))}
         </div>
     );
 };
-
-
-
-
-
-
-
-

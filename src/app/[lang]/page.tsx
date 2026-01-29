@@ -2,6 +2,7 @@ import { getDictionary } from "@/infrastructure/i18n/dictionaries";
 import { IcebergHero } from "@/features/hero/ui/IcebergHero";
 import { generatePageMetadata } from "@/shared/utils/seo/generatePageMetadata";
 import type { Metadata } from "next";
+import styles from "./page.module.scss";
 
 export async function generateMetadata({
     params,
@@ -22,7 +23,7 @@ export default async function Page({
     const dict = await getDictionary(lang);
 
     return (
-        <main className="relative bg-bg-brand">
+        <main className={styles.main}>
             <IcebergHero dict={dict} />
 
             {/* Next sections will follow here*/}

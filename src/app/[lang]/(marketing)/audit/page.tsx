@@ -4,9 +4,9 @@ import { AuditClient } from "@/features/audit/ui/AuditClient";
 import { AuditShowcase } from "@/features/audit/ui/AuditShowcase";
 import { generatePageMetadata } from "@/shared/utils/seo/generatePageMetadata";
 import type { Metadata } from "next";
-
 import path from "path";
 import { promises as fs } from "fs";
+import styles from "./page.module.scss";
 
 async function getCaseStudyFiles() {
     const docsPath = path.join(process.cwd(), "docs", "ICEBERG_AUDIT_1769538584665");
@@ -52,8 +52,8 @@ export default async function AuditPage({ params }: { params: Promise<{ lang: st
 
     return (
         <CleanPageLayout lang={lang} dict={dict}>
-            <section className="min-h-screen pt-32 pb-20 px-4">
-                <div className="max-w-6xl mx-auto flex flex-col gap-20">
+            <section className={styles.section}>
+                <div className={styles.inner}>
                     <AuditClient featureDict={dict.audit} />
                     <AuditShowcase caseStudyFiles={caseStudyFiles} />
                 </div>

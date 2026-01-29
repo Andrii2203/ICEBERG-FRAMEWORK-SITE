@@ -2,7 +2,8 @@ import { getDictionary } from "@/infrastructure/i18n/dictionaries";
 import { StandardsGrid } from "@/features/standards-list/ui/StandardsGrid";
 import { generatePageMetadata } from "@/shared/utils/seo/generatePageMetadata";
 import type { Metadata } from "next";
-import React from 'react';
+import React from "react";
+import styles from "./page.module.scss";
 
 export async function generateMetadata({
     params,
@@ -30,19 +31,13 @@ export default async function StandardsPage({
 
 
     return (
-        <main className="min-h-screen pt-40 pb-20 px-6 max-w-6xl mx-auto">
-            <header className="mb-16">
-                <h1 className="text-5xl md:text-6xl font-bold tracking-tighter text-text-brand mb-4">
-                    {dict.standards.title}
-                </h1>
-                <p className="text-xl text-accent-brand font-mono uppercase tracking-widest">
-                    {dict.standards.subtitle}
-                </p>
+        <main className={styles.main}>
+            <header className={styles.header}>
+                <h1 className={styles.title}>{dict.standards.title}</h1>
+                <p className={styles.subtitle}>{dict.standards.subtitle}</p>
             </header>
 
-            <p className="text-2xl text-text-brand/80 leading-relaxed mb-16 max-w-3xl">
-                {dict.standards.description}
-            </p>
+            <p className={styles.description}>{dict.standards.description}</p>
 
             <StandardsGrid list={dict.standards.list} />
         </main>

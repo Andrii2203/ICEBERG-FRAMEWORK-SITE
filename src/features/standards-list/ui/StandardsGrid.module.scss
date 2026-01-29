@@ -1,0 +1,63 @@
+// StandardsGrid — migrated from Tailwind (styling audit)
+// Uses CSS vars from globals.css: --text, --surface, --border, --accent
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--border) 30%, transparent);
+  background-color: color-mix(in srgb, var(--surface) 40%, transparent);
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--accent) 50%, transparent);
+    transform: translateY(-4px);
+  }
+}
+
+.iconWrap {
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease;
+  transform-origin: left;
+}
+
+.card:hover .iconWrap {
+  transform: scale(1.1);
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.title {
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.line {
+  width: 3rem;
+  height: 2px;
+  background-color: var(--border);
+  transition: width 0.5s ease;
+}
+
+.card:hover .line {
+  width: 100%;
+}

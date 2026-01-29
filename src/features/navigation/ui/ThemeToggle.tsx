@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
-import { cn } from "@/shared/utils/cn";
+import styles from "./ThemeToggle.module.scss";
 
 export const ThemeToggle = () => {
     const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -9,7 +9,6 @@ export const ThemeToggle = () => {
 
     useEffect(() => {
         const isDark = document.documentElement.classList.contains("dark");
-        // Use setTimeout to avoid synchronous setState in effect (lint)
         const timer = setTimeout(() => {
             setTheme(isDark ? "dark" : "light");
             setMounted(true);
@@ -29,30 +28,20 @@ export const ThemeToggle = () => {
         }
     };
 
-    if (!mounted) return <div className="w-9 h-9" />;
+    if (!mounted) return <div className={styles.placeholder} />;
 
     return (
         <button
+            type="button"
             onClick={toggleTheme}
-            className={cn(
-                "p-2 rounded-lg transition-all active:scale-90",
-                "bg-surface-brand border border-border-brand text-text-brand hover:text-accent-brand"
-            )}
+            className={styles.root}
             aria-label="Toggle theme"
         >
             {theme === "light" ? (
-                <Moon className="w-4 h-4" />
+                <Moon className={styles.icon} />
             ) : (
-                <Sun className="w-4 h-4" />
+                <Sun className={styles.icon} />
             )}
         </button>
     );
 };
-
-
-
-
-
-
-
-

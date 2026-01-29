@@ -1,0 +1,7 @@
+// Home page — migrated from Tailwind (styling audit)
+// Uses CSS var: --bg
+
+.main {
+  position: relative;
+  background-color: var(--bg);
+}

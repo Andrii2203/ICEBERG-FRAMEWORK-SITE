@@ -1,6 +1,6 @@
-
 import { Navbar } from "@/features/navigation/ui/Navbar";
 import { Dictionary } from "@/domain/i18n/types";
+import styles from "./CleanPageLayout.module.scss";
 
 interface CleanPageLayoutProps {
     lang: string;
@@ -12,18 +12,9 @@ export function CleanPageLayout({ dict, children }: CleanPageLayoutProps) {
     return (
         <>
             <Navbar dict={dict} />
-            <main className="min-h-screen bg-[--bg]">
+            <main className={styles.main}>
                 {children}
             </main>
-            {/* Footer can be added here if needed, or kept minimal */}
         </>
     );
 }
-
-
-
-
-
-
-
-
