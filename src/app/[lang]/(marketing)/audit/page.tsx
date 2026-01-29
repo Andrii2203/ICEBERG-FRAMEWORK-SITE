@@ -1,5 +1,4 @@
 import { getDictionary, SupportedLanguage } from "@/infrastructure/i18n/dictionaries";
-import { CleanPageLayout } from "@/shared/ui/layout/CleanPageLayout";
 import { AuditClient } from "@/features/audit/ui/AuditClient";
 import { AuditShowcase } from "@/features/audit/ui/AuditShowcase";
 import { generatePageMetadata } from "@/shared/utils/seo/generatePageMetadata";
@@ -51,14 +50,12 @@ export default async function AuditPage({ params }: { params: Promise<{ lang: st
     const caseStudyFiles = await getCaseStudyFiles();
 
     return (
-        <CleanPageLayout lang={lang} dict={dict}>
-            <section className={styles.section}>
-                <div className={styles.inner}>
-                    <AuditClient featureDict={dict.audit} />
-                    <AuditShowcase caseStudyFiles={caseStudyFiles} />
-                </div>
-            </section>
-        </CleanPageLayout>
+        <section className={styles.section}>
+            <div className={styles.inner}>
+                <AuditClient featureDict={dict.audit} />
+                <AuditShowcase caseStudyFiles={caseStudyFiles} />
+            </div>
+        </section>
     );
 }
 

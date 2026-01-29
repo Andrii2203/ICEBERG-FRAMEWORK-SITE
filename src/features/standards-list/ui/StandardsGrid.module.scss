@@ -1,26 +1,34 @@
-// StandardsGrid — migrated from Tailwind (styling audit)
-// Uses CSS vars from globals.css: --text, --surface, --border, --accent
+// StandardsGrid — uses CSS vars: --text, --surface, --border, --accent
+@use "../../../styles/breakpoints" as *;
 
 .grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
 
-  @media (min-width: 768px) {
+  @include from-sm {
+    gap: 1.5rem;
+  }
+
+  @include from-md {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 1024px) {
+  @include from-lg {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .card {
-  padding: 2rem;
+  padding: 1.25rem;
   border-radius: 1rem;
   border: 1px solid color-mix(in srgb, var(--border) 30%, transparent);
   background-color: color-mix(in srgb, var(--surface) 40%, transparent);
   backdrop-filter: blur(4px);
   transition: all 0.2s ease;
+
+  @include from-sm {
+    padding: 2rem;
+  }
 
   &:hover {
     border-color: color-mix(in srgb, var(--accent) 50%, transparent);
@@ -46,9 +54,13 @@
 
 .title {
   color: var(--text);
-  font-size: 1.25rem;
+  font-size: 1.0625rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+
+  @include from-sm {
+    font-size: 1.25rem;
+  }
 }
 
 .line {

@@ -34,7 +34,7 @@ export default async function EnterprisePage({
     };
 
     return (
-        <main className={styles.main}>
+        <div className={styles.main}>
             <header className={styles.header}>
                 <h1 className={styles.title}>{dict.enterprise.title}</h1>
                 <p className={styles.subtitle}>{dict.enterprise.subtitle}</p>
@@ -68,6 +68,6 @@ export default async function EnterprisePage({
                     Contact Sales
                 </a>
             </div>
-        </main>
+        </div>
     );
 }

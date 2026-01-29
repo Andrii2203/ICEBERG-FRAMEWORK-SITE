@@ -1,0 +1,44 @@
+// Breakpoint variables and mixins — use these instead of hardcoded @media (min-width: …).
+// Mobile-first: base styles for small screens, then @include from-xs / from-sm / from-md / from-lg.
+
+$bp-xs: 480px;   // large phone
+$bp-sm: 640px;   // tablet and up
+$bp-md: 768px;   // medium
+$bp-lg: 1024px;  // desktop / screen
+
+@mixin from-xs {
+  @media (min-width: $bp-xs) {
+    @content;
+  }
+}
+
+@mixin from-sm {
+  @media (min-width: $bp-sm) {
+    @content;
+  }
+}
+
+@mixin from-md {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+
+@mixin from-lg {
+  @media (min-width: $bp-lg) {
+    @content;
+  }
+}
+
+// Aliases for clarity
+@mixin tablet {
+  @media (min-width: $bp-sm) {
+    @content;
+  }
+}
+
+@mixin screen {
+  @media (min-width: $bp-lg) {
+    @content;
+  }
+}

@@ -34,7 +34,7 @@ export default async function MethodologyPage({
     ];
 
     return (
-        <main className={styles.main}>
+        <div className={styles.main}>
             <header className={styles.header}>
                 <h1 className={styles.title}>{dict.methodology.title}</h1>
                 <p className={styles.subtitle}>{dict.methodology.subtitle}</p>
@@ -87,6 +87,6 @@ export default async function MethodologyPage({
                     <span className={styles.flowText}>Layer 3</span>
                 </div>
             </div>
-        </main>
+        </div>
     );
 }

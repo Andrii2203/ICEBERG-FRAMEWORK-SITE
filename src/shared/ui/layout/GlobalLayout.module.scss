@@ -1,0 +1,17 @@
+// GlobalLayout — shared shell for all [lang] pages (Navbar + main)
+// Uses CSS vars from globals.css: --bg
+
+.wrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  position: relative;
+  background-color: var(--bg);
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}

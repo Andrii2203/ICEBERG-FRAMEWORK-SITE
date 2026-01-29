@@ -1,41 +1,63 @@
-// Standards page — migrated from Tailwind (styling audit)
-// Uses CSS vars from globals.css: --text, --accent
+// Standards page — uses CSS vars: --text, --accent, --page-*
+@use "../../../../styles/breakpoints" as *;
 
 .main {
   min-height: 100vh;
-  padding-top: 10rem;
-  padding-bottom: 5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  max-width: 72rem;
+  padding: var(--page-main-padding);
+  max-width: var(--page-main-max-width);
   margin-left: auto;
   margin-right: auto;
 }
 
 .header {
-  margin-bottom: 4rem;
+  margin-bottom: var(--page-header-margin-bottom);
+
+  @include from-md {
+    margin-bottom: var(--page-header-margin-bottom-md);
+  }
 }
 
 .title {
-  font-size: clamp(3rem, 8vw, 3.75rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-size: var(--page-title-size);
+  font-weight: var(--page-title-weight);
+  letter-spacing: var(--page-title-letter-spacing);
   color: var(--text);
-  margin-bottom: 1rem;
+  margin-bottom: var(--page-title-margin-bottom);
+
+  @include from-sm {
+    font-size: var(--page-title-size-sm);
+  }
+
+  @include from-md {
+    font-size: var(--page-title-size-md);
+  }
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: var(--page-subtitle-size);
   color: var(--accent);
   font-family: var(--font-mono), monospace;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+
+  @include from-sm {
+    font-size: var(--page-subtitle-size-sm);
+  }
 }
 
 .description {
-  font-size: 1.5rem;
+  font-size: var(--page-description-size);
   color: color-mix(in srgb, var(--text) 80%, transparent);
-  line-height: 1.625;
-  margin-bottom: 4rem;
+  line-height: var(--page-description-line-height);
+  margin-bottom: var(--page-description-margin-bottom);
   max-width: 48rem;
+
+  @include from-sm {
+    font-size: var(--page-description-size-sm);
+    margin-bottom: var(--page-description-margin-bottom-sm);
+  }
+
+  @include from-md {
+    font-size: var(--page-description-size-md);
+  }
 }

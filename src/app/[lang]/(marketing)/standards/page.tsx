@@ -31,7 +31,7 @@ export default async function StandardsPage({
 
 
     return (
-        <main className={styles.main}>
+        <div className={styles.main}>
             <header className={styles.header}>
                 <h1 className={styles.title}>{dict.standards.title}</h1>
                 <p className={styles.subtitle}>{dict.standards.subtitle}</p>
@@ -40,7 +40,7 @@ export default async function StandardsPage({
             <p className={styles.description}>{dict.standards.description}</p>
 
             <StandardsGrid list={dict.standards.list} />
-        </main>
+        </div>
     );
 }
 

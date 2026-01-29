@@ -27,6 +27,8 @@ Official styling standards for the Iceberg Framework Landing Website. All UI sty
 | `--border`  | Borders       | `#475569`      | `#1E3A5F`      |
 | `--accent`  | Links, focus  | `#38BDF8`      | same           |
 
+**Page-section variables (marketing pages):** In `:root`, globals.css also defines `--page-main-padding`, `--page-main-padding-sm`, `--page-main-max-width`, `--page-header-margin-bottom`, `--page-header-margin-bottom-md`, `--page-title-size`, `--page-title-size-sm`, `--page-title-size-md`, `--page-title-weight`, `--page-title-letter-spacing`, `--page-title-margin-bottom`, `--page-subtitle-size`, `--page-subtitle-size-sm`, `--page-description-size`, `--page-description-size-sm`, `--page-description-size-md`, `--page-description-line-height`, `--page-description-margin-bottom`, `--page-description-margin-bottom-sm`. Use `var(--page-...)` in page `.module.scss` for consistent titles, descriptions, and container spacing. No SCSS import needed; globals.css is loaded once in the root layout.
+
 - In SCSS: `color: var(--text);`, `background-color: var(--bg);`, etc.
 - For opacity: use `color-mix(in srgb, var(--text) 70%, transparent)` (or similar) instead of raw `opacity` when you need translucent colors.
 
@@ -59,11 +61,28 @@ Official styling standards for the Iceberg Framework Landing Website. All UI sty
 - **Avoid.** Put layout and appearance in the SCSS module.
 - **Exception:** Truly dynamic values (e.g. position from JS: `left`, `top`) may stay as `style={{ }}` when they cannot be expressed in CSS alone.
 
-## 7. SCSS structure
+## 7. Responsive breakpoints
+
+Use the shared breakpoint mixins instead of hardcoded `@media (min-width: …)`:
+
+- **`src/styles/_breakpoints.scss`** — Defines `$bp-xs` (480px), `$bp-sm` (640px), `$bp-md` (768px), `$bp-lg` (1024px) and mixins: `@include from-xs`, `@include from-sm` (tablet), `@include from-md`, `@include from-lg` (screen). Aliases: `tablet` = from-sm, `screen` = from-lg.
+
+**Usage:** At the top of a module: `@use "../../../styles/breakpoints" as *;` (path relative to the file). Then use `@include from-sm { … }` instead of `@media (min-width: 640px) { … }`.
+
+- **&lt; 480px / 640px:** Mobile (base styles: reduced padding, single column, smaller font sizes).
+- **640px (from-sm / tablet):** Increase padding, font sizes, some layout.
+- **768px (from-md):** Multi-column grids, row layouts.
+- **1024px (from-lg / screen):** Desktop; full nav, side-by-side sections.
+
+Prefer **mobile-first**: base styles for small screens, then `@include from-sm` / `from-md` / `from-lg` to add or override. Use **shorthand `padding`** (e.g. `padding: 8rem 1rem 3rem`) instead of separate `padding-top` / `padding-bottom` / `padding-left` / `padding-right` when values are consistent.
+
+**Responsive typography:** Use explicit font sizes per breakpoint (e.g. `font-size: 2rem; @include from-sm { font-size: 2.5rem; } @include from-md { font-size: 3rem; }`) so it’s obvious which size applies when. Avoid `clamp()` for key headings if you want clarity; use media/mixins instead.
+
+## 8. SCSS structure
 
 - Prefer flat, readable selectors and a small number of classes per component.
 - Use the same directory for TSX and its `.module.scss`; no shared SCSS partials unless multiple components reuse the same tokens/mixins (then consider `src/styles/` or similar and document in this file).
 
-## 8. References
+## 9. References
 
 - **Changes over time:** `docs/CHANGELOG.md` (styling migration and Tailwind removal).

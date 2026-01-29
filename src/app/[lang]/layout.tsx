@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { cn } from "@/shared/utils/cn";
 import "@/app/globals.css";
 import { getDictionary } from "@/infrastructure/i18n/dictionaries";
-import { Navbar } from "@/features/navigation/ui/Navbar";
+import { GlobalLayout } from "@/shared/ui/layout/GlobalLayout";
 import { ThemeSync } from "@/features/navigation/ui/ThemeSync";
 import styles from "./layout.module.scss";
 
@@ -69,8 +69,7 @@ export default async function RootLayout({
             <body className={styles.bodyRoot} suppressHydrationWarning>
                 <ThemeSync />
                 <div className={cn(inter.className, styles.wrapper)}>
-                    <Navbar dict={dict} />
-                    {children}
+                    <GlobalLayout dict={dict}>{children}</GlobalLayout>
                 </div>
             </body>
         </html>

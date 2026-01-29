@@ -68,124 +68,129 @@ export const Navbar = ({ dict }: NavbarProps) => {
   ];
 
   return (
-    <header className={cn(styles.header, isScrolled && styles.headerScrolled)}>
-      <div className={styles.container}>
-        <Link href={`/${currentLang}`} className={styles.logoLink}>
-          <div className={styles.logoBox}>
-            <span className={styles.logoLabel}>IB</span>
-          </div>
-          <span className={styles.logoText}>ICEBERG</span>
-        </Link>
+    <>
+      <div className={styles.topLine} />
+      <header
+        className={cn(styles.header, isScrolled && styles.headerScrolled)}
+      >
+        <div className={styles.container}>
+          <Link href={`/${currentLang}`} className={styles.logoLink}>
+            <div className={styles.logoBox}>
+              <span className={styles.logoLabel}>IB</span>
+            </div>
+            <span className={styles.logoText}>ICEBERG</span>
+          </Link>
 
-        <nav className={styles.desktopNav}>
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                styles.navLink,
-                pathname === link.href && styles.navLinkActive,
-              )}
-              aria-current={pathname === link.href ? "page" : undefined}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+          <nav className={styles.desktopNav}>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  styles.navLink,
+                  pathname === link.href && styles.navLinkActive,
+                )}
+                aria-current={pathname === link.href ? "page" : undefined}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-        <div className={styles.actions}>
-          <ThemeToggle />
+          <div className={styles.actions}>
+            <ThemeToggle />
 
-          <div className={styles.langWrapper}>
+            <div className={styles.langWrapper}>
+              <button
+                type="button"
+                onClick={() => setIsLangOpen(!isLangOpen)}
+                className={styles.langTrigger}
+              >
+                <Globe className={styles.globeIcon} />
+                <span className={styles.langCode}>{currentLang}</span>
+                <ChevronDown
+                  className={cn(
+                    styles.chevronIcon,
+                    isLangOpen && styles.chevronOpen,
+                  )}
+                />
+              </button>
+
+              <AnimatePresence>
+                {isLangOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className={styles.dropdown}
+                  >
+                    <div className={styles.dropdownInner}>
+                      {locales.map((locale) => (
+                        <button
+                          key={locale.id}
+                          type="button"
+                          onClick={() => handleLangChange(locale.id)}
+                          className={cn(
+                            styles.localeButton,
+                            currentLang === locale.id ?
+                              styles.localeButtonActive
+                            : styles.localeButtonInactive,
+                          )}
+                        >
+                          {locale.label}
+                          {currentLang === locale.id && (
+                            <div className={styles.localeDot} />
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <button
               type="button"
-              onClick={() => setIsLangOpen(!isLangOpen)}
-              className={styles.langTrigger}
+              className={styles.mobileMenuButton}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-expanded={isMobileMenuOpen}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
-              <Globe className={styles.globeIcon} />
-              <span className={styles.langCode}>{currentLang}</span>
-              <ChevronDown
-                className={cn(
-                  styles.chevronIcon,
-                  isLangOpen && styles.chevronOpen,
-                )}
-              />
+              {isMobileMenuOpen ?
+                <X className={styles.mobileMenuIcon} />
+              : <Menu className={styles.mobileMenuIcon} />}
             </button>
-
-            <AnimatePresence>
-              {isLangOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  className={styles.dropdown}
-                >
-                  <div className={styles.dropdownInner}>
-                    {locales.map((locale) => (
-                      <button
-                        key={locale.id}
-                        type="button"
-                        onClick={() => handleLangChange(locale.id)}
-                        className={cn(
-                          styles.localeButton,
-                          currentLang === locale.id ?
-                            styles.localeButtonActive
-                          : styles.localeButtonInactive,
-                        )}
-                      >
-                        {locale.label}
-                        {currentLang === locale.id && (
-                          <div className={styles.localeDot} />
-                        )}
-                      </button>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
           </div>
-
-          <button
-            type="button"
-            className={styles.mobileMenuButton}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-expanded={isMobileMenuOpen}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMobileMenuOpen ?
-              <X className={styles.mobileMenuIcon} />
-            : <Menu className={styles.mobileMenuIcon} />}
-          </button>
         </div>
-      </div>
 
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className={styles.mobileMenu}
-          >
-            <div className={styles.mobileMenuInner}>
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={cn(
-                    styles.mobileNavLink,
-                    pathname === link.href && styles.mobileNavLinkActive,
-                  )}
-                  aria-current={pathname === link.href ? "page" : undefined}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className={styles.mobileMenu}
+            >
+              <div className={styles.mobileMenuInner}>
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={cn(
+                      styles.mobileNavLink,
+                      pathname === link.href && styles.mobileNavLinkActive,
+                    )}
+                    aria-current={pathname === link.href ? "page" : undefined}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
+    </>
   );
 };

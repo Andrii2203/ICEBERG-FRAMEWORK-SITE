@@ -41,7 +41,7 @@ export default async function ProtocolsPage({
     };
 
     return (
-        <main className={styles.main}>
+        <div className={styles.main}>
             <header className={styles.header}>
                 <h1 className={styles.title}>{dict.protocols.title}</h1>
                 <p className={styles.subtitle}>{dict.protocols.subtitle}</p>
@@ -81,6 +81,6 @@ export default async function ProtocolsPage({
                 &quot;Standardization is the prerequisite for predictable
                 outcome.&quot;
             </div>
-        </main>
+        </div>
     );
 }

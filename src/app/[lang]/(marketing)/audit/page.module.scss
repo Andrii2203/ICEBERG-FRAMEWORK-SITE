@@ -1,18 +1,20 @@
-// Audit page — migrated from Tailwind (styling audit)
+// Audit page — uses CSS vars --page-* (from globals.css)
+@use "../../../../styles/breakpoints" as *;
 
 .section {
   min-height: 100vh;
-  padding-top: 8rem;
-  padding-bottom: 5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: var(--page-main-padding);
 }
 
 .inner {
-  max-width: 72rem;
+  max-width: var(--page-main-max-width);
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 3rem;
+
+  @include from-md {
+    gap: 5rem;
+  }
 }

@@ -1,44 +1,59 @@
-// Enterprise page — migrated from Tailwind (styling audit)
-// Uses CSS vars: --text, --surface, --border, --accent, --bg
+// Enterprise page — uses CSS vars: --text, --surface, --border, --accent, --bg, --page-*
+@use "../../../../styles/breakpoints" as *;
 
 .main {
   min-height: 100vh;
-  padding-top: 10rem;
-  padding-bottom: 5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  max-width: 72rem;
+  padding: var(--page-main-padding);
+  max-width: var(--page-main-max-width);
   margin-left: auto;
   margin-right: auto;
 }
 
 .header {
-  margin-bottom: 4rem;
+  margin-bottom: var(--page-header-margin-bottom);
   text-align: center;
+
+  @include from-md {
+    margin-bottom: var(--page-header-margin-bottom-md);
+  }
 }
 
 .title {
-  font-size: clamp(3rem, 8vw, 3.75rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-size: var(--page-title-size);
+  font-weight: var(--page-title-weight);
+  letter-spacing: var(--page-title-letter-spacing);
   color: var(--text);
-  margin-bottom: 1rem;
+  margin-bottom: var(--page-title-margin-bottom);
+
+  @include from-sm {
+    font-size: var(--page-title-size-sm);
+  }
+
+  @include from-md {
+    font-size: var(--page-title-size-md);
+  }
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: var(--page-subtitle-size);
   color: var(--accent);
   font-family: var(--font-mono), monospace;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+
+  @include from-sm {
+    font-size: var(--page-subtitle-size-sm);
+  }
 }
 
 .grid {
   display: grid;
-  gap: 3rem;
-  margin-top: 5rem;
+  gap: 2rem;
+  margin-top: 3rem;
 
-  @media (min-width: 768px) {
+  @include from-md {
+    gap: 3rem;
+    margin-top: 5rem;
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -52,17 +67,24 @@
 }
 
 .iconWrap {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
   background-color: var(--surface);
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--border);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   transition: all 0.5s ease;
+
+  @include from-sm {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .card:hover .iconWrap {
@@ -72,15 +94,24 @@
 }
 
 .icon {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
+
+  @include from-sm {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 
 .cardTitle {
   color: var(--text);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
+
+  @include from-sm {
+    font-size: 1.5rem;
+  }
 }
 
 .line {
@@ -95,14 +126,25 @@
 }
 
 .ctaSection {
-  margin-top: 8rem;
-  padding: 3rem;
-  border-radius: 1.5rem;
+  margin-top: 4rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
   background: linear-gradient(135deg, var(--surface), var(--bg));
   border: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
   text-align: center;
   position: relative;
   overflow: hidden;
+
+  @include from-sm {
+    margin-top: 6rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+  }
+
+  @include from-md {
+    margin-top: 8rem;
+    padding: 3rem;
+  }
 }
 
 .ctaBg {
@@ -116,23 +158,37 @@
 }
 
 .ctaTitle {
-  font-size: 1.875rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   position: relative;
   z-index: 10;
+
+  @include from-sm {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @include from-md {
+    font-size: 1.875rem;
+  }
 }
 
 .ctaDesc {
   color: color-mix(in srgb, var(--text) 70%, transparent);
-  font-size: 1.125rem;
-  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
   max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
   position: relative;
   z-index: 10;
+
+  @include from-sm {
+    font-size: 1.125rem;
+    margin-bottom: 2.5rem;
+  }
 }
 
 .ctaButton {

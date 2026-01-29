@@ -23,11 +23,11 @@ export default async function Page({
     const dict = await getDictionary(lang);
 
     return (
-        <main className={styles.main}>
+        <div className={styles.main}>
             <IcebergHero dict={dict} />
 
             {/* Next sections will follow here*/}
-        </main>
+        </div>
     );
 }
 

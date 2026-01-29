@@ -25,7 +25,8 @@ src/
     i18n/                  # Language models and types
     framework/             # Principle definitions and models
   shared/                  # Reusable UI, hooks, utils
-    ui/                    # Atomic components (Buttons, Cards, Typography)
+    ui/
+      layout/              # GlobalLayout (Navbar + main shell)
     hooks/                 # Shared client-side hooks
     utils/                 # Pure functions (formatting, slugs)
     config/                # Global framework configuration
@@ -68,6 +69,7 @@ src/
 - **Atomic UI:** Small, reusable components in `shared/ui`.
 - **Feature Blocks:** Logical sections in `features/`.
 - **Page Layouts:** Structural wrappers in `app/`.
+- **Global layout:** `src/shared/ui/layout/GlobalLayout.tsx` — Renders Navbar + a single `<main>`; used once in `app/[lang]/layout.tsx`. All pages under `[lang]` render their content as children of this main (no per-page `<main>`; pages use a content wrapper div with page-specific styles).
 
 ## 5. AUDIT PIPELINE
 The `/audit` feature uses an orchestrator pattern to manage the UI analysis workflow:

@@ -4,6 +4,49 @@ Record of significant changes to the Iceberg Framework Site. See `docs/STYLING_R
 
 ---
 
+## 2026-01-29 — Global layout, page-section CSS vars, CleanPageLayout removed
+
+### 1. Global layout component
+
+- **`src/shared/ui/layout/GlobalLayout.tsx`** (new) — Shared layout component that renders **Navbar** + a single **`<main>`** wrapping `children`. Used once in the root layout so every page gets the same shell.
+- **`src/shared/ui/layout/GlobalLayout.module.scss`** (new) — `.wrapper`: `min-height: 100dvh`, flex column; `.main`: `flex: 1`, `background-color: var(--bg)`.
+- **`src/app/[lang]/layout.tsx`** — Root layout now uses `<GlobalLayout dict={dict}>{children}</GlobalLayout>` instead of rendering Navbar and `children` directly. Single source of truth for Navbar + main.
+
+**Result:** One global layout (Navbar + main) for all `[lang]` routes; pages only supply content.
+
+---
+
+### 2. Page-section variables in globals.css
+
+- **`src/app/globals.css`** — Page-section design tokens moved from SCSS partial to CSS custom properties in `:root` so they are available everywhere without importing SCSS:
+  - **Main:** `--page-main-padding`, `--page-main-padding-sm`, `--page-main-max-width`
+  - **Header:** `--page-header-margin-bottom`, `--page-header-margin-bottom-md`
+  - **Title:** `--page-title-size`, `--page-title-size-sm`, `--page-title-size-md`, `--page-title-weight`, `--page-title-letter-spacing`, `--page-title-margin-bottom`
+  - **Subtitle:** `--page-subtitle-size`, `--page-subtitle-size-sm`
+  - **Description:** `--page-description-size`, `--page-description-size-sm`, `--page-description-size-md`, `--page-description-line-height`, `--page-description-margin-bottom`, `--page-description-margin-bottom-sm`
+- **`src/styles/_page-section.scss`** — Removed; values live only in `globals.css`.
+- **Marketing and audit pages** — All use `var(--page-...)` in their `.module.scss`; no `@use` of page-section.
+
+**Result:** Consistent title/description/container styling via globals.css; change once, apply everywhere.
+
+---
+
+### 3. Pages render content only; CleanPageLayout removed
+
+- **Home, philosophy, enterprise, standards, protocols, methodology** — Outer element changed from `<main>` to `<div className={styles.main}>` so the document has a single `<main>` (the one in GlobalLayout). Page-level container styles unchanged.
+- **Audit** — No longer uses CleanPageLayout; returns only `<section className={styles.section}>…</section>`.
+- **CleanPageLayout** — `src/shared/ui/layout/CleanPageLayout.tsx` and `CleanPageLayout.module.scss` deleted. Audit page now uses the same GlobalLayout as all other pages.
+
+**Result:** No duplicate Navbar; one layout component for the whole site.
+
+---
+
+### 4. GlobalLayout styles fix
+
+- **`src/shared/ui/layout/GlobalLayout.module.scss`** — `.wrapper` had `height: 50%`, which had no effect because the parent had no defined height. Replaced with **`min-height: 100dvh`** so the layout fills the viewport and `.main` with `flex: 1` expands correctly.
+
+---
+
 ## 2026-01-29 — Styling migration, theme persistence, active nav link
 
 ### 1. Styling migration (Tailwind → SCSS modules)
@@ -28,7 +71,7 @@ All TSX/JSX components were migrated from Tailwind-in-JSX to component-scoped `.
 | `src/features/navigation/ui/Navbar.module.scss` |
 | `src/features/navigation/ui/ThemeToggle.module.scss` |
 | `src/features/standards-list/ui/StandardsGrid.module.scss` |
-| `src/shared/ui/layout/CleanPageLayout.module.scss` |
+| ~~`src/shared/ui/layout/CleanPageLayout.module.scss`~~ (removed; see Global layout changelog above) |
 
 **Modified files (Tailwind removed, SCSS module wired):**
 

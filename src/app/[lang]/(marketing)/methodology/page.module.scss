@@ -1,50 +1,68 @@
-// Methodology page — migrated from Tailwind (styling audit)
-// Uses CSS vars: --text, --surface, --border, --accent
+// Methodology page — uses CSS vars: --text, --surface, --border, --accent, --page-*
+@use "../../../../styles/breakpoints" as *;
 
 .main {
   min-height: 100vh;
-  padding-top: 10rem;
-  padding-bottom: 5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  max-width: 72rem;
+  padding: var(--page-main-padding);
+  max-width: var(--page-main-max-width);
   margin-left: auto;
   margin-right: auto;
 }
 
 .header {
-  margin-bottom: 4rem;
+  margin-bottom: var(--page-header-margin-bottom);
   text-align: center;
+
+  @include from-md {
+    margin-bottom: var(--page-header-margin-bottom-md);
+  }
 }
 
 .title {
-  font-size: clamp(3rem, 8vw, 3.75rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-size: var(--page-title-size);
+  font-weight: var(--page-title-weight);
+  letter-spacing: var(--page-title-letter-spacing);
   color: var(--text);
-  margin-bottom: 1rem;
+  margin-bottom: var(--page-title-margin-bottom);
+
+  @include from-sm {
+    font-size: var(--page-title-size-sm);
+  }
+
+  @include from-md {
+    font-size: var(--page-title-size-md);
+  }
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: var(--page-subtitle-size);
   color: var(--accent);
   font-family: var(--font-mono), monospace;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+
+  @include from-sm {
+    font-size: var(--page-subtitle-size-sm);
+  }
 }
 
 .section {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
+
+  @include from-md {
+    gap: 3rem;
+  }
 }
 
 .row {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 
-  @media (min-width: 768px) {
+  @include from-md {
+    gap: 2rem;
     flex-direction: row;
     align-items: stretch;
   }
@@ -52,7 +70,7 @@
 
 .iconCol {
   width: 100%;
-  padding: 3rem;
+  padding: 1.5rem;
   border-radius: 1rem;
   border: 1px solid color-mix(in srgb, var(--border) 30%, transparent);
   background-color: color-mix(in srgb, var(--surface) 60%, transparent);
@@ -61,7 +79,12 @@
   justify-content: center;
   color: var(--accent);
 
-  @media (min-width: 768px) {
+  @include from-sm {
+    padding: 2rem;
+  }
+
+  @include from-md {
+    padding: 3rem;
     width: 33.333%;
   }
 }
@@ -92,7 +115,15 @@
   transition: border-color 0.2s ease;
   color: color-mix(in srgb, var(--text) 20%, transparent);
   font-weight: 900;
-  font-size: 3.75rem;
+  font-size: 2.25rem;
+
+  @include from-sm {
+    font-size: 2.75rem;
+  }
+
+  @include from-md {
+    font-size: 3.75rem;
+  }
 
   &:hover {
     border-color: color-mix(in srgb, var(--accent) 30%, transparent);
@@ -113,23 +144,43 @@
 .layerType {
   color: var(--accent);
   font-family: var(--font-mono), monospace;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
+
+  @include from-sm {
+    font-size: 0.875rem;
+  }
 }
 
 .layerName {
-  font-size: 1.875rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text);
   margin-bottom: 1rem;
+
+  @include from-sm {
+    font-size: 1.5rem;
+  }
+
+  @include from-md {
+    font-size: 1.875rem;
+  }
 }
 
 .layerDesc {
   color: color-mix(in srgb, var(--text) 80%, transparent);
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.625;
   font-weight: normal;
+
+  @include from-sm {
+    font-size: 1.125rem;
+  }
+
+  @include from-md {
+    font-size: 1.25rem;
+  }
 }
 
 .flowBox {
@@ -143,9 +194,13 @@
 .flowLabel {
   color: color-mix(in srgb, var(--text) 60%, transparent);
   font-family: var(--font-mono), monospace;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   margin-bottom: 1rem;
+
+  @include from-sm {
+    font-size: 0.875rem;
+  }
 }
 
 .flowItems {

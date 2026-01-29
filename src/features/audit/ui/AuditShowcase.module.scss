@@ -1,5 +1,5 @@
-// AuditShowcase — migrated from Tailwind (styling audit)
-// Uses slate/blue/sky palette; :global(.dark) for dark mode
+// AuditShowcase — uses slate/blue/sky palette; :global(.dark) for dark mode
+@use "../../../styles/breakpoints" as *;
 
 $slate50: #f8fafc;
 $slate100: #f1f5f9;
@@ -14,22 +14,30 @@ $sky400: #38bdf8;
 $green500: #22c55e;
 
 .root {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(226, 232, 240, 0.5), #f8fafc);
-  border-radius: 2rem;
+  border-radius: 1rem;
   border: 1px solid rgba(71, 85, 105, 0.3);
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 
   :global(.dark) & {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), transparent);
     border-color: rgba(255, 255, 255, 0.05);
   }
 
-  @media (min-width: 768px) {
+  @include from-sm {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @include from-md {
     padding-top: 6rem;
     padding-bottom: 6rem;
     border-radius: 3rem;
@@ -46,7 +54,7 @@ $green500: #22c55e;
   padding-left: 1rem;
   padding-right: 1rem;
 
-  @media (min-width: 768px) {
+  @include from-md {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
@@ -55,9 +63,13 @@ $green500: #22c55e;
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.5rem;
 
-  @media (min-width: 768px) {
+  @include from-sm {
+    gap: 2.5rem;
+  }
+
+  @include from-md {
     gap: 4rem;
   }
 }
@@ -69,11 +81,11 @@ $green500: #22c55e;
   align-items: center;
   text-align: center;
 
-  @media (min-width: 768px) {
+  @include from-md {
     gap: 3rem;
   }
 
-  @media (min-width: 1024px) {
+  @include from-lg {
     flex-direction: row;
     align-items: flex-start;
     text-align: left;
@@ -83,7 +95,7 @@ $green500: #22c55e;
 .topContent {
   width: 100%;
 
-  @media (min-width: 1024px) {
+  @include from-lg {
     width: 50%;
   }
 }
@@ -107,14 +119,14 @@ $green500: #22c55e;
   margin-left: auto;
   margin-right: auto;
 
-  @media (min-width: 1024px) {
+  @include from-lg {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 .title {
-  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-size: clamp(1.75rem, 5vw, 3.75rem);
   font-weight: 900;
   color: $slate950;
   line-height: 1.2;
@@ -130,7 +142,7 @@ $green500: #22c55e;
 
 .description {
   color: $slate600;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.625;
   max-width: 36rem;
   margin-left: auto;
@@ -140,7 +152,11 @@ $green500: #22c55e;
     color: rgba(255, 255, 255, 0.4);
   }
 
-  @media (min-width: 1024px) {
+  @include from-sm {
+    font-size: 1.125rem;
+  }
+
+  @include from-lg {
     margin-left: 0;
     margin-right: 0;
   }
@@ -153,7 +169,7 @@ $green500: #22c55e;
   gap: 1rem;
   padding-top: 1rem;
 
-  @media (min-width: 1024px) {
+  @include from-lg {
     justify-content: flex-start;
   }
 }
@@ -191,7 +207,7 @@ $green500: #22c55e;
   width: 100%;
   position: relative;
 
-  @media (min-width: 1024px) {
+  @include from-lg {
     width: 50%;
   }
 }
@@ -328,9 +344,9 @@ $green500: #22c55e;
 
 .content {
   flex: 1;
-  padding: 2rem;
+  padding: 1rem;
   font-family: ui-monospace, monospace;
-  font-size: 1rem;
+  font-size: 0.875rem;
   overflow-y: auto;
   max-height: 850px;
   background-color: $slate50;
@@ -340,7 +356,12 @@ $green500: #22c55e;
     background-color: rgba(0, 0, 0, 0.2);
   }
 
-  @media (min-width: 1024px) {
+  @include from-sm {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  @include from-lg {
     padding: 3rem;
   }
 }
@@ -369,32 +390,42 @@ $green500: #22c55e;
 }
 
 .contentH1 {
-  font-size: 2.25rem;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
   font-weight: 900;
   color: $slate950;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   border-bottom: 1px solid rgba(71, 85, 105, 0.2);
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
   letter-spacing: -0.025em;
 
   :global(.dark) & {
     color: #fff;
     border-color: rgba(255, 255, 255, 0.1);
   }
+
+  @include from-sm {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 
 .contentH2 {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   font-weight: 700;
   color: $slate900;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
 
   :global(.dark) & {
     color: #fff;
+  }
+
+  @include from-sm {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -407,14 +438,19 @@ $green500: #22c55e;
 }
 
 .contentH3 {
-  font-size: 1.25rem;
+  font-size: clamp(1.0625rem, 2.5vw, 1.25rem);
   font-weight: 700;
   color: #0284c7;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 
   :global(.dark) & {
     color: #60a5fa;
+  }
+
+  @include from-sm {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -423,7 +459,7 @@ $green500: #22c55e;
   font-weight: 700;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 2vw, 1.125rem);
 
   :global(.dark) & {
     color: rgba(255, 255, 255, 0.9);
@@ -500,7 +536,7 @@ $green500: #22c55e;
     border-color: rgba(255, 255, 255, 0.1);
   }
 
-  @media (min-width: 640px) {
+  @include from-sm {
     flex-direction: row;
   }
 }

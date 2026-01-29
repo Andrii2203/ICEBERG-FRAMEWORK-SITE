@@ -1,63 +1,92 @@
-// Philosophy page — migrated from Tailwind (styling audit)
-// Uses CSS vars: --text, --surface, --border, --accent
+// Philosophy page — uses CSS vars: --text, --surface, --border, --accent, --page-*
+@use "../../../../styles/breakpoints" as *;
 
 .main {
   min-height: 100vh;
-  padding-top: 10rem;
-  padding-bottom: 5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  max-width: 64rem;
+  padding: var(--page-main-padding);
+  max-width: var(--page-main-max-width);
   margin-left: auto;
   margin-right: auto;
 }
 
 .header {
-  margin-bottom: 4rem;
+  margin-bottom: var(--page-header-margin-bottom);
+
+  @include from-md {
+    margin-bottom: var(--page-header-margin-bottom-md);
+  }
 }
 
 .title {
-  font-size: clamp(3rem, 8vw, 3.75rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-size: var(--page-title-size);
+  font-weight: var(--page-title-weight);
+  letter-spacing: var(--page-title-letter-spacing);
   color: var(--text);
-  margin-bottom: 1rem;
+  margin-bottom: var(--page-title-margin-bottom);
+
+  @include from-sm {
+    font-size: var(--page-title-size-sm);
+  }
+
+  @include from-md {
+    font-size: var(--page-title-size-md);
+  }
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: var(--page-subtitle-size);
   color: var(--accent);
   font-family: var(--font-mono), monospace;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+
+  @include from-sm {
+    font-size: var(--page-subtitle-size-sm);
+  }
 }
 
 .intro {
-  font-size: 1.5rem;
+  font-size: var(--page-description-size);
   color: color-mix(in srgb, var(--text) 80%, transparent);
-  line-height: 1.625;
-  margin-bottom: 3rem;
+  line-height: var(--page-description-line-height);
+  margin-bottom: var(--page-description-margin-bottom);
   border-left: 4px solid var(--border);
-  padding-left: 2rem;
+  padding-left: 1rem;
+
+  @include from-sm {
+    font-size: var(--page-description-size-sm);
+    margin-bottom: var(--page-description-margin-bottom-sm);
+    padding-left: 2rem;
+  }
+
+  @include from-md {
+    font-size: var(--page-description-size-md);
+  }
 }
 
 .grid {
   display: grid;
-  gap: 2rem;
-  margin-bottom: 5rem;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 
-  @media (min-width: 768px) {
+  @include from-md {
+    gap: 2rem;
+    margin-bottom: 5rem;
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .card {
-  padding: 2rem;
+  padding: 1.25rem;
   border-radius: 0.75rem;
   border: 1px solid color-mix(in srgb, var(--border) 30%, transparent);
   background-color: color-mix(in srgb, var(--surface) 40%, transparent);
   backdrop-filter: blur(4px);
   transition: border-color 0.2s ease, color 0.2s ease;
+
+  @include from-sm {
+    padding: 2rem;
+  }
 
   &:hover {
     border-color: color-mix(in srgb, var(--accent) 50%, transparent);
@@ -66,10 +95,14 @@
 
 .cardTitle {
   color: var(--text);
-  font-size: 1.25rem;
+  font-size: 1.0625rem;
   font-weight: 700;
   margin-bottom: 1rem;
   transition: color 0.2s ease;
+
+  @include from-sm {
+    font-size: 1.25rem;
+  }
 }
 
 .card:hover .cardTitle {
@@ -77,9 +110,14 @@
 }
 
 .cardText {
+  font-size: 0.9375rem;
   color: color-mix(in srgb, var(--text) 60%, transparent);
   line-height: 1.625;
   transition: color 0.2s ease;
+
+  @include from-sm {
+    font-size: 1rem;
+  }
 }
 
 .card:hover .cardText {
@@ -110,7 +148,11 @@
 .illustrationText {
   color: var(--border);
   font-family: var(--font-mono), monospace;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1em;
+
+  @include from-sm {
+    font-size: 0.875rem;
+  }
 }

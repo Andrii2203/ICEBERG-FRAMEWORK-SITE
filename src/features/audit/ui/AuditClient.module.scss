@@ -1,5 +1,5 @@
-// AuditClient — migrated from Tailwind (styling audit)
-// Uses CSS vars from globals.css where applicable; slate/cyan/indigo for feature palette
+// AuditClient — uses CSS vars where applicable; slate/cyan/indigo for feature palette
+@use "../../../styles/breakpoints" as *;
 
 $cyan: #06b6d4;
 $cyanLight: rgba(6, 182, 212, 0.2);
@@ -42,6 +42,7 @@ $red500: #ef4444;
 
 .description {
   color: $slate400;
+  font-size: clamp(0.9375rem, 2vw, 1rem);
   max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
@@ -58,7 +59,7 @@ $red500: #ef4444;
   background: linear-gradient(135deg, rgba(226, 232, 240, 0.5), #f8fafc);
   backdrop-filter: blur(48px);
   border: 1px solid rgba(71, 85, 105, 0.3);
-  border-radius: 2.5rem;
+  border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.05);
   display: flex;
@@ -69,9 +70,14 @@ $red500: #ef4444;
     border-color: rgba(255, 255, 255, 0.1);
   }
 
-  @media (min-width: 768px) {
+  @include from-sm {
+    border-radius: 1.5rem;
+  }
+
+  @include from-md {
     height: 550px;
     display: block;
+    border-radius: 2.5rem;
   }
 }
 
@@ -98,7 +104,7 @@ $red500: #ef4444;
   position: relative;
   z-index: 10;
 
-  @media (min-width: 768px) {
+  @include from-md {
     flex-direction: row;
     flex-wrap: nowrap;
 
@@ -110,7 +116,7 @@ $red500: #ef4444;
   & > * {
     border-bottom: 1px solid color-mix(in srgb, var(--border) 20%, transparent);
 
-    @media (min-width: 768px) {
+    @include from-md {
       border-bottom: none;
     }
   }
@@ -133,7 +139,7 @@ $red500: #ef4444;
     border-color: rgba(255, 255, 255, 0.05);
   }
 
-  @media (min-width: 768px) {
+  @include from-md {
     width: 42%;
     padding: 2rem;
     height: auto;
@@ -366,7 +372,7 @@ $red500: #ef4444;
   padding: 2rem;
   min-height: 400px;
 
-  @media (min-width: 768px) {
+  @include from-md {
     width: 58%;
     padding: 3rem;
     min-height: 0;
