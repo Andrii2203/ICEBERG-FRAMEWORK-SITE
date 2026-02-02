@@ -282,3 +282,21 @@
 
 
 
+
+### [2026-01-29 21:40] Theme System Refactoring (next-themes)
+- **Objective:** Implement `next-themes` to fix persistent theme resetting on route changes (specifically language switching).
+- **Task 1:** [x] Create `src/infrastructure/theme/ThemeProvider.tsx` to wrap `next-themes` provider.
+- **Task 2:** [x] Clean up `src/app/[lang]/layout.tsx` (remove manual script injection).
+- **Task 3:** [x] Wrap application in `ThemeProvider` within `layout.tsx`.
+- **Task 4:** [x] Refactor `src/features/navigation/ui/ThemeToggle.tsx` to use `useTheme` hook.
+  - *Fix:* Wrapped `setMounted` in `setTimeout` to resolve `react-hooks/set-state-in-effect` lint error.
+- **Task 5:** [x] Verify theme persistence across language switches.
+  - *Note:* `next-themes` uses `localStorage` automatically, ensuring persistence without manual handling.
+
+### [2026-01-29 21:50] Documentation First Strategy
+- **Objective:** Ensure all changes are documented BEFORE implementation to prevent legacy drift.
+- **Task 1:** [x] Analyze existing docs in `docs/` to find the right place for "Theme/Features".
+- **Task 2:** [x] Create/Update documentation (likely `docs/ARCHITECTURE.md`) describing the Theme System.
+  - *Update:* Added `next-themes` to `CODING_RULES.md` as well.
+- **Task 3:** [x] Update Implementation Plan to reference the documentation.
+- **Task 4:** [x] Execute code changes only after docs are set.

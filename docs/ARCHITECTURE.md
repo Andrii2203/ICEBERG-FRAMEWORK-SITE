@@ -31,6 +31,7 @@ src/
     config/                # Global framework configuration
   infrastructure/          # External integrations
     i18n/                  # Dictionary fetchers and adapters
+    theme/                 # Theme provider (next-themes wrapper)
     pwa/                   # Service worker registration and PWA logic
 ```
 
@@ -63,6 +64,12 @@ src/
 3. **Server:** Metadata is generated for the specific language.
 4. **Render:** Components receive content from the dictionary via props or context.
 5. **PWA:** Service worker caches static assets and documentation pages for offline access.
+
+## 4. THEME SYSTEM
+- **Library:** `next-themes` (Standard for Next.js).
+- **Strategy:** Client-side provider with `suppressHydrationWarning` on `<html>`.
+- **Persistence:** Uses `localStorage` via the library to persist theme across route changes (which is critical for i18n routing).
+- **Default:** System preference, falling back to light.
 
 ## 4. COMPONENT SYSTEM
 - **Atomic UI:** Small, reusable components in `shared/ui`.

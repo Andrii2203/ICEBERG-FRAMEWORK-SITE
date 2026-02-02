@@ -22,8 +22,9 @@ export function generateViewport() {
 }
 
 import { getJsonLd } from "@/shared/utils/seo";
+import { ThemeProvider } from "@/infrastructure/theme/ThemeProvider";
 
-export default async function RootLayout({
+export default async function LangLayout({
     children,
     params,
 }: {
@@ -35,44 +36,15 @@ export default async function RootLayout({
     const jsonLd = getJsonLd(lang);
 
     return (
-        <html lang={lang} className="scroll-smooth" suppressHydrationWarning>
-            <head>
+        <>
+            <div className={inter.className}>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 />
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                            (function() {
-                                try {
-                                    var theme = localStorage.getItem('theme');
-                                    var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                                    if (theme === 'dark' || (!theme && systemTheme === 'dark')) {
-                                        document.documentElement.classList.add('dark');
-                                    } else {
-                                        document.documentElement.classList.remove('dark');
-                                    }
-                                } catch (e) {}
-                            })();
-                        `,
-                    }}
-                />
-            </head>
-            <body className="antialiased" suppressHydrationWarning>
-                <div className={inter.className}>
-                    <Navbar dict={dict} />
-                    {children}
-                </div>
-            </body>
-        </html>
+                <Navbar dict={dict} />
+                {children}
+            </div>
+        </>
     );
 }
-
-
-
-
-
-
-
-

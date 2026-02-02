@@ -21,6 +21,7 @@ This document ensures code consistency, quality, and maintainability across the 
 ## 4. STATE MANAGEMENT RULES
 - **Server State:** Use React Server Components or caching via `fetch`.
 - **Client State:** Use `useState` / `useReducer` for local state. Use `Zustand` for minimal global state if needed.
+- **Theme State:** Use `next-themes` for theme persistence (avoids hydration mismatch).
 - **No Global Mutable State:** Avoid complex state managers like Redux unless necessary.
 
 ## 5. API RULES

@@ -27,7 +27,7 @@ Every route in `src/app/[lang]` (e.g., `/standards`, `/philosophy`, etc.) must i
 ## 4. AUDIT PAGE SEO SPECIFICS
 - **Slug**: `audit`
 - **Supported Languages**: 8 (EN, UA, PL, DE, ES, FR, IT, PT)
-- **Canonical**: `https://icebergframework.co/audit` (absolute per language via `generatePageMetadata`)
+- **Canonical**: `https://iceberg-framework-site.vercel.app/en/audit` (absolute per language via `generatePageMetadata`)
 
 ## 5. SEO Consistency Checklist
 1. **Absolute URLs**: No relative paths in canonical/hreflang.
