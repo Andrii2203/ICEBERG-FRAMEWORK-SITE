@@ -54,6 +54,23 @@ export class TelegramService {
 
         await this.sendMessage(text.trim());
     }
+    /**
+     * Sends a security alert (e.g., Rate Limit breach).
+     */
+    static async sendSecurityAlert(data: { ip: string; path: string; reason: string; resetIn?: string }): Promise<void> {
+        const text = `
+🛡️ <b>Iceberg Security Alert</b> 🛡️
+
+<b>Event:</b> <code>${data.reason}</code>
+<b>Path:</b> <code>${data.path}</code>
+<b>IP:</b> <code>${data.ip}</code>
+${data.resetIn ? `<b>Reset In:</b> ${data.resetIn}` : ""}
+
+<b>Time:</b> ${new Date().toISOString()}
+        `;
+
+        await this.sendMessage(text.trim());
+    }
 }
 
 

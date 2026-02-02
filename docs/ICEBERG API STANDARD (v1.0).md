@@ -35,7 +35,7 @@ Security Requirements
 
 Authentication & Authorization (Future)
 
-Rate Limiting (Future)
+38. Rate Limiting (Implemented)
 
 Logging & Observability
 
@@ -264,14 +264,11 @@ stripe-verification-failed
 
 internal-error
 
-15. Validation Rules
-base64 must be valid
-
-image must not exceed size limit
-
-request must contain required fields
-
-no extra fields allowed
+15. Validation Rules (Implemented)
+- **Base64 Validity:** Must be a valid data URI string.
+- **Size Limit:** Payload must not exceed 5,000,000 characters (~4MB image).
+- **MIME Whitelist:** `data:image/png;base64,`, `data:image/jpeg;base64,`, `data:image/webp;base64,`.
+- **Strict Schema:** No extra fields allowed in the request body.
 
 16. Security Requirements
 no logging of base64
@@ -287,8 +284,10 @@ Stripe signature must be verified
 17. Authentication & Authorization (Future)
 Reserved for future enterprise version.
 
-18. Rate Limiting (Future)
-Reserved for future enterprise version.
+18. Rate Limiting (Implemented)
+Rate Limiting is enforced at the Edge level using Upstash/Redis.
+- **Rule:** Max 5 audits per hour for non-authenticated IPs.
+- **Scope:** /api/detect-ui and /api/analyze-ui.
 
 19. Logging & Observability
 Log only:

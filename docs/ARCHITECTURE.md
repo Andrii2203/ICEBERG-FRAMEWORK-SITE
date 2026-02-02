@@ -95,7 +95,32 @@ graph TD
 
 ---
 
+## 6. SECURITY LAYER
+- **Input Validation:** Strict Zod-like validation for all API routes.
+- **Rate Limiting:** Edge-level protection for AI resources (Upstash/Redis).
+- **File Safety:** 4MB limit on Base64 image payload to prevent OOM (Out of Memory) attacks.
+- **CORS:** Restricted to official Iceberg domains only.
+
+---
+
+## 6. SECURITY LAYER
+- **Input Validation (The Customs Layer):** Strict schema enforcement for all API routes using Zod.
+- **Rate Limiting:** Edge-level protection against brute-force and resource abuse (Upstash/Redis).
+- **Payload Constraints:** 4MB/5MB character limit on image data to prevent memory exhaustion.
+- **CORS Policy:** Restricted access to authorized Iceberg domains only.
+
+## 7. ADVANCED SECURITY ROADMAP
+Following the Enterprise Hardening phase, the following vectors are active:
+- **Content Security Policy (CSP):** [ACTIVE] Prevent XSS and unauthorized script execution.
+- **Prompt Injection Defense:** [ACTIVE] Model-level instructions to ignore spoofed UI text.
+- **Telegram Alerts:** [PLANNED] Real-time notification for Rate Limit and Validation breaches.
+- **Timeout Guard:** [PLANNED] Strict 30s execution limit for LLM calls.
+- **AI Audit Logs:** [PLANNED] Governance-ready storage of AI interactions (Metadata only).
+
+---
+
 ## STOP‑CHECK
 - [x] Folder structure validated (Iceberg Compliant)
 - [x] No conflicts with Repo B
 - [x] Terminology consistent
+- [x] Security Layer formally defined

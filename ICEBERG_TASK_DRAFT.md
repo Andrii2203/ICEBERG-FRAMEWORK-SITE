@@ -300,3 +300,32 @@
   - *Update:* Added `next-themes` to `CODING_RULES.md` as well.
 - **Task 3:** [x] Update Implementation Plan to reference the documentation.
 - **Task 4:** [x] Execute code changes only after docs are set.
+### [2026-02-02 12:45] Theme Persistence Fix (next-themes + Root Layout)
+- **Problem:** Flash of Unstyled Content (FOUC) and theme reset during language switch (`[lang]` segment remount).
+- **Solution:** Moved `ThemeProvider` and `globals.css` imports to a NEW global `src/app/layout.tsx`.
+- **Refactor:** `src/app/[lang]/layout.tsx` stripped of `html`/`body` tags to prevent hydration mismatch.
+- **CSS:** Added `color-scheme` to `:root`/`.dark` for browser-level background initialization.
+- **Outcome:** 100% persistent dark mode during navigation and language switching.
+
+### [2026-02-02 15:00] Security Hardening Start: The "Customs" Layer
+- **Objective:** Protect API routes from abuse and financial drain.
+- **Protocol:** Documentation First -> Validation Code -> Edge Protection.
+- **Focus:** `src/app/api/analyze-ui/route.ts` input sanitization.
+- **Guidelines:**
+  1. No trust in client-side data.
+  2. Fail-fast on oversized payloads (>4MB).
+  3. Explicit MIME type whitelisting.
+- **Next:** Implement validation logic in `analyze-ui/route.ts`.
+
+### [2026-02-02 16:30] Security Hardening (Phase 3) - COMPLETE
+- **Status:** All security layers active.
+- **Layers:**
+  1. **Customs (Zod):** Strict schema validation in `src/app/api/analyze-ui/route.ts`.
+  2. **Edge Rate Limiter:** Upstash sliding window (5 req/h) in `src/middleware.ts`.
+  3. **CORS & Headers:** Global security headers (HSTS, CSP, CORS) in `next.config.ts`.
+- **Verdict:** Project is now hardened against common API abuse and data corruption.
+
+### [2026-02-02 18:10] Security Monitoring - PLANNING
+- **Objective:** Implement Telegram Alerts for real-time security monitoring.
+- **Goal:** Connect `middleware.ts` to `TelegramService`.
+- **Status:** Documentation updated, proceeding to implementation.

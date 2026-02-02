@@ -264,22 +264,21 @@ export function InvalidPayloadError(details): IcebergError { ... }
 API routes map IcebergError.code → HTTP status + JSON error body
 (конкретна мапа — в API Standard).
 
-12. Validation standard
-Валідація не живе в API‑роутах напряму.
+12. Validation standard (Enterprise Hardening)
+Validation is strictly separated from controller logic.
 
-Використовується або:
+**Mechanism:** Zod schemas located in `src/domain/validation`.
 
-zod/valibot схеми в src/core/validation, або
+**Protocol:**
+1. API route parses JSON.
+2. API route calls the schema's `.safeParse()`.
+3. If fails: Return `invalid-payload` reason with 400 status.
+4. If success: Pass typed data to Service.
 
-власні guard‑функції.
-
-API route:
-
-парсить JSON
-
-передає в validateAuditRequest(payload)
-
-у випадку помилки — кидає InvalidPayloadError.
+**Mandatory Constraints:**
+- Base64 length validation (< 5MB characters).
+- MIME type string prefix validation.
+- `auditType` whitelist (`chaos` | `ui`).
 
 13. Logging standard
 Логер живе в src/core/logging.

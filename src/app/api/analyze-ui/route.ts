@@ -1,19 +1,29 @@
 
 import { NextRequest, NextResponse } from "next/server";
+import { AuditRequestSchema } from "@/domain/validation/audit.schema";
 import { IcebergError } from "@/domain/errors/IcebergError";
 import { StripeService } from "@/features/payments/services/stripe.service";
 import { AuditService } from "@/features/audit/services/audit.service";
-
 
 export const maxDuration = 300; // Allow 5 minutes for deep Claude 4.5 analysis
 
 export async function POST(req: NextRequest) {
     try {
-        const { imageBase64, sessionId, auditType } = await req.json();
+        const body = await req.json();
 
-        if (!imageBase64) {
-            return NextResponse.json({ status: "error", message: "Image is required" }, { status: 400 });
+        // 1. Validate request with "the Customs" (Zod)
+        const validation = AuditRequestSchema.safeParse(body);
+
+        if (!validation.success) {
+            return NextResponse.json({
+                status: "error",
+                reason: "invalid-payload",
+                message: validation.error.issues[0].message,
+                details: validation.error.format()
+            }, { status: 400 });
         }
+
+        const { imageBase64, sessionId, auditType } = validation.data;
 
         const auditService = new AuditService();
 
@@ -44,7 +54,7 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json({ status: "error", message: "Invalid audit type" }, { status: 400 });
 
-    } catch (error) {
+    } catch (error: unknown) {
         console.error("Audit Error:", error);
         if (error instanceof IcebergError) {
             return NextResponse.json(

@@ -22,7 +22,6 @@ export function generateViewport() {
 }
 
 import { getJsonLd } from "@/shared/utils/seo";
-import { ThemeProvider } from "@/infrastructure/theme/ThemeProvider";
 
 export default async function LangLayout({
     children,
