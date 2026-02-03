@@ -12,7 +12,7 @@ export class StripeService {
       console.warn("Stripe Secret Key is missing. Payments will fail.");
     }
     this.stripe = new Stripe(config.stripe.secretKey || "sk_test_placeholder", {
-      apiVersion: "2025-12-15.clover",
+      apiVersion: "2026-01-28.clover",
       typescript: true,
     });
   }

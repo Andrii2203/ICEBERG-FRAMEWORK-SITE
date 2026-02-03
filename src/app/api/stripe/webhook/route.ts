@@ -13,7 +13,7 @@ function getStripeInstance(): Stripe {
     throw new Error("Stripe secret key is not configured");
   }
   return new Stripe(config.stripe.secretKey, {
-    apiVersion: "2025-12-15.clover",
+    apiVersion: "2026-01-28.clover",
     typescript: true,
   });
 }

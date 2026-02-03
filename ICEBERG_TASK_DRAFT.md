@@ -329,3 +329,33 @@
 - **Objective:** Implement Telegram Alerts for real-time security monitoring.
 - **Goal:** Connect `middleware.ts` to `TelegramService`.
 - **Status:** Documentation updated, proceeding to implementation.
+
+### [2026-02-02 18:35] Data Privacy & Governance - COMPLETE
+- **Status:** Privacy Standards defined.
+- **Key Artifact:** `docs/PRIVACY_POLICY.md`.
+- **Logic:** Full stateless processing (In-memory only).
+- **Verdict:** Established "Privacy First" market position for Iceberg OS.
+
+### [2026-02-02 18:40] Middleware Resilience - PLANNED
+- **Problem:** Missing ENV keys cause 500 errors in Middleware (Deployment blocker).
+- **Task:** Implement `try/catch` and "safe-bypass" in `middleware.ts`.
+- **Logic:** If Redis fails to init, log error to console but `NextResponse.next()`.
+- **Verdict:** Established "Privacy First" market position for Iceberg OS.
+
+### [2026-02-02 19:55] Emergency Build Fix & Operational Corridor - PLANNING
+- **Problem 1:** Stripe API version mismatch (Build Failure).
+- **Problem 2:** Upstash Redis Node.js-detection in Edge Middleware.
+- **Problem 3:** Operational friction (Need to repeat standards).
+- **Goal:** Resolve build errors and formalize "The Iceberg Corridor" (Golden Rules).
+- **New Standard:** `docs/ICEBERG_GUIDELINES.md` will become the primary memory bank for the AI.
+- **Status:** Planning phase.
+
+### [2026-02-02 20:40] Audit Success UX - PLANNING
+- **Problem:** Immediate reset after ZIP download is jarring and lacks confirmation.
+- **Solution:** Dedicated `success` step in Audit flow.
+- **Features:** 
+  - Confetti/Success animation.
+  - Brief guide: "Next steps: Unzip and read SUMMARY.md".
+- **Status:** Planning.
+
+### [2026-02-02 19:05] зробити коридор, який показати ШІ, щоб він знав що треба робити пройшовши по коридору. наприклад щоб сайт нові сторінки одразу перекладалися на всі мови, щоб була імплементована і світла і темна тема, щоб всі логи мені приходили на телеграм, і все решта, щоб він знав, а не я йому кожен раз казав, що треба зробити.

@@ -107,11 +107,23 @@
             "processing": "Przetwarzanie..."
         },
         "status": {
-            "detecting": "Wykrywanie UI...",
-            "analyzing": "Analiza...",
-            "zipping": "Generowanie ZIP...",
-            "success": "Gotowe!",
-            "error": "Błąd."
+            "detecting": "Wykrywanie struktury UI...",
+            "analyzing": "Analiza komponentów i UX...",
+            "zipping": "Generowanie pakietu dostawy...",
+            "success": "Audit zakończony!",
+            "error": "Błąd audytu."
+        },
+        "success": {
+            "title": "Pakiet audytu gotowy!",
+            "description": "Twoja profesjonalna analiza UI/UX została wygenerowana i pomyślnie pobrana.",
+            "whatsInside": "Co jest w Twoim pakiecie?",
+            "filesCount": "6 kompleksowych plików analizy w jednym ZIP.",
+            "startGuide": "Zacznij od SUMMARY.md, aby uzyskać ogólny przegląd.",
+            "nextSteps": "Następne kroki",
+            "unzip": "1. Rozpakuj pobrany plik.",
+            "readReports": "2. Przeczytaj szczegółowe raporty Markdown.",
+            "implement": "3. Wdróż zidentyfikowane ulepszenia.",
+            "anotherAudit": "Pranalizuj inne UI"
         },
         "results": {
             "downloadZip": "Pobierz ZIP",

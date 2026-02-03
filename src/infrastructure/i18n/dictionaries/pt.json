@@ -107,11 +107,23 @@
             "processing": "Processando..."
         },
         "status": {
-            "detecting": "Detetando...",
-            "analyzing": "Análise...",
-            "zipping": "ZIP...",
-            "success": "Concluído!",
-            "error": "Erro."
+            "detecting": "Detetando estrutura de UI...",
+            "analyzing": "Analisando componentes e UX...",
+            "zipping": "Gerando pacote de entrega...",
+            "success": "Auditoria concluída!",
+            "error": "Falha na auditoria."
+        },
+        "success": {
+            "title": "Pacote de auditoria pronto!",
+            "description": "A sua análise profissional de UI/UX foi gerada e transferida com sucesso.",
+            "whatsInside": "O que há no seu pacote?",
+            "filesCount": "6 ficheiros de análise abrangentes num único ZIP.",
+            "startGuide": "Comece pelo SUMMARY.md para uma visão geral.",
+            "nextSteps": "Próximos passos",
+            "unzip": "1. Descomprima o ficheiro transferido.",
+            "readReports": "2. Leia os relatórios Markdown detalhados.",
+            "implement": "3. Implemente as melhorias identificadas.",
+            "anotherAudit": "Analisar outro UI"
         },
         "results": {
             "downloadZip": "Descarregar ZIP",

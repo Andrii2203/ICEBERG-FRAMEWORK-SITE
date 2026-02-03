@@ -12,4 +12,12 @@ export const config = {
         webhookSecret: process.env.STRIPE_WEBHOOK_SECRET || "",
         priceId: process.env.STRIPE_PRICE_ID || "",
     },
+    upstash: {
+        redisRestUrl: process.env.UPSTASH_REDIS_REST_URL || "",
+        redisRestToken: process.env.UPSTASH_REDIS_REST_TOKEN || "",
+    },
+    telegram: {
+        botToken: process.env.TELEGRAM_BOT_TOKEN || "",
+        chatId: process.env.TELEGRAM_CHAT_ID || "",
+    },
 };

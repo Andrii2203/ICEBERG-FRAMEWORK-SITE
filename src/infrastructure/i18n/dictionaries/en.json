@@ -113,6 +113,18 @@
             "success": "Audit complete!",
             "error": "Audit failed."
         },
+        "success": {
+            "title": "Audit Package Ready!",
+            "description": "Your professional UI/UX analysis has been generated and downloaded successfully.",
+            "whatsInside": "What's inside your package?",
+            "filesCount": "6 comprehensive analysis files in one ZIP.",
+            "startGuide": "Start with SUMMARY.md for a high-level overview.",
+            "nextSteps": "Next steps",
+            "unzip": "1. Unzip the downloaded file.",
+            "readReports": "2. Read the detailed Markdown reports.",
+            "implement": "3. Implement identified improvements.",
+            "anotherAudit": "Analyze Another UI"
+        },
         "results": {
             "downloadZip": "Download Audit Response (ZIP)",
             "freeResultTitle": "Audit Analysis Report",

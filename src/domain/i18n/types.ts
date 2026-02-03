@@ -122,6 +122,18 @@ export interface Dictionary {
             paymentRequired: string;
             generic: string;
         };
+        success: {
+            title: string;
+            description: string;
+            whatsInside: string;
+            filesCount: string;
+            startGuide: string;
+            nextSteps: string;
+            unzip: string;
+            readReports: string;
+            implement: string;
+            anotherAudit: string;
+        };
     };
 }
 

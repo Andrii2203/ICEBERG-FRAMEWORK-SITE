@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Upload, CheckCircle, AlertOctagon, RefreshCw, Lock } from "lucide-react";
+import { Upload, CheckCircle, AlertOctagon, RefreshCw, Lock, ShieldCheck, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useDropzone } from "react-dropzone";
 import { useSearchParams } from "next/navigation";
@@ -16,32 +17,38 @@ export interface DetectionResult {
 
 interface AuditClientProps {
     featureDict: Dictionary["audit"];
+    privacyPolicy?: string;
 }
 
-export function AuditClient({ featureDict }: AuditClientProps) {
+export function AuditClient({ featureDict, privacyPolicy }: AuditClientProps) {
     const searchParams = useSearchParams();
     const sessionId = searchParams.get("session_id");
     const status = searchParams.get("status");
 
     const [preview, setPreview] = useState<string | null>(null);
-    const [step, setStep] = useState<"upload" | "detecting" | "recovering" | "result">("upload");
+    const [step, setStep] = useState<"upload" | "detecting" | "recovering" | "result" | "success">("upload");
     const [detection, setDetection] = useState<DetectionResult | null>(null);
     const [loading, setLoading] = useState(false);
     const [hasRecovered, setHasRecovered] = useState(false);
     const [recoveryMessage, setRecoveryMessage] = useState("");
+    const [showPrivacy, setShowPrivacy] = useState(false);
 
     const handleFullAudit = useCallback(async (imageBase64: string, stripeSessionId?: string) => {
         setLoading(true);
+        setStep("detecting");
+
         try {
-            const res = await fetch("/api/analyze-ui", {
+            const response = await fetch("/api/analyze-ui", {
                 method: "POST",
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     imageBase64,
                     sessionId: stripeSessionId,
                     auditType: "ui"
                 }),
             });
-            const data = await res.json();
+
+            const data = await response.json();
 
             if (data.status === "success" && data.zipBase64) {
                 const link = document.createElement("a");
@@ -53,15 +60,15 @@ export function AuditClient({ featureDict }: AuditClientProps) {
                 window.history.replaceState({}, "", window.location.pathname);
                 setPreview(null);
                 setDetection(null);
-                setStep("upload");
+
+                setStep("success");
             } else {
                 alert(data.message || "Audit analysis failed");
-                sessionStorage.removeItem("audit_image");
-                window.history.replaceState({}, "", window.location.pathname);
                 setStep("upload");
             }
-        } catch (_err) {
-            alert("Network error during analysis");
+        } catch (error) {
+            console.error("Audit failed:", error);
+            setStep("upload");
         } finally {
             setLoading(false);
         }
@@ -70,6 +77,7 @@ export function AuditClient({ featureDict }: AuditClientProps) {
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         accept: { "image/*": [] },
         multiple: false,
+        disabled: step !== "upload",
         onDrop: (acceptedFiles) => {
             const f = acceptedFiles[0];
             const url = URL.createObjectURL(f);
@@ -219,18 +227,18 @@ export function AuditClient({ featureDict }: AuditClientProps) {
             </div>
 
             {/* Permanent Dashboard Container */}
-            <div className="relative h-auto md:h-[550px] bg-gradient-to-br from-slate-200/50 to-slate-50 dark:from-[#0A0A0A]/90 dark:to-[#0A0A0A]/80 backdrop-blur-3xl border border-slate-600/30 dark:border-white/10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-sky-400/5 group flex flex-col md:block">
+            <div className="w-full relative h-auto md:h-[550px] bg-gradient-to-br from-slate-200/50 to-slate-50 dark:from-[#0A0A0A]/90 dark:to-[#0A0A0A]/80 backdrop-blur-3xl border border-slate-600/30 dark:border-white/10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-sky-400/5 group flex flex-col md:block">
 
                 {/* Background Micro-animations */}
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-indigo-500/5 pointer-events-none" />
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
 
                 {/* THE CORE SPLIT VIEW */}
-                <div {...getRootProps()} className="flex cursor-pointer flex-col md:flex-row h-full divide-y md:divide-y-0 md:divide-x divide-border-brand/20 dark:divide-white/5 relative z-10">
+                <div {...getRootProps()} className="w-full flex cursor-pointer flex-col md:flex-row h-full divide-y md:divide-y-0 md:divide-x divide-border-brand/20 dark:divide-white/5 relative z-10">
                     <input {...getInputProps()} />
 
                     {/* LEFT PANEL: Media/Preview (Stack on mobile, 42% on desktop) */}
-                    <div className="w-full md:w-[42%] shrink-0 relative overflow-hidden bg-slate-50/50 dark:bg-black/40 p-6 md:p-8 flex flex-col h-[300px] md:h-auto border-b md:border-b-0 border-slate-600/20 dark:border-white/5">
+                    <div className="w-full md:w-[42%] shrink-0 relative overflow-hidden bg-slate-50/50 dark:bg-black/40 p-6 md:p-8 flex flex-col h-[300px] md:h-full border-b md:border-b-0 border-slate-600/20 dark:border-white/5">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
                             <span className="text-[10px] font-black tracking-widest text-white/40 uppercase">
@@ -238,7 +246,7 @@ export function AuditClient({ featureDict }: AuditClientProps) {
                             </span>
                         </div>
 
-                        <div className="relative w-full h-full rounded-2xl overflow-hidden border border-slate-600/20 dark:border-white/5 bg-slate-50 dark:bg-white/[0.02] shadow-inner flex items-center justify-center group/preview min-w-0">
+                        <div className="relative w-full flex-1 rounded-2xl overflow-hidden border border-slate-600/20 dark:border-white/5 bg-slate-50 dark:bg-white/[0.02] shadow-inner flex items-center justify-center group/preview min-w-0">
                             {!preview ? (
                                 <div
                                     key="placeholder"
@@ -289,8 +297,9 @@ export function AuditClient({ featureDict }: AuditClientProps) {
 
                         {preview && !loading && (
                             <button
-                                onClick={() => { setPreview(null); setStep("upload"); setDetection(null); sessionStorage.removeItem("audit_image"); }}
-                                className="mt-6 flex items-center justify-center gap-2 text-[10px] font-black text-slate-500 dark:text-white/20 hover:text-slate-900 dark:hover:text-white transition-all uppercase tracking-widest"
+                                type="button"
+                                onClick={(e) => { e.stopPropagation(); setPreview(null); setStep("upload"); setDetection(null); sessionStorage.removeItem("audit_image"); }}
+                                className="mt-6 flex items-center justify-center gap-2 text-[10px] font-black text-slate-500 dark:text-white/20 hover:text-slate-900 dark:hover:text-white transition-all uppercase tracking-widest relative z-[20]"
                             >
                                 <RefreshCw className="w-3 h-3" />
                                 Replace Input
@@ -299,11 +308,11 @@ export function AuditClient({ featureDict }: AuditClientProps) {
                     </div>
 
                     {/* RIGHT PANEL: Actions/Controls (Stack on mobile, 58% on desktop) */}
-                    <div className="w-full md:w-[58%] shrink-0 relative flex flex-col p-8 md:p-12 min-h-[400px] md:min-h-0">
+                    <div className="w-full md:h-full md:w-[58%] shrink-0 relative flex flex-col p-8 md:p-6 min-h-[400px] md:min-h-0">
 
                         {/* STATE: INITIAL UPLOAD / DROPZONE */}
                         {step === "upload" && (
-                            <div  className="h-full">
+                            <div className="h-full">
                                 <div
                                     key="upload-pane"
                                     className="h-full flex flex-col justify-center group/drop"
@@ -316,6 +325,7 @@ export function AuditClient({ featureDict }: AuditClientProps) {
                                             <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
                                                 Drop your interface screenshot here. Our AI will analyze UX metrics, visual balance, and code mapping.
                                             </p>
+
                                         </div>
                                     </div>
 
@@ -323,6 +333,69 @@ export function AuditClient({ featureDict }: AuditClientProps) {
                             </div>
                         )
                         }
+
+                        {/* STATE: SUCCESS */}
+                        {step === "success" && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="text-center space-y-4"
+                            >
+                                <div className="flex justify-center">
+                                    <div className="relative">
+                                        <div className="absolute inset-0 bg-cyan-500/20 blur-3xl rounded-full" />
+                                        <div className="relative bg-slate-900/50 dark:bg-white/5 border border-cyan-500/30 p-4 rounded-full">
+                                            <CheckCircle className="w-8 h-8 text-cyan-500" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-4">
+                                    <h2 className="text-4xl font-black tracking-tighter text-slate-950 dark:text-white">
+                                        {featureDict.success?.title || "Audit Package Ready!"}
+                                    </h2>
+                                    <p className="text-slate-600 dark:text-slate-400 text-lg max-w-md mx-auto">
+                                        {featureDict.success?.description || "Your professional UI/UX analysis has been generated and downloaded successfully."}
+                                    </p>
+                                </div>
+
+                                <div className="max-w-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                                    <div className="p-6 bg-slate-100 dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 rounded-3xl space-y-4">
+                                        <h4 className="font-bold text-slate-950 dark:text-white uppercase text-xs tracking-widest flex items-center gap-2">
+                                            <Upload className="w-4 h-4 text-cyan-500" />
+                                            {featureDict.success?.whatsInside || "What's inside your package?"}
+                                        </h4>
+                                        <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400 font-mono">
+                                            <li>• {featureDict.success?.filesCount || "6 comprehensive analysis files in one ZIP."}</li>
+                                            <li className="text-cyan-500/80">• {featureDict.success?.startGuide || "Start with SUMMARY.md for a high-level overview."}</li>
+                                        </ul>
+                                    </div>
+                                    <div className="p-6 bg-slate-100 dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 rounded-3xl space-y-4">
+                                        <h4 className="font-bold text-slate-950 dark:text-white uppercase text-xs tracking-widest flex items-center gap-2">
+                                            <RefreshCw className="w-4 h-4 text-cyan-500" />
+                                            {featureDict.success?.nextSteps || "Next steps"}
+                                        </h4>
+                                        <div className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                            <p>{featureDict.success?.unzip || "1. Unzip the downloaded file."}</p>
+                                            <p>{featureDict.success?.readReports || "2. Read the detailed Markdown reports."}</p>
+                                            <p>{featureDict.success?.implement || "3. Implement identified improvements."}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button
+                                    onClick={() => {
+                                        setPreview(null);
+                                        setDetection(null);
+                                        setStep("upload");
+                                        window.history.replaceState({}, "", window.location.pathname);
+                                    }}
+                                    className="px-12 py-4 bg-slate-950 dark:bg-white text-white dark:text-black font-black rounded-2xl hover:scale-105 transition-all shadow-xl shadow-cyan-500/10"
+                                >
+                                    {featureDict.success?.anotherAudit || "Analyze Another UI"}
+                                </button>
+                            </motion.div>
+                        )}
 
                         {/* STATE: RECOVERING / RESUMING */}
                         {step === "recovering" && (
@@ -404,13 +477,6 @@ export function AuditClient({ featureDict }: AuditClientProps) {
                                                 {detection.message || "We couldn't identify a valid user interface in this image."}
                                             </p>
                                         </div>
-                                        <button
-                                            onClick={() => { setPreview(null); setStep("upload"); setDetection(null); }}
-                                            className="group flex items-center gap-3 text-sm font-black text-white/40 hover:text-cyan-400 transition-colors uppercase tracking-widest"
-                                        >
-                                            <Upload className="w-5 h-5 transition-transform group-hover:-translate-y-1" />
-                                            Try different image
-                                        </button>
                                     </div>
                                 )}
                             </div>
@@ -419,6 +485,64 @@ export function AuditClient({ featureDict }: AuditClientProps) {
                     <div className={`absolute inset-0 bg-cyan-500/5 transition-opacity duration-500 ${isDragActive ? 'opacity-100' : 'opacity-0'}`} />
                 </div>
             </div>
+
+            <div className="flex flex-wrap items-center gap-2 pt-2 text-xs font-bold uppercase tracking-widest">
+                <ShieldCheck className="w-4 h-4 text-cyan-500" />
+                Privacy First: Images are processed in-memory and never stored.
+                <button
+                    onClick={(e: React.MouseEvent) => { e.stopPropagation(); setShowPrivacy(true); }}
+                    className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/30 underline-offset-4 ml-1"
+                >
+                    Read More
+                </button>
+            </div>
+
+            {/* Privacy Modal */}
+            <AnimatePresence>
+                {showPrivacy && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setShowPrivacy(false)}
+                        className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-4 md:p-8"
+                    >
+                        <motion.div
+                            initial={{ scale: 0.95, opacity: 0, y: 20 }}
+                            animate={{ scale: 1, opacity: 1, y: 0 }}
+                            exit={{ scale: 0.95, opacity: 0, y: 20 }}
+                            onClick={(e) => e.stopPropagation()}
+                            className="w-full max-w-2xl max-h-[80vh] bg-slate-50 dark:bg-[#0A0A0A] border border-slate-600/30 dark:border-white/10 rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col"
+                        >
+                            <div className="p-8 border-b border-slate-600/10 dark:border-white/5 flex items-center justify-between">
+                                <div className="flex items-center gap-3">
+                                    <ShieldCheck className="w-6 h-6 text-cyan-500" />
+                                    <h3 className="text-xl font-black text-slate-950 dark:text-white">Privacy Policy</h3>
+                                </div>
+                                <button
+                                    onClick={() => setShowPrivacy(false)}
+                                    className="p-2 hover:bg-slate-200 dark:hover:bg-white/5 rounded-full transition-colors text-slate-400"
+                                >
+                                    <X className="w-5 h-5" />
+                                </button>
+                            </div>
+                            <div className="flex-1 overflow-y-auto p-8 font-mono text-sm leading-relaxed text-slate-600 dark:text-white/60 custom-scrollbar">
+                                <div className="whitespace-pre-wrap">
+                                    {privacyPolicy || "Privacy policy content not available."}
+                                </div>
+                            </div>
+                            <div className="p-6 bg-slate-100 dark:bg-white/[0.02] border-t border-slate-600/10 dark:border-white/5 text-center">
+                                <button
+                                    onClick={() => setShowPrivacy(false)}
+                                    className="px-8 py-3 bg-slate-900 dark:bg-white text-white dark:text-black font-bold rounded-xl transition-all hover:scale-105"
+                                >
+                                    I understand
+                                </button>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }

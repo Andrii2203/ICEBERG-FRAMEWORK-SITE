@@ -117,6 +117,12 @@ Following the Enterprise Hardening phase, the following vectors are active:
 - **Timeout Guard:** [PLANNED] Strict 30s execution limit for LLM calls.
 - **AI Audit Logs:** [PLANNED] Governance-ready storage of AI interactions (Metadata only).
 
+## 8. PRIVACY TIER (STATELESSNESS)
+- **Zero-Storage Policy:** No UI assets are stored in databases or file systems.
+- **In-Memory Processing:** Assets exist only during the request lifecycle.
+- **API Sovereignty:** AI providers (Claude/Groq) are configured to exclude data from training sets.
+- **Legal Base:** See [PRIVACY_POLICY.md](file:///c:/Users/Andrii/Desktop/iceberg-landing-3/docs/PRIVACY_POLICY.md).
+
 ---
 
 ## STOP‑CHECK

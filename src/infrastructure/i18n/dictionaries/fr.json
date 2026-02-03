@@ -94,34 +94,46 @@
             "validation": "Moteur de validation et QA"
         }
     },
-    "audit":{
-        "title":"Audit Iceberg",
-        "subtitle":"Analyse UI/UX déterministe",
-        "description":"Téléchargez une capture d''écran et obtenez un audit complet.",
-        "form":{
-            "uploadLabel":"Déposez ici",
-            "auditTypeLabel":"Type",
-            "freeAudit":"Gratuit",
-            "paidAudit":"Complet",
-            "submitButton":"Démarrer",
-            "processing":"Traitement..."
+    "audit": {
+        "title": "Audit Iceberg",
+        "subtitle": "Analyse UI/UX déterministe",
+        "description": "Téléchargez une capture d''écran et obtenez un audit complet.",
+        "form": {
+            "uploadLabel": "Déposez ici",
+            "auditTypeLabel": "Type",
+            "freeAudit": "Gratuit",
+            "paidAudit": "Complet",
+            "submitButton": "Démarrer",
+            "processing": "Traitement..."
         },
-        "status":{
-            "detecting":"Détection...",
-            "analyzing":"Analyse...",
-            "zipping":"ZIP...",
-            "success":"Terminé!",
-            "error":"Erreur."
+        "status": {
+            "detecting": "Détection de la structure UI...",
+            "analyzing": "Analyse des composants et UX...",
+            "zipping": "Génération du pack de livraison...",
+            "success": "Audit terminé !",
+            "error": "Échec de l'audit."
         },
-        "results":{
-            "downloadZip":"Télécharger ZIP",
-            "freeResultTitle":"Rapport",
-            "backToForm":"Nouvel"
+        "success": {
+            "title": "Pack d'audit prêt !",
+            "description": "Votre analyse UI/UX professionnelle a été générée et téléchargée avec succès.",
+            "whatsInside": "Que contient votre pack ?",
+            "filesCount": "6 fichiers d'analyse complets dans un ZIP.",
+            "startGuide": "Commencez par SUMMARY.md pour une vue d'ensemble.",
+            "nextSteps": "Prochaines étapes",
+            "unzip": "1. Décompressez le fichier téléchargé.",
+            "readReports": "2. Lisez les rapports Markdown détaillés.",
+            "implement": "3. Implémentez les améliorations identifiées.",
+            "anotherAudit": "Analyser une autre UI"
         },
-        "errors":{
-            "nonUi":"Pas UI",
-            "paymentRequired":"Paiement requis",
-            "generic":"Erreur"
+        "results": {
+            "downloadZip": "Télécharger ZIP",
+            "freeResultTitle": "Rapport",
+            "backToForm": "Nouvel"
+        },
+        "errors": {
+            "nonUi": "Pas UI",
+            "paymentRequired": "Paiement requis",
+            "generic": "Erreur"
         }
     }
 }
