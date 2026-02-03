@@ -16,6 +16,7 @@ export interface Dictionary {
         standards: string;
         protocols: string;
         enterprise: string;
+        solo: string;
         audit: string;
         language: string;
     };
@@ -92,6 +93,43 @@ export interface Dictionary {
             memory: string;
             validation: string;
         };
+        pitch: {
+            problem: string;
+            solution: string;
+        };
+        tiers: {
+            agency: {
+                name: string;
+                price: string;
+                features: string[];
+            };
+            enterprise: {
+                name: string;
+                price: string;
+                features: string[];
+            };
+        };
+        cta_agency: string;
+        cta_contact: string;
+    };
+    solo: {
+        title: string;
+        description: string;
+        benefits: {
+            title: string;
+            rules: string;
+            matrix: string;
+            corridor: string;
+            speed: string;
+        };
+        setup: {
+            title: string;
+            step1: string;
+            step2: string;
+            step3: string;
+            step4: string;
+        };
+        cta: string;
     };
     audit: {
         title: string;
@@ -133,6 +171,23 @@ export interface Dictionary {
             readReports: string;
             implement: string;
             anotherAudit: string;
+        };
+    };
+    legal: {
+        faq: {
+            title: string;
+            subtitle: string;
+            items: { q: string; a: string }[];
+        };
+        tos: {
+            title: string;
+            lastUpdated: string;
+            sections: { title: string; content: string }[];
+        };
+        privacy: {
+            title: string;
+            lastUpdated: string;
+            sections: { title: string; content: string }[];
         };
     };
 }

@@ -24,10 +24,20 @@ This function is the "Single Source of Truth" for metadata generation.
 #### Page Implementation
 Every route in `src/app/[lang]` (e.g., `/standards`, `/philosophy`, etc.) must implement its own `generateMetadata` function and call the shared utility.
 
-## 4. AUDIT PAGE SEO SPECIFICS
-- **Slug**: `audit`
-- **Supported Languages**: 8 (EN, UA, PL, DE, ES, FR, IT, PT)
-- **Canonical**: `https://iceberg-framework-site.vercel.app/en/audit` (absolute per language via `generatePageMetadata`)
+## 4. PRODUCT PAGE SEO SPECIFICS
+
+### Solo Pack Page
+- **Slug**: `solo-pack`
+- **Focus**: "AI System rules", "Deterministic YAML", "Senior developer AI instructions".
+- **Canonical**: `https://iceberg-framework-site.vercel.app/en/solo-pack`
+
+### Enterprise Page
+- **Slug**: `enterprise`
+- **Focus**: "AI team governance", "Corporate AI standards", "Agency AI license".
+- **Canonical**: `https://iceberg-framework-site.vercel.app/en/enterprise`
+
+## 5. REVENUE-DRIVEN INDEXING
+- **Download Success Page (`/success`)**: MUST be marked as `noindex, nofollow` in metadata to prevent search engines from indexing the secure download portal.
 
 ## 5. SEO Consistency Checklist
 1. **Absolute URLs**: No relative paths in canonical/hreflang.

@@ -86,7 +86,7 @@ export function AuditClient({ featureDict, privacyPolicy }: AuditClientProps) {
         },
     });
 
-    const handleDetection = async (file: File) => {
+    const handleDetection = useCallback(async (file: File) => {
         setStep("detecting");
         setLoading(true);
 
@@ -112,20 +112,15 @@ export function AuditClient({ featureDict, privacyPolicy }: AuditClientProps) {
                 } else {
                     setDetection(data.data);
                 }
-            } catch (_err) {
+            } catch {
                 setDetection({ type: "error", message: "Network Error" });
             } finally {
                 setLoading(false);
                 setStep("result");
             }
         };
-    };
+    }, [featureDict.errors?.nonUi]);
 
-    const startFreeAudit = async () => {
-        if (!preview) return;
-        setLoading(true);
-        setTimeout(() => setLoading(false), 2000);
-    };
 
     useEffect(() => {
         const recoverSession = async () => {
@@ -145,7 +140,7 @@ export function AuditClient({ featureDict, privacyPolicy }: AuditClientProps) {
                         setLoading(false);
                         return;
                     }
-                } catch (_err) {
+                } catch {
                     window.history.replaceState({}, "", window.location.pathname);
                     setStep("upload");
                     setLoading(false);
@@ -192,7 +187,7 @@ export function AuditClient({ featureDict, privacyPolicy }: AuditClientProps) {
 
         window.addEventListener("paste", handlePaste);
         return () => window.removeEventListener("paste", handlePaste);
-    }, [step]);
+    }, [step, handleDetection]);
 
     const startPaidAudit = async () => {
         setLoading(true);
@@ -208,7 +203,7 @@ export function AuditClient({ featureDict, privacyPolicy }: AuditClientProps) {
                 alert(data.message || "Payment initiation failed");
                 setLoading(false);
             }
-        } catch (_err) {
+        } catch {
             alert("Payment initiation failed");
             setLoading(false);
         }

@@ -17,6 +17,7 @@
         "standards": "Standards",
         "protocols": "Protocols",
         "enterprise": "Enterprise",
+        "solo": "Solo Pack",
         "audit": "Audit",
         "language": "Language"
     },
@@ -85,14 +86,41 @@
         }
     },
     "enterprise": {
-        "title": "Enterprise Solutions",
+        "title": "Agency & Enterprise",
         "subtitle": "Proprietary Execution Engines",
         "description": "Take Iceberg further with automated governance and persistent memory execution.",
+        "pitch": {
+            "title": "Why This Matters",
+            "problem": "Standard AI creates technical trash (Legacy).",
+            "solution": "Iceberg OS enforces Determinism."
+        },
         "modules": {
             "executor": "AI Execution Engine",
             "memory": "Persistent Memory Engine",
             "validation": "Validation & QA Engine"
-        }
+        },
+        "tiers": {
+            "agency": {
+                "name": "Agency License",
+                "price": "$999",
+                "features": [
+                    "Unlimited Teams",
+                    "Priority Updates",
+                    "Commercial Rights"
+                ]
+            },
+            "enterprise": {
+                "name": "Enterprise",
+                "price": "Custom",
+                "features": [
+                    "Rule Distillation",
+                    "Self-Hosted Matrix",
+                    "Direct Support"
+                ]
+            }
+        },
+        "cta_agency": "Buy Agency License",
+        "cta_contact": "Contact Sales"
     },
     "audit": {
         "title": "Iceberg Audit",
@@ -134,6 +162,101 @@
             "nonUi": "The uploaded image is not a valid UI screenshot.",
             "paymentRequired": "Payment is required for a Full Audit.",
             "generic": "An unexpected error occurred. Please try again."
+        }
+    },
+    "solo": {
+        "title": "Iceberg OS Starter Pack",
+        "description": "Your AI's Senior-grade brain in a YAML file.",
+        "benefits": {
+            "title": "What's inside?",
+            "rules": "600+ Human-Distilled Senior Rules",
+            "matrix": "Logical Context Matrix",
+            "corridor": "Operational Security Standards",
+            "speed": "5x Development Speed"
+        },
+        "setup": {
+            "title": "5-Minute Quick Start",
+            "step1": "Download your YAML bundle",
+            "step2": "Inject into your AI System Prompt",
+            "step3": "Run your first /audit command",
+            "step4": "Validate and Build"
+        },
+        "cta": "Get Solo Pack — $129"
+    },
+    "legal": {
+        "faq": {
+            "title": "FAQ (Iceberg OS)",
+            "subtitle": "Common questions about deterministic AI framework",
+            "items": [
+                {
+                    "q": "What is Iceberg OS?",
+                    "a": "Iceberg OS is a digital framework for building deterministic AI systems. Products are delivered as downloadable files after purchase."
+                },
+                {
+                    "q": "What do I receive after buying?",
+                    "a": "You receive immediate access to downloadable assets (YAML files, documentation, or ZIP archives), depending on the product tier."
+                },
+                {
+                    "q": "How do I download my files?",
+                    "a": "After completing the checkout, you are redirected to a secure download page. Access is verified through your Stripe session."
+                },
+                {
+                    "q": "Compatibility & Models",
+                    "a": "Iceberg rules are optimized for Claude 3.5 Sonnet, GPT-4o, and Gemini 1.5 Pro. They work seamlessly in Cursor and VS Code AI environments."
+                },
+                {
+                    "q": "Do you offer refunds?",
+                    "a": "Digital products are non‑refundable once downloaded. If you experience issues accessing your files, contact support."
+                },
+                {
+                    "q": "Commercial Usage",
+                    "a": "Yes. Usage rights depend on the license tier (Solo, Agency, Enterprise). Solo is for individuals; Agency/Enterprise allows team redistribution."
+                },
+                {
+                    "q": "Contact Support",
+                    "a": "You can reach us via email at: https://www.linkedin.com/in/andrii-shavel-976485187/"
+                }
+            ]
+        },
+        "tos": {
+            "title": "Terms of Service",
+            "lastUpdated": "February 3, 2026",
+            "sections": [
+                {
+                    "title": "1. Overview",
+                    "content": "These Terms govern your access to Iceberg OS digital products. By purchasing, you agree to these legal conditions."
+                },
+                {
+                    "title": "2. Delivery",
+                    "content": "All products are digital. No physical items are shipped. Access is provided immediately after payment."
+                },
+                {
+                    "title": "3. License",
+                    "content": "You receive a non‑exclusive license based on your tier. Redistribution or resale is strictly prohibited."
+                },
+                {
+                    "title": "4. Refunds",
+                    "content": "Due to the nature of digital goods, all sales are final once the product has been downloaded."
+                }
+            ]
+        },
+        "privacy": {
+            "title": "Privacy Policy",
+            "lastUpdated": "February 3, 2026",
+            "sections": [
+                {
+                    "title": "1. Data Collection",
+                    "content": "We collect email via Stripe and download session verification data. We do not store payment card information."
+                },
+                {
+                    "title": "2. Security",
+                    "content": "Uploaded screenshots for audits are processed in-memory and never stored. Downloads use time-limited signed links."
+                },
+                {
+                    "title": "3. Rights",
+                    "content": "You may request deletion of customer data by contacting https://www.linkedin.com/in/andrii-shavel-976485187/."
+                }
+            ]
         }
     }
 }

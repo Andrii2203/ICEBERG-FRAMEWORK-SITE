@@ -26,11 +26,20 @@ Content structure definition for the Iceberg Framework Landing Website.
 - **Layer 2:** Iceberg Framework (MIT)
 - **Layer 3:** Iceberg Enterprise Engines (Proprietary)
 
-### Standards Page
-- **List:** Architecture, Quality, SEO, PWA, Accessibility, API, etc.
+### Solo Pack Page
+- **Core Value**: "Senior-grade brain in a YAML file."
+- **Inside**: 
+  - Rules Normalized (617+).
+  - Context Matrix.
+  - Operational Corridor.
+- **Setup Flow**: Download -> Inject -> /audit -> Build.
 
-### Protocols Page
-- **List:** Planning, Migration, AI Execution, Validation.
+### Enterprise Page
+- **Problem**: Technical Trash (Standard AI).
+- **Solution**: Deterministic Force Multiplier.
+- **Tiers**:
+  - **Agency**: Fixed price ($999), 50+ devs, Commercial usage.
+  - **Enterprise**: Custom price, Rule distillation, Self-hosted.
 
 ### Audit Page
 - **Hero:**

@@ -18,25 +18,23 @@ export class StripeService {
   }
 
   /**
-   * Creates a Checkout Session for the Paid Audit.
+   * Creates a Checkout Session for any Iceberg product.
    */
-  async createAuditSession(origin: string): Promise<string> {
-    console.log("[StripeService] Creating checkout session for origin:", origin);
+  async createCheckoutSession(origin: string, priceId: string, metadata: Record<string, string>): Promise<string> {
+    console.log("[StripeService] Creating checkout session for price:", priceId, "metadata:", metadata);
     try {
       const session = await this.stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         line_items: [
           {
-            price: config.stripe.priceId,
+            price: priceId,
             quantity: 1,
           },
         ],
         mode: "payment",
-        success_url: `${origin}/audit?session_id={CHECKOUT_SESSION_ID}&status=success`,
-        cancel_url: `${origin}/audit?status=cancelled`,
-        metadata: {
-          type: "audit_full",
-        },
+        success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${origin}/`,
+        metadata: metadata,
       });
 
       if (!session.url) throw new Error("Failed to generate session URL");
@@ -44,6 +42,13 @@ export class StripeService {
     } catch (error) {
       throw new IcebergError("stripe-error", "Failed to create checkout session", error);
     }
+  }
+
+  /**
+   * @deprecated Use createCheckoutSession instead
+   */
+  async createAuditSession(origin: string): Promise<string> {
+    return this.createCheckoutSession(origin, config.stripe.priceId, { type: "audit_full" });
   }
 
   /**

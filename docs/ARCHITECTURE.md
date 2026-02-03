@@ -76,7 +76,9 @@ src/
 - **Feature Blocks:** Logical sections in `features/`.
 - **Page Layouts:** Structural wrappers in `app/`.
 
-## 5. AUDIT PIPELINE
+## 5. REVENUE & DELIVERY PIPELINES
+
+### A. Audit Pipeline
 The `/audit` feature uses an orchestrator pattern to manage the UI analysis workflow:
 
 ```mermaid
@@ -90,32 +92,38 @@ graph TD
     Stripe --> |Success| Claude[Claude 3.5: Full Audit]
     Claude --> |Generate 6 Files| Zip[Zip Service]
     Zip --> |Return ZIP| User
-    StripeCheck --> |No| Error2[Paid Only for Full Audit]
+```
+
+### B. Lean Asset Pipeline (Solo/Agency)
+Standardized path for selling the Deterministic Matrix assets:
+
+```mermaid
+graph LR
+    Page[Solo/Enterprise Page] --> |priceId| Stripe[Stripe Checkout]
+    Stripe --> |Success + session_id| Success[/success/]
+    Success --> |Internal Check| API[/api/download/]
+    API --> |Verify Session| R2[Cloudflare R2]
+    R2 --> |Presigned URL| Finish[10-Min Secure Download]
 ```
 
 ---
 
-## 6. SECURITY LAYER
-- **Input Validation:** Strict Zod-like validation for all API routes.
-- **Rate Limiting:** Edge-level protection for AI resources (Upstash/Redis).
-- **File Safety:** 4MB limit on Base64 image payload to prevent OOM (Out of Memory) attacks.
-- **CORS:** Restricted to official Iceberg domains only.
 
----
-
-## 6. SECURITY LAYER
+## 6. SECURITY LAYER & DELIVERY
 - **Input Validation (The Customs Layer):** Strict schema enforcement for all API routes using Zod.
-- **Rate Limiting:** Edge-level protection against brute-force and resource abuse (Upstash/Redis).
-- **Payload Constraints:** 4MB/5MB character limit on image data to prevent memory exhaustion.
-- **CORS Policy:** Restricted access to authorized Iceberg domains only.
+- **Rate Limiting:** Edge-level protection against brute-force (Upstash/Redis).
+- **Secure Asset Delivery (Anti-Sharing):**
+  - **Mechanism:** Server-Side Expiry (10 mins) + **Secure Session Locking**.
+  - **Protocol:** First successful download sets an `HttpOnly` cookie. Subsequent requests must present this cookie.
+- **Payload Constraints:** 4MB/5MB character limit on image data.
 
 ## 7. ADVANCED SECURITY ROADMAP
 Following the Enterprise Hardening phase, the following vectors are active:
-- **Content Security Policy (CSP):** [ACTIVE] Prevent XSS and unauthorized script execution.
-- **Prompt Injection Defense:** [ACTIVE] Model-level instructions to ignore spoofed UI text.
-- **Telegram Alerts:** [PLANNED] Real-time notification for Rate Limit and Validation breaches.
-- **Timeout Guard:** [PLANNED] Strict 30s execution limit for LLM calls.
-- **AI Audit Logs:** [PLANNED] Governance-ready storage of AI interactions (Metadata only).
+- **Content Security Policy (CSP):** [ACTIVE] Prevent XSS.
+- **Prompt Injection Defense:** [ACTIVE] Model-level defense.
+- **Telegram Alerts:** [ACTIVE] Real-time monitoring.
+- **Timeout Guard:** [ACTIVE] Strict 30s execution limit.
+- **AI Audit Logs:** [PLANNED] Governance-ready logs.
 
 ## 8. PRIVACY TIER (STATELESSNESS)
 - **Zero-Storage Policy:** No UI assets are stored in databases or file systems.

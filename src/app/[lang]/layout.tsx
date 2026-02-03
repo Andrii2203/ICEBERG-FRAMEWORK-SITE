@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "@/app/globals.css";
 import { getDictionary } from "@/infrastructure/i18n/dictionaries";
 import { Navbar } from "@/features/navigation/ui/Navbar";
+import { Footer } from "@/features/navigation/ui/Footer";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
@@ -43,6 +44,7 @@ export default async function LangLayout({
                 />
                 <Navbar dict={dict} />
                 {children}
+                <Footer dict={dict} />
             </div>
         </>
     );

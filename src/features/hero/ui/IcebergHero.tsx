@@ -2,6 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 import { Github, Linkedin } from "lucide-react";
 
 interface IcebergHeroProps {
@@ -19,6 +21,8 @@ interface IcebergHeroProps {
 }
 
 export const IcebergHero = ({ dict }: IcebergHeroProps) => {
+    const params = useParams();
+
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-bg-brand py-20 px-6">
             {/* Background Orbs & Effects */}
@@ -40,6 +44,21 @@ export const IcebergHero = ({ dict }: IcebergHeroProps) => {
                         ICEBERG<br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-b from-text-brand to-accent-brand/50">FRAMEWORK</span>
                     </h1>
+
+                    <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
+                        <Link
+                            href={`/${params.lang}/solo-pack`}
+                            className="px-10 py-5 bg-accent-brand text-black font-black text-xs uppercase tracking-widest rounded-full shadow-[0_0_30px_rgba(var(--accent-brand),0.3)] hover:scale-105 hover:shadow-[0_0_50px_rgba(var(--accent-brand),0.5)] transition-all"
+                        >
+                            Get Solo Pack — $129
+                        </Link>
+                        <Link
+                            href={`/${params.lang}/audit`}
+                            className="px-10 py-5 bg-surface-brand/30 border border-border-brand/30 text-text-brand font-black text-xs uppercase tracking-widest rounded-full backdrop-blur-md hover:bg-surface-brand transition-all"
+                        >
+                            Run UI Audit
+                        </Link>
+                    </div>
                 </motion.div>
             </div>
 

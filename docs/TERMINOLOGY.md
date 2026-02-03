@@ -16,6 +16,12 @@ Unified glossary of terms for the Iceberg Framework Landing Website.
 - **Chaos Mode:** A state where the system detects a messy or unstructured UI, leading to a "Free Audit" using Groq.
 - **Full Audit:** A premium analysis of a valid UI interface using Claude 3.5 Sonnet, resulting in a 6-file professional package.
 
+## 4. COMMERCIAL TERMS
+- **Solo Pack (Starter Pack):** The base commercial offering containing `rules_normalized.yaml` and the initial Context Matrix for individual use.
+- **Agency License:** A team-tier offering allowing up to 50 developers to use Iceberg assets across multiple client projects.
+- **Deterministic Matrix:** The core logical engine (binary or YAML) that provides the "Submerged Mass" logic to an AI model.
+- **Signed URL (TTL):** A temporary, secure link for downloading assets from R2, valid for exactly 10 minutes.
+
 ---
 
 ## STOP‑CHECK

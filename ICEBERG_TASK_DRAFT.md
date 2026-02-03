@@ -358,4 +358,34 @@
   - Brief guide: "Next steps: Unzip and read SUMMARY.md".
 - **Status:** Planning.
 
-### [2026-02-02 19:05] зробити коридор, який показати ШІ, щоб він знав що треба робити пройшовши по коридору. наприклад щоб сайт нові сторінки одразу перекладалися на всі мови, щоб була імплементована і світла і темна тема, щоб всі логи мені приходили на телеграм, і все решта, щоб він знав, а не я йому кожен раз казав, що треба зробити.
+### [2026-02-03 13:45] Lean Commercial Launch - Phase 15 Start
+- **Objective:** Implement Solo and Enterprise product landing pages with Stripe integration and secure Cloudflare R2 delivery.
+- **Action:** Created `docs/SOLO.md` and `docs/ENTERPRISE.md` defining page structure and SEO.
+- **Action:** Synchronized `en.json` and `ua.json` with new `solo` and `enterprise` modules (Starter Pack pitch, PH Pitch, Multi-Tier Pricing).
+- **Refactor:** Unified `enterprise` module under a single key to prevent dictionary drift.
+- **Technical Note:** R2 Bucket `iceberg-vault` will be used for signed URLs (10-min expiry).
+- **Next:** Global i18n synchronization for the remaining 6 languages.
+
+### [2026-02-03 21:00] Secure Download Architecture - COMPLETE
+- **Feature:** Server-Side Expiry Enforcement.
+- **Logic:** `api/download` calculates `now - payment.finished_at`. If > 10 mins, reject (403).
+- **UX:** `SuccessClient` syncs UI timer with server-provided seconds. Auto-cleansing is visual only.
+- **Security:** "AES-256-R2-EPHEMERAL" policy badge added for enterprise trust.
+
+### [2026-02-03 21:05] Commercial Licenses - COMPLETE
+- **Artifacts:** `docs/SOLO_LICENSE.md` and `docs/AGENCY_LICENSE.md`.
+- **Clauses:** 
+  - Non-transferability.
+  - Audit Rights.
+  - "No Warranty" (As Is).
+  - Explicit Definitions (User, Product).
+- **Status:** Professional Grade.
+
+### [2026-02-03 21:10] Secure Session Locking (Anti-Sharing) - PLANNING
+- **Objective:** Prevent download link sharing via Incognito/Different Browsers.
+- **Mechanism:** HttpOnly Secure Cookie (`iceberg_session_lock`).
+- **Flow:**
+  1. First successful access to `/api/download` sets the cookie.
+  2. Subsequent accesses check for cookie presence.
+  3. If cookie missing but session valid -> REJECT (403 "Session Locked to original device").
+- **Documentation:** Updating `docs/ARCHITECTURE.md` to reflect this security layer.

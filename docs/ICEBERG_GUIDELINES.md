@@ -53,5 +53,13 @@
 ## 10. THE CLEAN-EXIT RULE
 - Professional projects must purge "Debug Debris" (extraneous `console.log` statements used for AI tracing) once a feature is stabilized and verified.
 
+## 11. THE COMMERCIAL INTEGRITY RULE
+- Product pages (`/solo-pack`, `/enterprise`) must maintain a "Premium" aesthetic (Gradients, Glassmorphism, subtle animations).
+- Pricing must be pulled from environment variables (`STRIPE_PRICE_ID_*`) to ensure staging/production parity.
+
+## 12. THE ASSET VAULT RULE (R2 Security)
+- All commercial assets (YAML/ZIP) must be stored in private R2 buckets.
+- Never expose direct R2 links. ALWAYS use the `/api/download` proxy with 10-minute presigned URL TTL (Time To Live).
+
 ---
 *Following this corridor ensures the Iceberg OS remains a high-performance, secure, and globally-ready framework.*

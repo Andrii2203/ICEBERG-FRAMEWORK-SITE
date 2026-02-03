@@ -8,18 +8,10 @@ import { Globe, Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/shared/utils/cn";
 import { ThemeToggle } from "./ThemeToggle";
 
+import { Dictionary } from "@/domain/i18n/types";
+
 interface NavbarProps {
-    dict: {
-        nav: {
-            philosophy: string;
-            methodology: string;
-            standards: string;
-            protocols: string;
-            enterprise: string;
-            audit: string;
-            language: string;
-        };
-    };
+    dict: Dictionary;
 }
 
 const locales = [
@@ -63,6 +55,7 @@ export const Navbar = ({ dict }: NavbarProps) => {
         { href: `/${currentLang}/standards`, label: dict.nav.standards },
         { href: `/${currentLang}/protocols`, label: dict.nav.protocols },
         { href: `/${currentLang}/enterprise`, label: dict.nav.enterprise },
+        { href: `/${currentLang}/solo-pack`, label: dict.nav.solo },
         { href: `/${currentLang}/audit`, label: dict.nav.audit },
     ];
 

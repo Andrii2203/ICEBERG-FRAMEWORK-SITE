@@ -37,11 +37,20 @@ The website is a multi-page Next.js application designed to explain the Iceberg 
   - src/app/protocols/page.tsx
 - **Short Description:** Overview of core protocols (Planning, Migration, AI Execution).
 
+### Solo Pack Page
+- **URL**: `/solo-pack`
+- **Files**: `src/app/[lang]/(marketing)/solo-pack/page.tsx`
+- **Short Description**: Starter pack landing for individuals. 600+ Senior-grade rules.
+
 ### Enterprise Page
-- **URL:** /enterprise
-- **Files:**  
-  - src/app/enterprise/page.tsx
-- **Short Description:** Information about proprietary commercial modules (AI Executor, Memory Engine, etc.).
+- **URL**: `/enterprise`
+- **Files**: `src/app/[lang]/(marketing)/enterprise/page.tsx`
+- **Short Description**: Dual-tier (Agency/Enterprise) portal with team-scaling pitch.
+
+### Success & Download Page
+- **URL**: `/success`
+- **Files**: `src/app/[lang]/(marketing)/success/page.tsx`
+- **Short Description**: Secure download portal using Stripe session validation and R2 signed URLs.
 
 ### Audit Page
 - **URL:** /audit
@@ -58,8 +67,10 @@ The website is a multi-page Next.js application designed to explain the Iceberg 
   /methodology
   /standards
   /protocols
+  /solo-pack
   /enterprise
   /audit
+  /success
 ```
 
 ---
