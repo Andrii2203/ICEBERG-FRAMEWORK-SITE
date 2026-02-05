@@ -35,6 +35,24 @@ export class StripeService {
         success_url: `${origin}${successPath}?session_id={CHECKOUT_SESSION_ID}&status=success`,
         cancel_url: `${origin}/`,
         metadata: metadata,
+        custom_fields: [
+          {
+            key: "marketing_opt_in",
+            label: {
+              type: "custom",
+              custom: "Receive news and product updates",
+            },
+            type: "dropdown",
+            optional: true,
+            dropdown: {
+              options: [
+                { value: "yes", label: "Yes" },
+                { value: "no", label: "No" },
+              ],
+            },
+          },
+        ],
+
       });
 
       if (!session.url) throw new Error("Failed to generate session URL");
