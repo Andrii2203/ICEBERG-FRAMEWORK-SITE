@@ -306,7 +306,7 @@ export function AuditClient({ featureDict, privacyPolicy }: AuditClientProps) {
                     <div className="w-full md:h-full md:w-[58%] shrink-0 relative flex flex-col p-8 md:p-6 min-h-[400px] md:min-h-0">
 
                         {/* STATE: INITIAL UPLOAD / DROPZONE */}
-                        {step === "success" && (
+                        {step === "upload" && (
                             <div className="h-full">
                                 <div
                                     key="upload-pane"
@@ -330,7 +330,7 @@ export function AuditClient({ featureDict, privacyPolicy }: AuditClientProps) {
                         }
 
                         {/* STATE: SUCCESS */}
-                        {step === "upload" && (
+                        {step === "success" && (
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
