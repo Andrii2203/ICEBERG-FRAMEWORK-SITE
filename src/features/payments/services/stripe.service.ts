@@ -35,9 +35,6 @@ export class StripeService {
         success_url: `${origin}${successPath}?session_id={CHECKOUT_SESSION_ID}&status=success`,
         cancel_url: `${origin}/`,
         metadata: metadata,
-        consent_collection: {
-          promotional_communications: 'auto',
-        } as Stripe.Checkout.SessionCreateParams.ConsentCollection,
       });
 
       if (!session.url) throw new Error("Failed to generate session URL");
