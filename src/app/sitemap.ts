@@ -14,13 +14,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }))
     );
 
-    return routes;
+    const rootUrl = {
+        url: baseUrl,
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 1,
+    };
+
+    return [rootUrl, ...routes];
 }
-
-
-
-
-
-
-
-
