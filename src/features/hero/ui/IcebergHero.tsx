@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { Github, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 interface IcebergHeroProps {
     dict: {
@@ -186,6 +187,9 @@ export const IcebergHero = ({ dict }: IcebergHeroProps) => {
                         © 2026 Iceberg Framework <br className="md:hidden" />
                         <span className="md:ml-2 text-accent-brand/50">v1.2.0 Stable (MIT)</span>
                     </p>
+                    <span>
+                        <a href="https://www.producthunt.com/products/iceberg-framework?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-iceberg-framework" target="_blank" rel="noopener noreferrer"><Image alt="Iceberg Framework - Rules for AI. | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1074157&amp;theme=neutral&amp;t=1770318559983"></Image></a>
+                    </span>
                 </div>
 
                 <div className="flex items-center gap-8 md:gap-6">
