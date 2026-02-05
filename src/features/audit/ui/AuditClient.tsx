@@ -74,10 +74,10 @@ export function AuditClient({ featureDict, privacyPolicy }: AuditClientProps) {
         }
     }, []);
 
-    const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
         accept: { "image/*": [] },
         multiple: false,
-        disabled: step !== "upload",
+        disabled: step !== "upload" && step !== "success",
         onDrop: (acceptedFiles) => {
             const f = acceptedFiles[0];
             const url = URL.createObjectURL(f);
@@ -306,7 +306,7 @@ export function AuditClient({ featureDict, privacyPolicy }: AuditClientProps) {
                     <div className="w-full md:h-full md:w-[58%] shrink-0 relative flex flex-col p-8 md:p-6 min-h-[400px] md:min-h-0">
 
                         {/* STATE: INITIAL UPLOAD / DROPZONE */}
-                        {step === "upload" && (
+                        {step === "success" && (
                             <div className="h-full">
                                 <div
                                     key="upload-pane"
@@ -330,7 +330,7 @@ export function AuditClient({ featureDict, privacyPolicy }: AuditClientProps) {
                         }
 
                         {/* STATE: SUCCESS */}
-                        {step === "success" && (
+                        {step === "upload" && (
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -350,7 +350,7 @@ export function AuditClient({ featureDict, privacyPolicy }: AuditClientProps) {
                                         {featureDict.success?.title || "Audit Package Ready!"}
                                     </h2>
                                     <p className="text-slate-600 dark:text-slate-400 text-lg max-w-md mx-auto">
-                                        {featureDict.success?.description || "Your professional UI/UX analysis has been generated and downloaded successfully."}
+                                        {featureDict.success?.description || "Your download should start automatically. Check your downloads folder."}
                                     </p>
                                 </div>
 
@@ -379,11 +379,13 @@ export function AuditClient({ featureDict, privacyPolicy }: AuditClientProps) {
                                 </div>
 
                                 <button
-                                    onClick={() => {
+                                    onClick={(e) => {
+                                        e.stopPropagation();
                                         setPreview(null);
                                         setDetection(null);
                                         setStep("upload");
                                         window.history.replaceState({}, "", window.location.pathname);
+                                        open();
                                     }}
                                     className="px-12 py-4 bg-slate-950 dark:bg-white text-white dark:text-black font-black rounded-2xl hover:scale-105 transition-all shadow-xl shadow-cyan-500/10"
                                 >
@@ -477,7 +479,7 @@ export function AuditClient({ featureDict, privacyPolicy }: AuditClientProps) {
                             </div>
                         )}
                     </div>
-                    <div className={`absolute inset-0 bg-cyan-500/5 transition-opacity duration-500 ${isDragActive ? 'opacity-100' : 'opacity-0'}`} />
+                    <div className={`absolute inset-0 bg-cyan-500/5 transition-opacity duration-500 pointer-events-none ${isDragActive ? 'opacity-100' : 'opacity-0'}`} />
                 </div>
             </div>
 

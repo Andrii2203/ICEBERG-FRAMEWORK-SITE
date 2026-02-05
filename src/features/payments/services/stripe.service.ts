@@ -20,7 +20,7 @@ export class StripeService {
   /**
    * Creates a Checkout Session for any Iceberg product.
    */
-  async createCheckoutSession(origin: string, priceId: string, metadata: Record<string, string>): Promise<string> {
+  async createCheckoutSession(origin: string, priceId: string, metadata: Record<string, string>, successPath: string = "/success"): Promise<string> {
     console.log("[StripeService] Creating checkout session for price:", priceId, "metadata:", metadata);
     try {
       const session = await this.stripe.checkout.sessions.create({
@@ -32,7 +32,7 @@ export class StripeService {
           },
         ],
         mode: "payment",
-        success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${origin}${successPath}?session_id={CHECKOUT_SESSION_ID}&status=success`,
         cancel_url: `${origin}/`,
         metadata: metadata,
       });
@@ -48,7 +48,8 @@ export class StripeService {
    * @deprecated Use createCheckoutSession instead
    */
   async createAuditSession(origin: string): Promise<string> {
-    return this.createCheckoutSession(origin, config.stripe.priceId, { type: "audit_full" });
+    // Redirect to /audit after payment success
+    return this.createCheckoutSession(origin, config.stripe.priceId, { type: "audit_full" }, "/audit");
   }
 
   /**
