@@ -8,7 +8,7 @@
 1. **Hero**: Focus on "Force Multiplier" for teams.
 2. **Why This Matters (PH Pitch)**: Highlighting the "Technical Trash" problem vs. Iceberg Determinism.
 3. **Tier Selection**:
-    - **Agency ($999)**: Unlimited teams, Priority updates, Commercial rights.
+    - **Agency (2999€)**: Unlimited teams, Priority updates, Commercial rights.
     - **Enterprise (Custom)**: Custom rule distillation, Self-hosted Matrix.
 4. **What's Inside the Matrix**: Broad overview of Core Logic, Visual Integrity, Privacy Shield, and Operational Memory.
 

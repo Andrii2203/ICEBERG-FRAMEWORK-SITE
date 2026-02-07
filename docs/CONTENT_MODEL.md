@@ -38,7 +38,7 @@ Content structure definition for the Iceberg Framework Landing Website.
 - **Problem**: Technical Trash (Standard AI).
 - **Solution**: Deterministic Force Multiplier.
 - **Tiers**:
-  - **Agency**: Fixed price ($999), 50+ devs, Commercial usage.
+  - **Agency**: Fixed price (2999€), 50+ devs, Commercial usage.
   - **Enterprise**: Custom price, Rule distillation, Self-hosted.
 
 ### Audit Page
