@@ -22,62 +22,62 @@
         "language": "Sprache"
     },
     "philosophy": {
-        "title": "Kernphilosophie",
-        "subtitle": "Determinismus über Kreativität",
-        "intro": "Das Iceberg Framework basiert auf einer Überzeugung: KI-Entwicklung muss deterministisch, strukturiert und vorhersehbar sein.",
+        "title": "Kernphilosophie des Determinismus",
+        "subtitle": "Engineering vorhersagbarer Ergebnisse in einer KI-gesteuerten Welt",
+        "intro": "Das Iceberg Framework basiert auf einer zentralen Überzeugung: Die KI-Entwicklung muss deterministisch, strukturiert und vorhersagbar sein. In der aktuellen Landschaft des 'generativen Chaos', in der KI-Modelle standardmäßig oft nicht-deterministische 'technische Schulden' produzieren, bietet Iceberg den starren operativen Korridor, der für Software der Enterprise-Klasse erforderlich ist. Wir entfernen uns vom 'Black Box'-Ansatz des Prompting hin zu einem System expliziter Governance. Durch die Definition harter Standards – der tiefliegenden Masse des Eisbergs – stellen wir sicher, dass die sichtbare Spitze (Ihre Anwendung) über jeden Ausführungszyklus hinweg stabil, skalierbar und auditierbar bleibt. Unsere Philosophie schreibt vor, dass jedes Byte des generierten Codes eine rückverfolgbare Herkunft der Absicht haben muss, die aus einer verifizierten Architekturmatrix stammt und nicht aus einer probabilistischen Vermutung.",
         "principles": {
             "determinism": {
-                "title": "1. Determinismus",
-                "text": "Jede Aktion und Regel erzeugt vorhersehbare, reproduzierbare Ergebnisse."
+                "title": "1. Determinismus über Wahrscheinlichkeit",
+                "text": "Jede Aktion, jede Regel und jedes Protokoll in Iceberg liefert vorhersagbare, reproduzierbare Ergebnisse. Wir eliminieren die probabilistische Varianz von LLMs, indem wir jede Interaktion in eine strikte logische Matrix einbinden. Dies stellt sicher, dass dieselbe Eingabe immer zum selben architektonischen Ergebnis führt, unabhängig von der Modellversion oder dem verwendeten Anbieter. Durch die Minimierung der 'Temperatur' des Engineering-Prozesses etablieren wir eine Umgebung ohne Drift, in der Software nach Plan wächst und nicht nach den kreativen Launen des Modells."
             },
             "structure": {
                 "title": "2. Struktur über Kreativität",
-                "text": "Effizienz kommt von strengen Protokollen, nicht von kreativer Improvisation."
+                "text": "Technische Effizienz entsteht durch die strikte Einhaltung bewährter Protokolle, nicht durch kreative Improvisation. In einer von Iceberg gesteuerten Umgebung ist die KI kein 'Schöpfer', sondern ein 'Ausführer'. Sie operiert innerhalb einer vordefinierten 5-Schicht-Architektur unter Verwendung kanonischer Pfade und deterministischer Benennungskonventionen, die technischen Drift und architektonische Erosion verhindern. Kreativität ist der übergeordneten menschlichen Planungsphase vorbehalten, während die Ausführung der KI binär ist: Entweder sie entspricht dem Standard, oder sie stoppt an der Wasserlinie."
             },
             "explicitness": {
-                "title": "3. Explizitheit",
-                "text": "Alles muss klar definiert sein. Null Annahmen. Null Mehrdeutigkeit."
+                "title": "3. Explizitheit über Mehrdeutigkeit",
+                "text": "Alles muss klar definiert sein. Null Annahmen. Null Mehrdeutigkeit. Wenn eine Regel nicht in der YAML-Matrix dokumentiert ist, existiert sie für die KI nicht. Diese radikale Transparenz ermöglicht sofortige Audits und stellt sicher, dass der Systemzustand durch persistente Speicherprotokolle und deterministische Artefakte immer rückverfolgbar ist. Diese explizite Natur verwandelt die typische 'Black Box' der KI-Entwicklung in eine 'Glass Box', in der jede Entscheidung protokolliert, verifiziert und ohne Sinnverlust in den breiteren architektonischen Kontext integriert wird."
             }
         }
     },
     "methodology": {
         "title": "Die Iceberg-Methodik",
-        "subtitle": "Eine dreischichtige Architektur",
+        "subtitle": "Die dreischichtige Architektur der KI-Kontrolle",
         "layers": {
             "layer1": {
-                "name": "Schicht 1: Iceberg Method",
+                "name": "Schicht 1: Iceberg-Methode (Die Strategie)",
                 "type": "Proprietäres Protokoll",
-                "description": "Die High-Level-Logik und Strategie für KI-Governance."
+                "description": "Die übergeordnete Logik und Strategie für die KI-Governance. Diese Schicht definiert das mentale Modell für die Mensch-KI-Zusammenarbeit, wobei der Fokus auf dem STOP-CHECK-Mechanismus und der Trennung von Verantwortlichkeiten zwischen Planung und Ausführung liegt. Sie ist das 'Warum' hinter der Starrheit des Frameworks. Durch die Durchsetzung eines 'Documentation First'-Ansatzes stellen wir sicher, dass jeder Codeänderung ein technischer Plan vorausgeht, der als einzige Quelle der Wahrheit für die KI-Ausführungsphase dient. Dies verhindert den Logik-Abfluss, der bei der standardmäßigen chatbasierten Entwicklung üblich ist, wo Modelle oft das übergeordnete Ziel aus den Augen verlieren. Unsere Strategie etabliert eine strikte kognitive Grenze, die sowohl Mensch als auch KI in einem deterministischen Engineering-Korridor hält und 100 % Transparenz im Entscheidungsprozess gewährt."
             },
             "layer2": {
-                "name": "Schicht 2: Iceberg Framework",
+                "name": "Schicht 2: Iceberg Framework (Die Standards)",
                 "type": "Open Source (MIT)",
-                "description": "Strenge technische Standards für Code, SEO und Architektur."
+                "description": "Die 'Wasserlinie' des Systems. Diese Schicht bietet strikte technische Standards für Codestruktur, SEO, Performance und Barrierefreiheit. Sie stellt sicher, dass jedes mit Iceberg erstellte Projekt mit automatisierten Verifizierungs-Engines kompatibel ist und die Qualitätsbenchmarks der Enterprise-Klasse bereits out-of-the-box erfüllt. Dies umfasst die kanonische Dateisystemstruktur, Benennungskonventionen für Kernmodule und die 100-prozentige Einhaltung technischer SEO-Standards. Dadurch wird sichergestellt, dass jedes erstellte Asset nativ für Suchmaschinen und Barrierefreiheits-Crawler optimiert ist. Schicht 2 ist nicht nur eine Sammlung von Vorlagen, sondern ein lebendiges Regelwerk, das Ihre Codebasis dynamisch an sich entwickelnde Industriestandards anpasst und die strukturelle Integrität auch bei schneller Systemexpansion bewahrt."
             },
             "layer3": {
-                "name": "Schicht 3: Enterprise Engines",
+                "name": "Schicht 3: Enterprise Engines (Die Automatisierung)",
                 "type": "Kommerzielle Module",
-                "description": "Automatisierte Tools für Ausführung, Speicher und Validierung."
+                "description": "Der technische Kern, der die Automatisierung antreibt. Diese proprietären Engines – einschließlich der Execution Engine, Memory Engine und Validation Engine – übernehmen die schwere Arbeit der Codegenerierung, Statuspersistenz und Qualitätskontrolle. Sie verwandeln Standards mit null menschlichem Aufwand in Realität. Durch die Integration von Deep-Learning-basierten Validierungspuffern können diese Engines nicht-deterministische Abweichungen in Echtzeit erkennen und rückgängig machen. So wird sichergestellt, dass der finale Build ein perfektes 1:1-Abbild des ursprünglichen architektonischen Blueprints ist und die strukturelle Integrität über die Zeit zu 100 % erhalten bleibt. Dies eliminiert kostspielige manuelle Refactorings und ermöglicht KI-Agenten, auf Senior-Level zu operieren, ohne das Risiko eines architektonischen Verfalls der Codestruktur."
             }
         }
     },
     "standards": {
         "title": "Technische Standards",
         "subtitle": "Die Regeln des Determinismus",
-        "description": "Das Iceberg Framework bietet eine Reihe strenger Standards, die sicherstellen, dass jedes Projekt hochwertig, zugänglich und KI-optimiert ist.",
+        "description": "Das Iceberg Framework bietet eine Reihe strikter Standards, die sicherstellen, dass jedes Projekt hochwertig, barrierefrei und KI-optimiert ist. Diese Standards sind keine Vorschläge; sie sind die harten Randbedingungen, die den operativen Rahmen des Systems definieren. Durch die strikte Einhaltung dieser Standards eliminieren wir 90 % der üblichen Fehler im Zusammenhang mit der Mensch-KI-Zusammenarbeit und stellen sicher, dass das Endprodukt die höchstmöglichen Benchmarks für professionelles Web-Engineering und ein erstklassiges User-Experience-Design erfüllt.",
         "list": {
-            "architecture": "Architekturstandard",
-            "quality": "Web-Qualitätsstandard",
-            "seo": "Technischer SEO-Standard",
-            "a11y": "Barrierefreiheitsstandard",
+            "architecture": "Architektur-Standard",
+            "quality": "Website-Qualitätsstandard",
+            "seo": "SEO-Technik-Standard",
+            "a11y": "Barrierefreiheits-Standard",
             "pwa": "PWA-Qualitätsstandard",
             "api": "API-Interaktionsstandard"
         }
     },
     "protocols": {
-        "title": "Operationale Protokolle",
+        "title": "Operative Protokolle",
         "subtitle": "Schritt-für-Schritt-Ausführung",
-        "description": "Protokolle definieren, wie Aufgaben im Iceberg-Ökosystem ausgeführt werden. Keine Improvisation, nur Ausführung.",
+        "description": "Protokolle definieren, wie Aufgaben innerhalb des Iceberg-Ökosystems ausgeführt werden. Keine Improvisation, nur Ausführung. Jedes Protokoll ist eine deterministische Abfolge von Schritten, die eine konsistente Qualität über verschiedene Teams und Projekte hinweg gewährleistet. Durch die Einhaltung dieser Protokolle stellen wir sicher, dass der Entwicklungsprozess ebenso vorhersagbar ist wie der Code, den er erzeugt. Dies ermöglicht eine schnelle Skalierung und komplexe Systemmigrationen bei null Verlust an architektonischem Kontext oder technischer Qualität. Unsere Protokolle fungieren als Nervensystem des Frameworks und koordinieren die Bemühungen sowohl der menschlichen Planer als auch der KI-Ausführer.",
         "list": {
             "planning": "Deterministisches Planungsprotokoll",
             "migration": "Systemmigrationsprotokoll",
@@ -86,175 +86,181 @@
         }
     },
     "enterprise": {
-        "title": "Agency & Enterprise",
-        "subtitle": "Proprietäre Ausführungs-Engines",
-        "description": "Gehen Sie mit Iceberg weiter dank automatisierter Governance und persistentem Speicher.",
+        "title": "Agency & Enterprise Lösungen",
+        "subtitle": "Proprietäre Execution Engines für den Unternehmenseinsatz",
+        "description": "Iceberg ist nicht nur ein Regelwerk; es ist eine automatisierte Governance-Schicht. Für Organisationen, die mehrere Teams oder komplexe Migrationen von Altsystemen verwalten, bieten wir die Werkzeuge, um Standards bei jedem Commit durchzusetzen. So wird sichergestellt, dass eine KI-gesteuerte Entwicklung skaliert, ohne die technische Entropie oder architektonische Fragmentierung zu erhöhen. Durch die Integration unseres Enterprise Cores in Ihre CI/CD-Pipelines können Sie den gesamten architektonischen Review-Prozess automatisieren und das traditionelle, langsame menschliche Audit in einen sofortigen, deterministischen Validierungszyklus umwandeln. Dies garantiert, dass Ihre Codebasis bei ihrer Erweiterung sauber, sicher und performant bleibt, und erlaubt Ihren Teams, sich auf Innovationen zu konzentrieren, anstatt von KI-generierten technischen Schulden ausgebremst zu werden.",
         "pitch": {
-            "title": "Warum das wichtig ist",
-            "problem": "Standard-KI erzeugt technischen Müll (Legacy).",
-            "solution": "Iceberg OS erzwingt Determinismus."
+            "title": "Das Problem mit dem technischen Müll",
+            "problem": "Standard-KI-Entwicklung erzeugt 'technischen Müll' – unstrukturierten, unverifizierten Code, der sich vom ersten Tag an wie Altschulden ansammelt. Ohne Korrektiv werden KI-gestützte Projekte schließlich unwartbar, da die Kontextfenster der Modelle die ursprüngliche Architektur aus den Augen verlieren. Dies führt zu einer 'Black Box'-Codebasis, bei der kein Mensch mehr die Logik erklären kann und die KI ständig Halluzinationen zur Behebung ihrer eigenen vorherigen Fehler produziert. Dies resultiert in einer Feedbackschleife aus technischem Zerfall, steigendem operativen Risiko für das Unternehmen und einer massiven Erhöhung der Total Cost of Ownership (TCO), was letztlich die Innovation bremst und die Markteinführungszeit (Time-to-Market) verlängert.",
+            "solution": "Iceberg OS erzwingt eine konstante 'architektonische Wahrheit' durch seine deterministische Matrix und seinen persistenten Speicher. Es behandelt die Codebasis als lebenden Organismus, der sich an einen strengen genetischen Code halten muss. Unsere Enterprise Engines automatisieren diese Durchsetzung und fungieren als Echtzeit-Validator für jedes KI-generierte Artefakt. Dies stellt sicher, dass selbst wenn Ihr System auf Millionen von Codezeilen anwächst, die zugrunde liegende Logik so sauber und auditierbar bleibt wie beim ersten Commit. Wir bieten die Architektur der Gewissheit in einem Zeitalter probabilistischer Ungewissheit und verwandeln KI von einer Belastung in ein Hochleistungs-Asset der Enterprise-Klasse, das nahtlos zwischen Teams übergeben und skaliert werden kann."
         },
         "modules": {
-            "executor": "KI-Ausführungs-Engine",
-            "memory": "Persistente Speicher-Engine",
-            "validation": "Validierungs- & QA-Engine"
+            "executor": "AI Execution Engine: Deterministische Codegenerierung basierend auf genehmigten Ausführungsplänen.",
+            "memory": "Persistent Memory Engine: Sequenzielle Protokollierung, die Kontextverlust über Sitzungen hinweg verhindert.",
+            "validation": "Validation & QA Engine: Automatisierte Verifizierung gegen die Iceberg-Qualitätsstandards."
         },
         "tiers": {
             "agency": {
-                "name": "Agency License",
+                "name": "Agency-Lizenz",
                 "price": "2999€",
                 "features": [
-                    "Unbegrenzte Teams",
-                    "Prioritäre Updates",
-                    "Kommerzielle Rechte"
+                    "Vollständige Rechte für Kundenprojekte",
+                    "Unbegrenzte Entwicklerplätze",
+                    "Deterministische Matrix-Updates",
+                    "Bevorzugte Sicherheitspatches",
+                    "PWA & SEO Automatisierungssuite",
+                    "Dedizierte Onboarding-Dokumentation"
                 ]
             },
             "enterprise": {
-                "name": "Enterprise",
-                "price": "Custom",
+                "name": "Enterprise Core",
+                "price": "Auf Anfrage",
                 "features": [
-                    "Regeldestillation",
-                    "Self-Hosted Matrix",
-                    "Direkter Support"
+                    "Proprietäre Regeldestillation",
+                    "On-Premise Matrix-Hosting",
+                    "Custom Protocol Engineering",
+                    "24/7 SLA & Architektur-Support",
+                    "Team-Produktivitätsanalyse",
+                    "Maßgeschneiderte Integrationsadapter"
                 ]
             }
         },
-        "cta_agency": "Agency-Lizenz kaufen",
-        "cta_contact": "Vertrieb kontaktieren"
+        "cta_agency": "Agency-Lizenz erwerben",
+        "cta_contact": "Beratung mit einem Architekten"
     },
     "audit": {
         "title": "Iceberg Audit",
         "subtitle": "Deterministische UI/UX-Analyse",
-        "description": "Laden Sie einen Screenshot hoch und erhalten Sie ein vollständiges Audit.",
+        "description": "Laden Sie einen Screenshot hoch und erhalten Sie ein vollständiges Audit Ihres Interfaces: strukturiert, professionell und KI-gestützt. Unsere Audit-Engine nutzt den Iceberg-Standard für visuelle Hierarchie und die Anti-Legacy-Coding-Regeln, um Ihr Interface anhand von 48 kritischen Benchmarks zu bewerten, die Barrierefreiheit, visuelle Balance und technische Optimierung abdecken. Erhalten Sie einen Bericht auf Profi-Niveau, der nicht nur Probleme auflistet, sondern eine deterministische Roadmap zur Exzellenz bietet. So stellen wir sicher, dass Ihr UI/UX die höchsten Industriestandards für moderne Premium-Webanwendungen erfüllt.",
         "form": {
-            "uploadLabel": "Screenshot hier ablegen",
+            "uploadLabel": "Screenshot hierher ziehen oder zum Hochladen klicken",
             "auditTypeLabel": "Audit-Typ",
-            "freeAudit": "Kostenloses Audit",
-            "paidAudit": "Vollständiges Audit",
+            "freeAudit": "Gratis-Audit (Chaos-Erkennung)",
+            "paidAudit": "Vollständiges Audit (6-Datei-Paket)",
             "submitButton": "Audit starten",
-            "processing": "Verarbeitung..."
+            "processing": "Audit wird verarbeitet..."
         },
         "status": {
-            "detecting": "UI-Struktur erkennen...",
-            "analyzing": "Komponenten und UX analysieren...",
-            "zipping": "Lieferpaket generieren...",
+            "detecting": "UI-Struktur wird erkannt...",
+            "analyzing": "Komponenten und UX werden analysiert...",
+            "zipping": "Lieferpaket wird generiert...",
             "success": "Audit abgeschlossen!",
             "error": "Audit fehlgeschlagen."
         },
         "success": {
             "title": "Audit-Paket bereit!",
             "description": "Ihre professionelle UI/UX-Analyse wurde generiert und erfolgreich heruntergeladen.",
-            "whatsInside": "Was ist in Ihrem Paket?",
-            "filesCount": "6 umfassende Analysedateien in einem ZIP.",
+            "whatsInside": "Was befindet sich in Ihrem Paket?",
+            "filesCount": "6 umfassende Analysedateien in einer ZIP-Datei.",
             "startGuide": "Beginnen Sie mit SUMMARY.md für einen allgemeinen Überblick.",
             "nextSteps": "Nächste Schritte",
             "unzip": "1. Entpacken Sie die heruntergeladene Datei.",
             "readReports": "2. Lesen Sie die detaillierten Markdown-Berichte.",
             "implement": "3. Implementieren Sie identifizierte Verbesserungen.",
-            "anotherAudit": "Weiteres UI analysieren"
+            "anotherAudit": "Anderes UI analysieren"
         },
         "results": {
-            "downloadZip": "ZIP herunterladen",
-            "freeResultTitle": "Bericht",
+            "downloadZip": "Audit-Antwort herunterladen (ZIP)",
+            "freeResultTitle": "Audit-Analysebericht",
             "backToForm": "Neues Audit"
         },
         "errors": {
-            "nonUi": "Kein UI-Screenshot",
-            "paymentRequired": "Zahlung erforderlich",
-            "generic": "Fehler"
+            "nonUi": "Das hochgeladene Bild ist kein gültiger UI-Screenshot.",
+            "paymentRequired": "Für ein vollständiges Audit ist eine Zahlung erforderlich.",
+            "generic": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
         }
     },
     "solo": {
-        "title": "Iceberg OS Starter Pack",
-        "description": "Das Senior-Gehirn Ihrer KI in einer YAML-Datei.",
+        "title": "Iceberg OS Solo Pack (Starter-Lizenz)",
+        "description": "Das grundlegende YAML-Bundle für die KI-Orchestrierung auf Senior-Niveau. Dieses Paket enthält den zentralen 'genetischen Code' des Iceberg Frameworks, kondensiert in einer hochdichten logischen Matrix, die jedes Standard-LLM in einen deterministischen Engineering-Agenten verwandelt. Es wurde für Einzelentwickler konzipiert, die den typischen Trial-and-Error-Zyklus der KI umgehen und sofort mit der Erstellung von Senior-Grade-Code über jeden Tech-Stack hinweg beginnen möchten. Durch die Injektion unseres Regelwerks etablieren Sie eine dauerhafte 'Quality Baseline', die sicherstellt, dass Ihr KI-Assistent jederzeit innerhalb des professionellen operativen Korridors bleibt. Dies ist Ihr digitaler Schutzschild gegen architektonische Entropie und unkontrollierte KI-Improvisation.",
         "benefits": {
-            "title": "Was ist drin?",
-            "rules": "600+ destillierte Senior-Regeln",
-            "matrix": "Logische Kontextmatrix",
-            "corridor": "Operative Sicherheitsstandards",
-            "speed": "5x Entwicklungsgeschwindigkeit"
+            "title": "Technische Wertversprechen",
+            "rules": "Über 600 von Experten destillierte Senior-Regeln: Eine vollständige Hierarchie von Randbedingungen, die Architektur, sauberen Code, Sicherheit und Performance abdecken. Diese Regeln basieren auf realen Fehlern und Erfolgen in Unternehmen und bieten Schutz vor den üblichen Fallen der KI-gesteuerten Entwicklung, wie etwa Verstößen gegen Typstandards oder das Umgehen von Sicherheitsprotokollen. Es ist Ihre ultimative Versicherung gegen technischen Schuldenaufbau.",
+            "matrix": "Logische Kontextmatrix: Eine strukturierte Wissensbasis, die Kontext-Drift verhindert und sicherstellt, dass die KI über mehrere Sitzungen hinweg ein konsistentes mentales Modell beibehält. Diese Matrix fungiert als 'submergierte Masse' für Ihr spezifisches Projekt und verankert die probabilistische Engine der KI in einem Meer deterministischer architektonischer Fakten und logischer Zusammenhänge, die in Standard-Chats verloren gehen.",
+            "corridor": "Operative Sicherheitsstandards: Fest codierte Verbote gegen häufige KI-Fehler, einschließlich Halluzinationen, unbefugte Improvisationen und die Anhäufung technischer Schulden. Unser Regelwerk stellt sicher, dass die KI niemals nach vorne 'rät', sondern immer das kanonische Protokoll anfordert, was für die langfristige Wartbarkeit und Auditierbarkeit von Systemen von entscheidender Bedeutung ist.",
+            "speed": "5x schnellere Entwicklung: Eliminieren Sie 80 % der manuellen Code-Reviews, indem Sie die KI zwingen, ihren eigenen Output gegen Senior-Standards zu validieren, bevor er Ihr Terminal erreicht. Dies verlagert die Last der Qualitätskontrolle von Ihren Schultern auf die Execution Engine der KI, sodass Sie sich auf das übergeordnete architektonische Design und die Geschäftslogik konzentrieren können, statt auf Syntaxkorrekturen."
         },
         "setup": {
-            "title": "5-Minuten-Schnellstart",
-            "step1": "Laden Sie Ihr YAML-Paket herunter",
-            "step2": "In den KI-System-Prompt einfügen",
-            "step3": "Führen Sie Ihren ersten /audit-Befehl aus",
-            "step4": "Validieren und Bauen"
+            "title": "Taktische 5-Minuten-Bereitstellung",
+            "step1": "Laden Sie Ihr deterministisches YAML-Bundle über das sichere Portal herunter.",
+            "step2": "Injizieren Sie das Regelwerk in Ihren AI System Prompt (Cursor, Claude oder ChatGPT).",
+            "step3": "Führen Sie Ihren ersten /audit-Befehl auf Ihrer bestehenden Codebasis oder Ihrem Design aus.",
+            "step4": "Beobachten Sie die deterministische Verschiebung der Codequalität und folgen Sie den Verifizierungsprotokollen."
         },
-        "cta": "Solo Pack holen — $129"
+        "cta": "Solo Pack holen — 129 $ (Sofortiger Download)"
     },
     "legal": {
         "faq": {
             "title": "FAQ (Iceberg OS)",
-            "subtitle": "Common questions about deterministic AI framework",
+            "subtitle": "Häufig gestellte Fragen zum deterministischen KI-Framework",
             "items": [
                 {
-                    "q": "What is Iceberg OS?",
-                    "a": "Iceberg OS is a digital framework for building deterministic AI systems. Products are delivered as downloadable files after purchase."
+                    "q": "Was ist Iceberg OS?",
+                    "a": "Iceberg OS ist ein digitales Framework zur Erstellung deterministischer KI-Systeme. Produkte werden nach dem Kauf als herunterladbare Dateien geliefert."
                 },
                 {
-                    "q": "What do I receive after buying?",
-                    "a": "You receive immediate access to downloadable assets (YAML files, documentation, or ZIP archives), depending on the product tier."
+                    "q": "Was erhalte ich nach dem Kauf?",
+                    "a": "Sie erhalten sofortigen Zugriff auf herunterladbare Assets (YAML-Dateien, Dokumentation oder ZIP-Archive), je nach Produktstufe."
                 },
                 {
-                    "q": "How do I download my files?",
-                    "a": "After completing the checkout, you are redirected to a secure download page. Access is verified through your Stripe session."
+                    "q": "Wie lade ich meine Dateien herunter?",
+                    "a": "Nach Abschluss des Bezahlvorgangs werden Sie auf eine sichere Download-Seite weitergeleitet. Der Zugriff wird über Ihre Stripe-Sitzung verifiziert."
                 },
                 {
-                    "q": "Compatibility & Models",
-                    "a": "Iceberg rules are optimized for Claude 3.5 Sonnet, GPT-4o, and Gemini 1.5 Pro. They work seamlessly in Cursor and VS Code AI environments."
+                    "q": "Kompatibilität & Modelle",
+                    "a": "Iceberg-Regeln sind für Claude 3.5 Sonnet, GPT-4o und Gemini 1.5 Pro optimiert. Sie funktionieren nahtlos in Cursor- und VS Code AI-Umgebungen."
                 },
                 {
-                    "q": "Do you offer refunds?",
-                    "a": "Digital products are non‑refundable once downloaded. If you experience issues accessing your files, contact support."
+                    "q": "Gibt es Rückerstattungen?",
+                    "a": "Digitale Produkte sind nach dem Herunterladen nicht erstattungsfähig. Wenn Sie Probleme beim Zugriff auf Ihre Dateien haben, kontaktieren Sie den Support."
                 },
                 {
-                    "q": "Commercial Usage",
-                    "a": "Yes. Usage rights depend on the license tier (Solo, Agency, Enterprise). Solo is for individuals; Agency/Enterprise allows team redistribution."
+                    "q": "Kommerzielle Nutzung",
+                    "a": "Ja. Die Nutzungsrechte hängen von der Lizenzstufe ab (Solo, Agency, Enterprise). Solo ist für Einzelpersonen; Agency/Enterprise erlaubt die Weitergabe im Team."
                 },
                 {
-                    "q": "Contact Support",
-                    "a": "You can reach us via email at: https://www.linkedin.com/in/andrii-shavel-976485187/"
+                    "q": "Support kontaktieren",
+                    "a": "Sie erreichen uns über LinkedIn unter: https://www.linkedin.com/in/andrii-shavel-976485187/"
                 }
             ]
         },
         "tos": {
-            "title": "Terms of Service",
-            "lastUpdated": "February 3, 2026",
+            "title": "Nutzungsbedingungen",
+            "lastUpdated": "3. Februar 2026",
             "sections": [
                 {
-                    "title": "1. Overview",
-                    "content": "These Terms govern your access to Iceberg OS digital products. By purchasing, you agree to these legal conditions."
+                    "title": "1. Überblick",
+                    "content": "Diese Bedingungen regeln Ihren Zugriff auf digitale Iceberg OS Produkte. Mit dem Kauf erklären Sie sich mit diesen rechtlichen Bedingungen einverstanden."
                 },
                 {
-                    "title": "2. Delivery",
-                    "content": "All products are digital. No physical items are shipped. Access is provided immediately after payment."
+                    "title": "2. Lieferung",
+                    "content": "Alle Produkte sind digital. Es werden keine physischen Artikel versandt. Der Zugriff erfolgt unmittelbar nach der Zahlung."
                 },
                 {
-                    "title": "3. License",
-                    "content": "You receive a non‑exclusive license based on your tier. Redistribution or resale is strictly prohibited."
+                    "title": "3. Lizenz",
+                    "content": "Sie erhalten eine nicht-exklusive Lizenz basierend auf Ihrer Stufe. Die Weitergabe oder der Wiederverkauf ist streng untersagt."
                 },
                 {
-                    "title": "4. Refunds",
-                    "content": "Due to the nature of digital goods, all sales are final once the product has been downloaded."
+                    "title": "4. Rückerstattungen",
+                    "content": "Aufgrund der Beschaffenheit digitaler Güter sind alle Verkäufe endgültig, sobald das Produkt heruntergeladen wurde."
                 }
             ]
         },
         "privacy": {
-            "title": "Privacy Policy",
-            "lastUpdated": "February 3, 2026",
+            "title": "Datenschutzerklärung",
+            "lastUpdated": "3. Februar 2026",
             "sections": [
                 {
-                    "title": "1. Data Collection",
-                    "content": "We collect email via Stripe and download session verification data. We do not store payment card information."
+                    "title": "1. Datenerfassung",
+                    "content": "Wir erfassen E-Mails über Stripe und Daten zur Verifizierung der Download-Sitzung. Wir speichern keine Zahlungskarteninformationen."
                 },
                 {
-                    "title": "2. Security",
-                    "content": "Uploaded screenshots for audits are processed in-memory and never stored. Downloads use time-limited signed links."
+                    "title": "2. Sicherheit",
+                    "content": "Hochgeladene Screenshots für Audits werden im Arbeitsspeicher verarbeitet und niemals gespeichert. Downloads verwenden zeitlich begrenzte signierte Links."
                 },
                 {
-                    "title": "3. Rights",
-                    "content": "You may request deletion of customer data by contacting https://www.linkedin.com/in/andrii-shavel-976485187/."
+                    "title": "3. Rechte",
+                    "content": "Sie können die Löschung von Kundendaten beantragen, indem Sie uns unter https://www.linkedin.com/in/andrii-shavel-976485187/ kontaktieren."
                 }
             ]
         }

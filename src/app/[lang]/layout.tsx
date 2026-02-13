@@ -22,7 +22,7 @@ export function generateViewport() {
     };
 }
 
-import { getJsonLd } from "@/shared/utils/seo";
+import { generateSchema } from "@/shared/utils/seo";
 
 export default async function LangLayout({
     children,
@@ -33,19 +33,21 @@ export default async function LangLayout({
 }) {
     const { lang } = await params;
     const dict = await getDictionary(lang);
-    const jsonLd = getJsonLd(lang);
+
+    const organizationSchema = generateSchema.organization(lang);
+    const websiteSchema = generateSchema.website(lang);
 
     return (
-        <>
-            <div className={inter.className}>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                />
-                <Navbar dict={dict} />
-                {children}
-                <Footer dict={dict} />
-            </div>
-        </>
+        <div className={inter.className}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify([organizationSchema, websiteSchema])
+                }}
+            />
+            <Navbar dict={dict} />
+            {children}
+            <Footer dict={dict} />
+        </div>
     );
 }

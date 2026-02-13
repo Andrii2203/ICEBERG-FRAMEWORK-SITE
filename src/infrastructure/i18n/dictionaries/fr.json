@@ -22,49 +22,49 @@
         "language": "Langue"
     },
     "philosophy": {
-        "title": "Philosophie de base",
-        "subtitle": "Le déterminisme plutôt que la créativité",
-        "intro": "L'Iceberg Framework repose sur une conviction fondamentale : le développement de l'IA doit être déterministe, structuré et prévisible.",
+        "title": "Cœur de la philosophie du déterminisme",
+        "subtitle": "Ingénierie des résultats prévisibles dans un monde piloté par l'IA",
+        "intro": "L'Iceberg Framework repose sur une conviction centrale : le développement de l'IA doit être déterministe, structuré et prévisible. Dans le paysage actuel du 'chaos génératif', où les modèles d'IA produisent souvent par défaut une 'dette technique' non déterministe, Iceberg fournit le couloir opérationnel rigide requis pour les logiciels de classe entreprise. Nous nous éloignons de l'approche 'boîte noire' du prompt engineering pour passer à un système de gouvernance explicite. En définissant des standards stricts — la masse immergée de l'iceberg — nous garantissons que la partie visible (votre application) reste stable, évolutive et auditable à chaque cycle d'exécution. Notre philosophie dicte que chaque octet de code généré doit avoir une origine d'intention traçable, issue d'une matrice architecturale vérifiée plutôt que d'une supposition probabiliste.",
         "principles": {
             "determinism": {
-                "title": "1. Déterminisme",
-                "text": "Chaque action et chaque règle produisent des résultats prévisibles et reproductibles."
+                "title": "1. Déterminisme sur probabilité",
+                "text": "Chaque action, règle et protocole dans Iceberg produit des résultats prévisibles et reproductibles. Nous éliminons la variance probabiliste des LLM en enveloppant chaque interaction de AI dans une matrice logique stricte. Cela garantit que les mêmes entrées mènent toujours au même résultat architectural, quel que soit la version du modèle ou le fournisseur utilisé. En minimisant la 'température' du processus d'ingénierie, nous établissons un environnement sans dérive où le logiciel croît selon le plan, et non selon les caprices créatifs du modèle."
             },
             "structure": {
-                "title": "2. Structure plutôt que créativité",
-                "text": "L'efficacité provient de protocoles stricts, et non d'une improvisation créative."
+                "title": "2. Structure sur créativité",
+                "text": "L'efficacité technique découle du respect strict de protocoles éprouvés, et non de l'improvisation créative. Dans un environnement géré par Iceberg, l'IA n'est pas un 'créateur', mais un 'exécuteur'. Elle opère dans une architecture à 5 couches prédéfinie, utilisant des chemins canoniques et des conventions de nommage déterministes qui empêchent la dérive technique et l'érosion architecturale. La créativité est réservée à la phase de planification humaine de haut niveau, tandis que l'exécution par l'IA est binaire : soit elle est conforme au standard, soit elle s'arrête à la ligne de flottaison."
             },
             "explicitness": {
-                "title": "3. Explicitation",
-                "text": "Tout doit être clairement défini. Zéro hypothèse. Zéro ambiguïté."
+                "title": "3. Explicitation sur ambiguïté",
+                "text": "Tout doit être clairement défini. Zéro supposition. Zéro ambiguïté. Si une règle n'est pas documentée dans la matrice YAML, elle n'existe pas pour l'IA. Cette transparence radicale permet des audits immédiats et garantit que l'état du système est toujours traçable via des journaux de mémoire persistants et des artefacts déterministes. Cette nature explicite transforme la 'boîte noire' typique du développement de l'IA en une 'boîte de verre', où chaque décision est enregistrée, vérifiée et intégrée dans le contexte architectural plus large sans perte de sens."
             }
         }
     },
     "methodology": {
-        "title": "La Méthodologie Iceberg",
-        "subtitle": "Une architecture à trois couches",
+        "title": "Méthodologie Iceberg",
+        "subtitle": "L'architecture de contrôle de l'IA à trois couches",
         "layers": {
             "layer1": {
-                "name": "Couche 1 : Iceberg Method",
+                "name": "Couche 1 : Méthode Iceberg (La Stratégie)",
                 "type": "Protocole propriétaire",
-                "description": "La logique de haut niveau et la stratégie de gouvernance de l'IA."
+                "description": "Logique de haut niveau et stratégie de gouvernance de l'IA. Cette couche définit le modèle mental de la collaboration homme-IA, en se concentrant sur le mécanisme de STOP-CHECK et la séparation des responsabilités entre la planification et l'exécution. C'est le 'pourquoi' de la rigidité du framework. En imposant une approche 'Documentation First', nous nous assurons que chaque changement de code est précédé d'un plan technique qui sert de source unique de vérité pour la phase d'exécution de l'IA, empêchant ainsi les fuites de logique communes au développement standard basé sur le chat."
             },
             "layer2": {
-                "name": "Couche 2 : Iceberg Framework",
+                "name": "Couche 2 : Framework Iceberg (Les Standards)",
                 "type": "Open Source (MIT)",
-                "description": "Des standards techniques stricts pour le code, le SEO et l'architecture."
+                "description": "La 'ligne de flottaison' du système. Cette couche fournit des standards techniques stricts pour la structure du code, le SEO, la performance et l'accessibilité. Elle garantit que tout projet construit avec Iceberg est compatible avec les moteurs de vérification automatisés et respecte les critères de qualité de classe entreprise dès le départ. Cela inclut la structure de fichiers canonique, les conventions de nommage pour les modules de base et le respect à 100 % des standards techniques SEO, garantissant que chaque contenu produit est nativement optimisé pour les moteurs de recherche et les robots d'accessibilité."
             },
             "layer3": {
-                "name": "Couche 3 : Enterprise Engines",
+                "name": "Couche 3 : Moteurs Enterprise (L'Automatisation)",
                 "type": "Modules commerciaux",
-                "description": "Outils automatisés pour l'exécution, la mémoire et la validation."
+                "description": "Le cœur technique qui propulse l'automatisation. Ces moteurs propriétaires — incluant l'Execution Engine, le Memory Engine et le Validation Engine — effectuent le travail lourd de génération de code, de persistance d'état et de contrôle qualité. Ils transforment les standards en réalité avec un effort humain nul. Grâce à l'intégration de tampons de validation basés sur le deep learning, ces moteurs peuvent détecter et annuler les déviations non déterministes en temps réel, garantissant que le build final est une image parfaite 1:1 de l'architecture initiale, maintenant 100 % d'intégrité structurelle au fil du temps. Cette couche d'automatisation avancée permet de s'affranchir des erreurs manuelles et de garantir une évolutivité technique sans précédent pour les systèmes complexes pilotés par l'IA, assurant une fiabilité absolue et une maintenance simplifiée à long terme."
             }
         }
     },
     "standards": {
-        "title": "Standards Techniques",
+        "title": "Standards techniques",
         "subtitle": "Les règles du déterminisme",
-        "description": "L'Iceberg Framework fournit un ensemble de standards stricts qui garantissent que chaque projet est de haute qualité, accessible et optimisé pour l'IA.",
+        "description": "L'Iceberg Framework fournit un ensemble de standards stricts qui garantissent une haute qualité, une accessibilité et une optimisation pour l'IA pour chaque projet. Ces standards ne sont pas des suggestions ; ce sont des contraintes rigides qui définissent l'enveloppe opérationnelle du système. En respectant strictement ces standards, nous éliminons 90 % des erreurs courantes liées à la collaboration homme-IA et garantissons que le produit final répond aux critères les plus élevés de l'ingénierie web professionnelle et du design d'expérience utilisateur de niveau premium.",
         "list": {
             "architecture": "Standard d'architecture",
             "quality": "Standard de qualité web",
@@ -75,186 +75,192 @@
         }
     },
     "protocols": {
-        "title": "Protocoles Opérationnels",
-        "subtitle": "Exécution étape par étape",
-        "description": "Les protocoles définissent comment les tâches sont exécutées au sein de l'écosystème Iceberg. Pas d'improvisation, seulement de l'exécution.",
+        "title": "Protocoles opérationnels",
+        "subtitle": "Exécution pas à pas",
+        "description": "Les protocoles définissent comment les tâches sont exécutées au sein de l'écosystème Iceberg. Aucune improvisation, seulement l'exécution. Chaque protocole est une séquence déterministe d'étapes qui assure une qualité constante à travers les équipes et les projets. En suivant ces protocoles, nous garantissons que le processus de développement est aussi prévisible que le code qu'il produit, permettant une mise à l'échelle rapide et des migrations de systèmes complexes sans aucune perte de contexte architectural ou de qualité technique. Nos protocoles agissent comme le système nerveux du framework, coordonnant les efforts des planificateurs humains et des exécuteurs d'IA.",
         "list": {
             "planning": "Protocole de planification déterministe",
-            "migration": "Protocole de migration de système",
-            "execution": "Protocole d'exécution de l'IA",
-            "validation": "Protocole de validation de la qualité"
+            "migration": "Protocole de migration système",
+            "execution": "Protocole d'exécution IA",
+            "validation": "Protocole de validation qualité"
         }
     },
     "enterprise": {
-        "title": "Agency & Enterprise",
-        "subtitle": "Moteurs d'Exécution Propriétaires",
-        "description": "Allez plus loin avec Iceberg grâce à la gouvernance automatisée et à la mémoire persistante.",
+        "title": "Solutions Agency et Enterprise",
+        "subtitle": "Moteurs d'exécution propriétaires pour l'échelle corporative",
+        "description": "Iceberg n'est pas seulement un ensemble de règles ; c'est une couche de gouvernance automatisée. Pour les organisations gérant plusieurs équipes ou des migrations complexes de systèmes hérités, nous fournissons les outils pour imposer les standards à chaque commit, garantissant que le développement piloté par l'IA évolue sans augmenter l'entropie technique ou la fragmentation architecturale. En intégrant notre Enterprise Core à vos pipelines CI/CD, vous pouvez automatiser l'intégralité du processus de revue architecturale, transformant l'audit humain traditionnel et lent en un cycle de validation déterministe immédiat qui garantit que votre base de code reste propre, sécurisée et performante à mesure qu'elle s'étend.",
         "pitch": {
-            "title": "Pourquoi c'est important",
-            "problem": "L'IA standard crée des déchets techniques (Legacy).",
-            "solution": "Iceberg OS impose le Déterminisme."
+            "title": "Le problème des 'déchets techniques'",
+            "problem": "Le développement IA standard crée des 'déchets techniques' — du code non structuré et non vérifié qui s'accumule comme une dette technique dès le premier jour. Sans superviseur, les projets assistés par l'IA deviennent finalement ingérables car les fenêtres de contexte des modèles perdent de vue l'architecture originale. Cela conduit à une base de code 'boîte noire' où aucun humain ne peut expliquer la logique, et où l'IA hallucine continuellement des correctifs pour ses propres erreurs précédentes, entraînant une boucle de rétroaction de décomposition technique et de risque opérationnel croissant pour l'entreprise.",
+            "solution": "Iceberg OS impose une « Vérité Architecturale » constante via sa matrice déterministe et sa mémoire persistante. Il traite la base de code comme un organisme vivant qui doit respecter un code génétique strict. Nos moteurs Enterprise automatisent cette application, agissant comme un validateur en temps réel pour chaque artefact généré par l'IA. Cela garantit que même si votre système atteint des millions de lignes de code, la logique de base reste aussi propre et auditable qu'au premier commit. Nous fournissons une architecture de certitude dans une ère d'incertitude probabiliste, transformant l'IA d'un fardeau en un atout d'entreprise haute performance, capable de soutenir une croissance rapide sans sacrifier la qualité technique ni la robustesse opérationnelle."
         },
         "modules": {
-            "executor": "Moteur d'Exécution IA",
-            "memory": "Moteur de Mémoire Persistante",
-            "validation": "Moteur de Validation & QA"
+            "executor": "AI Execution Engine : Génération de code déterministe basée sur des cartes d'exécution approuvées.",
+            "memory": "Persistent Memory Engine : Journalisation séquentielle empêchant la perte de contexte entre les sessions.",
+            "validation": "Validation & QA Engine : Vérification automatisée par rapport aux standards de qualité Iceberg."
         },
         "tiers": {
             "agency": {
-                "name": "Agency License",
+                "name": "Licence Agency",
                 "price": "2999€",
                 "features": [
-                    "Équipes illimitées",
-                    "Mises à jour prioritaires",
-                    "Droits commerciaux"
+                    "Droits complets sur les projets clients",
+                    "Nombre illimité de postes développeurs",
+                    "Mises à jour déterministes de la matrice",
+                    "Correctifs de sécurité prioritaires",
+                    "Suite d'automatisation PWA & SEO",
+                    "Documentation d'onboarding dédiée"
                 ]
             },
             "enterprise": {
-                "name": "Enterprise",
-                "price": "Custom",
+                "name": "Enterprise Core",
+                "price": "Sur demande",
                 "features": [
-                    "Distillation de règles",
-                    "Self-Hosted Matrix",
-                    "Support direct"
+                    "Distillation de règles propriétaire",
+                    "Hébergement de la matrice sur site",
+                    "Ingénierie de protocoles sur mesure",
+                    "Support SLA 24/7 & Architecture",
+                    "Analytique de productivité d'équipe",
+                    "Adapteurs d'intégration dédiés"
                 ]
             }
         },
-        "cta_agency": "Acheter la licence Agence",
-        "cta_contact": "Contacter le service commercial"
+        "cta_agency": "Acquérir la licence Agency",
+        "cta_contact": "Consulter un architecte"
     },
     "audit": {
         "title": "Audit Iceberg",
-        "subtitle": "Analyse UI/UX déterministe",
-        "description": "Téléchargez une capture d''écran et obtenez un audit complet.",
+        "subtitle": "Analyse déterministe UI/UX",
+        "description": "Envoyez une capture d'écran et recevez un audit complet de votre interface : structuré, professionnel et piloté par l'IA. Notre moteur d'audit utilise le Standard de Hiérarchie Visuelle d'Iceberg et les règles de codage Anti-Legacy pour évaluer votre interface par rapport à 48 critères critiques, couvrant l'accessibilité, l'équilibre visuel et l'optimisation technique. Recevez un rapport de classe professionnelle qui ne se contente pas de lister les problèmes, mais fournit une feuille de route déterministe vers l'excellence, garantissant que votre UI/UX répond aux standards industriels les plus élevés pour les applications web premium modernes.",
         "form": {
-            "uploadLabel": "Déposez ici",
-            "auditTypeLabel": "Type",
-            "freeAudit": "Gratuit",
-            "paidAudit": "Complet",
-            "submitButton": "Démarrer",
-            "processing": "Traitement..."
+            "uploadLabel": "Glissez une capture d'écran ici ou cliquez pour télécharger",
+            "auditTypeLabel": "Type d'audit",
+            "freeAudit": "Audit gratuit (Détection du chaos)",
+            "paidAudit": "Audit complet (Pack de 6 fichiers)",
+            "submitButton": "Lancer l'audit",
+            "processing": "Traitement de l'audit..."
         },
         "status": {
             "detecting": "Détection de la structure UI...",
             "analyzing": "Analyse des composants et UX...",
             "zipping": "Génération du pack de livraison...",
             "success": "Audit terminé !",
-            "error": "Échec de l'audit."
+            "error": "L'audit a échoué."
         },
         "success": {
             "title": "Pack d'audit prêt !",
             "description": "Votre analyse UI/UX professionnelle a été générée et téléchargée avec succès.",
-            "whatsInside": "Que contient votre pack ?",
-            "filesCount": "6 fichiers d'analyse complets dans un ZIP.",
+            "whatsInside": "Qu'y a-t-il dans votre pack ?",
+            "filesCount": "6 fichiers analytiques complets dans un seul ZIP.",
             "startGuide": "Commencez par SUMMARY.md pour une vue d'ensemble.",
-            "nextSteps": "Prochaines étapes",
-            "unzip": "1. Décompressez le fichier téléchargé.",
-            "readReports": "2. Lisez les rapports Markdown détaillés.",
+            "nextSteps": "Étapes suivantes",
+            "unzip": "1. Dézippez le fichier téléchargé.",
+            "readReports": "2. Lisez les rapports détaillés en format Markdown.",
             "implement": "3. Implémentez les améliorations identifiées.",
             "anotherAudit": "Analyser une autre UI"
         },
         "results": {
-            "downloadZip": "Télécharger ZIP",
-            "freeResultTitle": "Rapport",
-            "backToForm": "Nouvel"
+            "downloadZip": "Télécharger la réponse d'audit (ZIP)",
+            "freeResultTitle": "Rapport d'analyse d'audit",
+            "backToForm": "Nouvel audit"
         },
         "errors": {
-            "nonUi": "Pas une UI",
-            "paymentRequired": "Paiement requis",
-            "generic": "Erreur"
+            "nonUi": "L'image envoyée n'est pas une capture d'écran UI valide.",
+            "paymentRequired": "Un paiement est requis pour l'audit complet.",
+            "generic": "Une erreur inattendue est survenue. Veuillez réessayer."
         }
     },
     "solo": {
-        "title": "Iceberg OS Starter Pack",
-        "description": "Le cerveau de niveau Senior de votre IA dans un fichier YAML.",
+        "title": "Iceberg OS Solo Pack (Licence Starter)",
+        "description": "Le pack YAML fondamental pour l'orchestration de l'IA de niveau senior. Ce pack contient le 'code génétique' de base du Framework Iceberg, condensé dans une matrice logique à haute densité qui transforme n'importe quel LLM standard en un agent d'ingénierie déterministe. Il est conçu pour les développeurs individuels qui souhaitent sauter le cycle typique d'essais et d'erreurs de l'IA et commencer immédiatement à produire du code de qualité senior sur n'importe quelle pile technologique. En injectant notre ensemble de règles, vous établissez une 'Ligne de Base de Qualité' durable qui garantit que votre assistant IA reste à tout moment dans le couloir opérationnel professionnel.",
         "benefits": {
-            "title": "Qu'est-ce qu'il y a à l'intérieur ?",
-            "rules": "Plus de 600 règles Senior distillées",
-            "matrix": "Matrice de contexte logique",
-            "corridor": "Normes de sécurité opérationnelle",
-            "speed": "Développement 5x plus rapide"
+            "title": "Propositions de valeur technique",
+            "rules": "Plus de 600 règles de niveau Senior distillées : Une hiérarchie complète de contraintes couvrant l'architecture, le code propre, la sécurité et la performance. Ces règles sont dérivées d'échecs et de succès corporatifs réels, agissant comme un bouclier contre les pièges courants du développement piloté par l'IA.",
+            "matrix": "Matrice de contexte logique : Une base de connaissances structurée qui empêche la dérive de contexte et garantit que l'IA maintient un modèle mental cohérent sur plusieurs sessions. Cette matrice agit comme la 'masse immergée' de votre projet spécifique, ancrant le moteur probabiliste de l'IA dans un océan de faits architecturaux déterministes.",
+            "corridor": "Standards de sécurité opérationnelle : Interdictions codées en dur contre les échecs courants de l'IA, incluant les hallucinations, les improvisations non autorisées et l'accumulation de dette technique. Notre ensemble de règles garantit que l'IA ne 'devine' jamais la voie à suivre, mais demande toujours le protocole canonique.",
+            "speed": "Développement 5x plus rapide : Éliminez 80 % des révisions manuelles de code en forçant l'IA à valider elle-même son résultat par rapport aux standards senior avant qu'il n'atteigne votre terminal. Cela déplace le fardeau du contrôle qualité de vos épaules vers le moteur d'exécution de l'IA, vous permettant de vous concentrer sur la conception de haut niveau et la logique métier, plutôt que de corriger des erreurs de syntaxe ou des dérives architecturales, ce qui accélère considérablement votre cycle de mise sur le marché (Time-to-Market)."
         },
         "setup": {
-            "title": "Démarrage rapide en 5 minutes",
-            "step1": "Téléchargez votre pack YAML",
-            "step2": "Injectez-le dans votre System Prompt IA",
-            "step3": "Lancez votre première commande /audit",
-            "step4": "Validez et construisez"
+            "title": "Déploiement tactique en 5 minutes",
+            "step1": "Téléchargez votre pack YAML déterministe depuis le portail sécurisé.",
+            "step2": "Injectez l'ensemble de règles dans le prompt système de votre IA (Cursor, Claude ou ChatGPT).",
+            "step3": "Lancez votre première commande /audit sur votre base de code ou design existant.",
+            "step4": "Observez le changement déterministe de la qualité du code et suivez les journaux de vérification."
         },
-        "cta": "Obtenir le Solo Pack — 129 $"
+        "cta": "Obtenir le Solo Pack — 129 $ (Téléchargement immédiat)"
     },
     "legal": {
         "faq": {
             "title": "FAQ (Iceberg OS)",
-            "subtitle": "Common questions about deterministic AI framework",
+            "subtitle": "Questions courantes sur le framework d'IA déterministe",
             "items": [
                 {
-                    "q": "What is Iceberg OS?",
-                    "a": "Iceberg OS is a digital framework for building deterministic AI systems. Products are delivered as downloadable files after purchase."
+                    "q": "Qu'est-ce qu'Iceberg OS ?",
+                    "a": "Iceberg OS est un cadre numérique pour construire des systèmes d'IA déterministes. Les produits sont livrés sous forme de fichiers téléchargeables après achat."
                 },
                 {
-                    "q": "What do I receive after buying?",
-                    "a": "You receive immediate access to downloadable assets (YAML files, documentation, or ZIP archives), depending on the product tier."
+                    "q": "Que reçois-je après l'achat ?",
+                    "a": "Vous recevez un accès immédiat aux ressources téléchargeables (fichiers YAML, documentation ou archives ZIP), selon le niveau du produit."
                 },
                 {
-                    "q": "How do I download my files?",
-                    "a": "After completing the checkout, you are redirected to a secure download page. Access is verified through your Stripe session."
+                    "q": "Comment télécharger mes fichiers ?",
+                    "a": "Après avoir terminé le paiement, vous êtes redirigé vers une page de téléchargement sécurisée. L'accès est vérifié via votre session Stripe."
                 },
                 {
-                    "q": "Compatibility & Models",
-                    "a": "Iceberg rules are optimized for Claude 3.5 Sonnet, GPT-4o, and Gemini 1.5 Pro. They work seamlessly in Cursor and VS Code AI environments."
+                    "q": "Compatibilité et modèles",
+                    "a": "Les règles Iceberg sont optimisées pour Claude 3.5 Sonnet, GPT-4o et Gemini 1.5 Pro. Elles fonctionnent parfaitement dans les environnements IA de Cursor et VS Code."
                 },
                 {
-                    "q": "Do you offer refunds?",
-                    "a": "Digital products are non‑refundable once downloaded. If you experience issues accessing your files, contact support."
+                    "q": "Proposez-vous des remboursements ?",
+                    "a": "Les produits numériques ne sont pas remboursables une fois téléchargés. Si vous rencontrez des problèmes pour accéder à vos fichiers, contactez le support."
                 },
                 {
-                    "q": "Commercial Usage",
-                    "a": "Yes. Usage rights depend on the license tier (Solo, Agency, Enterprise). Solo is for individuals; Agency/Enterprise allows team redistribution."
+                    "q": "Utilisation commerciale",
+                    "a": "Oui. Les droits d'utilisation dépendent du niveau de licence (Solo, Agency, Enterprise). Solo est pour les particuliers ; Agency/Enterprise permet la redistribution en équipe."
                 },
                 {
-                    "q": "Contact Support",
-                    "a": "You can reach us via email at: https://www.linkedin.com/in/andrii-shavel-976485187/"
+                    "q": "Contacter le support",
+                    "a": "Vous pouvez nous rejoindre via LinkedIn à : https://www.linkedin.com/in/andrii-shavel-976485187/"
                 }
             ]
         },
         "tos": {
-            "title": "Terms of Service",
-            "lastUpdated": "February 3, 2026",
+            "title": "Conditions d'utilisation",
+            "lastUpdated": "3 février 2026",
             "sections": [
                 {
-                    "title": "1. Overview",
-                    "content": "These Terms govern your access to Iceberg OS digital products. By purchasing, you agree to these legal conditions."
+                    "title": "1. Aperçu",
+                    "content": "Ces conditions régissent votre accès aux produits numériques Iceberg OS. En achetant, vous acceptez ces conditions légales."
                 },
                 {
-                    "title": "2. Delivery",
-                    "content": "All products are digital. No physical items are shipped. Access is provided immediately after payment."
+                    "title": "2. Livraison",
+                    "content": "Tous les produits sont numériques. Aucun article physique n'est expédié. L'accès est fourni immédiatement après le paiement."
                 },
                 {
-                    "title": "3. License",
-                    "content": "You receive a non‑exclusive license based on your tier. Redistribution or resale is strictly prohibited."
+                    "title": "3. Licence",
+                    "content": "Vous recevez une licence non exclusive basée sur votre niveau. La redistribution ou la revente est strictement interdite."
                 },
                 {
-                    "title": "4. Refunds",
-                    "content": "Due to the nature of digital goods, all sales are final once the product has been downloaded."
+                    "title": "4. Remboursements",
+                    "content": "En raison de la nature des biens numériques, toutes les ventes sont finales une fois que le produit a été téléchargé."
                 }
             ]
         },
         "privacy": {
-            "title": "Privacy Policy",
-            "lastUpdated": "February 3, 2026",
+            "title": "Politique de confidentialité",
+            "lastUpdated": "3 février 2026",
             "sections": [
                 {
-                    "title": "1. Data Collection",
-                    "content": "We collect email via Stripe and download session verification data. We do not store payment card information."
+                    "title": "1. Collecte de données",
+                    "content": "Nous collectons l'e-mail via Stripe et des données de vérification de session de téléchargement. Nous ne stockons pas d'informations de carte de paiement."
                 },
                 {
-                    "title": "2. Security",
-                    "content": "Uploaded screenshots for audits are processed in-memory and never stored. Downloads use time-limited signed links."
+                    "title": "2. Sécurité",
+                    "content": "Les captures d'écran téléchargées pour les audits sont traitées en mémoire et ne sont jamais stockées. Les téléchargements utilisent des liens signés limités dans le temps."
                 },
                 {
-                    "title": "3. Rights",
-                    "content": "You may request deletion of customer data by contacting https://www.linkedin.com/in/andrii-shavel-976485187/."
+                    "title": "3. Droits",
+                    "content": "Vous pouvez demander la suppression des données client en contactant https://www.linkedin.com/in/andrii-shavel-976485187/."
                 }
             ]
         }

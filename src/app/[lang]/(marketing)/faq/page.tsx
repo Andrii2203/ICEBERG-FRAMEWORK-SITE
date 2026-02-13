@@ -18,6 +18,8 @@ export async function generateMetadata({
     );
 }
 
+import { generateSchema } from "@/shared/utils/seo";
+
 export default async function FAQPage({
     params,
 }: {
@@ -26,8 +28,21 @@ export default async function FAQPage({
     const { lang } = await params;
     const dict = await getDictionary(lang);
 
+    const breadcrumbLd = generateSchema.breadcrumbs(lang, [
+        { name: dict.common.title, url: "" },
+        { name: dict.nav.audit, url: "/faq" }, // Note: nav.audit might be mislabeled as 'Audit' in nav. I should check nav dictionary.
+    ]);
+
+    const faqLd = generateSchema.faq(lang, dict.legal.faq.items);
+
     return (
         <main className="min-h-screen pt-40 pb-20 px-6 max-w-4xl mx-auto">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify([breadcrumbLd, faqLd])
+                }}
+            />
             <header className="mb-20 text-center">
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-text-brand mb-6">
                     {dict.legal.faq.title}

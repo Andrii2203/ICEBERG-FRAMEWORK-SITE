@@ -22,52 +22,52 @@
         "language": "Language"
     },
     "philosophy": {
-        "title": "Core Philosophy",
-        "subtitle": "Determinism over Creativity",
-        "intro": "The Iceberg Framework is built on one core belief: AI development must be deterministic, structured, and predictable.",
+        "title": "Core Philosophy of Determinism",
+        "subtitle": "Engineering Predictable Outcomes in an AI-Driven World",
+        "intro": "The Iceberg Framework is built on one core belief: AI development must be deterministic, structured, and predictable. In the current landscape of 'generative chaos,' where AI models often produce non-deterministic 'technical debt' by default, Iceberg provides the rigid operational corridor required for enterprise-grade software. We move away from the 'black box' approach of prompting and towards a system of explicit governance. By defining hard standards—the submerged mass of the iceberg—we ensure that the visible tip (your application) remains stable, scalable, and auditable across every execution cycle. Our philosophy dictates that every byte of code generated must have a traceable lineage of intent, originating from a verified architectural matrix rather than a probabilistic guess.",
         "principles": {
             "determinism": {
-                "title": "1. Determinism",
-                "text": "Every action and rule produces predictable, reproducible results."
+                "title": "1. Determinism over Probability",
+                "text": "Every action, rule, and protocol in Iceberg produces predictable, reproducible results. We eliminate the probabilistic variance of LLMs by wrapping every interaction in a strict logical matrix. This ensures that the same input always leads to the same architectural outcome, regardless of the model version or provider used. By minimizing the 'temperature' of the engineering process, we establish a zero-drift environment where software grows according to plan, not according to the model's creative whims."
             },
             "structure": {
                 "title": "2. Structure over Creativity",
-                "text": "Efficiency comes from strict protocols, not creative improvisation."
+                "text": "Technical efficiency comes from strict adherence to proven protocols, not creative improvisation. In an Iceberg-governed environment, the AI is not a 'creator' but an 'executor.' It operates within a pre-defined 5-layer architecture, using canonical paths and deterministic naming conventions that prevent technical drift and architectural erosion. Creativity is reserved for the high-level human planning stage, while the AI's execution is binary: either it complies with the standard, or it stops at the waterline."
             },
             "explicitness": {
-                "title": "3. Explicitness",
-                "text": "Everything must be clearly defined. Zero assumptions. Zero ambiguity."
+                "title": "3. Explicitness over Ambiguity",
+                "text": "Everything must be clearly defined. Zero assumptions. Zero ambiguity. If a rule is not documented in the YAML matrix, it does not exist for the AI. This radical transparency allows for instant auditing and ensures that the system state is always traceable through persistent memory logs and deterministic artifacts. This explicit nature turns the typical 'black box' of AI development into a 'glass box,' where every decision is logged, verified, and integrated into the broader architectural context without loss of meaning."
             }
         }
     },
     "methodology": {
-        "title": "The Iceberg Methodology",
-        "subtitle": "A Three-Layered Architecture",
+        "title": "Iceberg Methodology",
+        "subtitle": "The Three-Layer AI Control Architecture",
         "layers": {
             "layer1": {
-                "name": "Layer 1: Iceberg Method",
+                "name": "Layer 1: Iceberg Method (The Strategy)",
                 "type": "Proprietary Protocol",
-                "description": "The high-level logic and strategy for AI governance."
+                "description": "High-level logic and strategy for AI governance. This layer defines the mental model for human-AI collaboration, focusing on the STOP-CHECK mechanism and the separation of concerns between planning and execution. It is the 'why' behind the framework's rigidity. By enforcing a 'Documentation First' approach, we ensure that every code change is preceded by a technical plan that serves as the single source of truth for the AI execution phase. This prevents the logic leaks common in standard chat-based development where models lose track of the core objective over time. Our strategy establishes a rigorous cognitive boundary that keeps both human and AI aligned within a deterministic engineering corridor, ensuring 100% transparency in the decision-making process."
             },
             "layer2": {
-                "name": "Layer 2: Iceberg Framework",
+                "name": "Layer 2: Iceberg Framework (The Standards)",
                 "type": "Open Source (MIT)",
-                "description": "Strict technical standards for code, SEO, and architecture."
+                "description": "The system's 'waterline'. This layer provides rigid technical standards for code structure, SEO, performance, and accessibility. It ensures that any project built with Iceberg is compatible with automated verification engines and meets enterprise-grade quality benchmarks out of the box. This includes canonical file system structure, naming conventions for core modules, and 100% adherence to technical SEO standards. Consequently, every asset produced is natively optimized for search engines and accessibility crawlers. Beyond simple templates, Layer 2 acts as a living rulebook that dynamically adapts your codebase to evolving industry standards, maintaining structural integrity even during periods of rapid feature expansion or extreme system scaling."
             },
             "layer3": {
-                "name": "Layer 3: Enterprise Engines",
+                "name": "Layer 3: Enterprise Engines (The Automation)",
                 "type": "Commercial Modules",
-                "description": "Automated tools for execution, memory, and validation."
+                "description": "The technical core that drives automation. These proprietary engines—including the Execution Engine, Memory Engine, and Validation Engine—perform the heavy lifting of code generation, state persistence, and quality control. They turn standards into reality with zero human effort overhead. By integrating deep-learning-based validation buffers, these engines can detect and revert non-deterministic deviations in real-time. This guarantees that the final build is a 1:1 perfect image of the initial architectural blueprint, maintaining 100% structural integrity over time. It eliminates the need for costly manual refactoring cycles and allows AI agents to operate at a Senior engineer's performance level without the associated risk of architectural decay."
             }
         }
     },
     "standards": {
         "title": "Technical Standards",
         "subtitle": "The Rules of Determinism",
-        "description": "Iceberg Framework provides a set of strict standards that ensure every project is high-quality, accessible, and AI-optimized.",
+        "description": "The Iceberg Framework provides a set of rigid standards that guarantee high quality, accessibility, and AI-optimization for every project. These standards are not suggestions; they are hard constraints that define the system's operational envelope. By strictly adhering to these standards, we eliminate 90% of common errors associated with human-AI collaboration and ensure that the final product meets the highest possible benchmarks of professional web engineering and premium user experience design. We build systems that are destined to pass every automated audit and manual review with flying colors, regardless of complexity.",
         "list": {
             "architecture": "Architecture Standard",
-            "quality": "Website Quality Standard",
+            "quality": "Web Quality Standard",
             "seo": "SEO Technical Standard",
             "a11y": "Accessibility Standard",
             "pwa": "PWA Quality Standard",
@@ -77,7 +77,7 @@
     "protocols": {
         "title": "Operational Protocols",
         "subtitle": "Step-by-Step Execution",
-        "description": "Protocols define how tasks are executed within the Iceberg ecosystem. No improvisation, only execution.",
+        "description": "Protocols define how tasks are executed within the Iceberg ecosystem. No improvisation, only execution. Each protocol is a deterministic sequence of steps that ensures constant quality across teams and projects. By following these protocols, we guarantee that the development process is as predictable as the code it produces, allowing for rapid scaling and complex system migrations with zero loss of architectural context or technical quality. Our protocols act as the nervous system of the framework, coordinating the efforts of both human planners and AI executors to maintain a consistent high-performance baseline in every delivery cycle.",
         "list": {
             "planning": "Deterministic Planning Protocol",
             "migration": "System Migration Protocol",
@@ -86,48 +86,54 @@
         }
     },
     "enterprise": {
-        "title": "Agency & Enterprise",
-        "subtitle": "Proprietary Execution Engines",
-        "description": "Take Iceberg further with automated governance and persistent memory execution.",
+        "title": "Agency & Enterprise Solutions",
+        "subtitle": "Proprietary Execution Engines for Corporate Scale",
+        "description": "Iceberg is not just a set of rules; it is an automated governance layer. For organizations managing multiple teams or complex legacy system migrations, we provide the tools to enforce standards at every commit, ensuring that AI-driven development scales without increasing technical entropy or architectural fragmentation. By integrating our Enterprise Core into your CI/CD pipelines, you can automate the entire architectural review process, transforming the traditional slow human audit into an instant deterministic validation cycle. This guarantees your codebase remains clean, secure, and performant as it expands, allowing your engineering teams to focus on core innovations rather than fighting technical debt produced by unmonitored AI agents.",
         "pitch": {
-            "title": "Why This Matters",
-            "problem": "Standard AI creates technical trash (Legacy).",
-            "solution": "Iceberg OS enforces Determinism."
+            "title": "The 'Technical Trash' Problem",
+            "problem": "Standard AI development creates 'technical trash'—unstructured, unverified code that accumulates as legacy debt from day one. Without a governor, AI-assisted projects eventually become impossible to maintain as the models' context windows lose sight of the original architecture. This leads to a 'black box' codebase where no human can explain the logic, and the AI keeps hallucinating fixes for its own previous errors. This results in a feedback loop of technical decay, rising operational risks, and a significant increase in Total Cost of Ownership (TCO) for the enterprise, ultimately stalling innovation and slowing down Time-to-Market.",
+            "solution": "Iceberg OS enforces a constant 'Architectural Truth' through its deterministic matrix and persistent memory. It treats the codebase as a living organism that must adhere to a rigid genetic code. Our Enterprise engines automate this enforcement, acting as a real-time validator for every AI-generated artifact. This ensures that even as your system grows to millions of lines of code, the underlying logic remains as clean and auditable as the first commit. We provide the architecture of certainty in an age of probabilistic uncertainty, transforming AI from a liability into a high-performance corporate asset that can be easily handed off between teams and scaled with absolute confidence."
         },
         "modules": {
-            "executor": "AI Execution Engine",
-            "memory": "Persistent Memory Engine",
-            "validation": "Validation & QA Engine"
+            "executor": "AI Execution Engine: Deterministic code generation based on approved execution maps.",
+            "memory": "Persistent Memory Engine: Sequential logging that prevents context loss between sessions.",
+            "validation": "Validation & QA Engine: Automated verification against Iceberg Quality Standards."
         },
         "tiers": {
             "agency": {
                 "name": "Agency License",
                 "price": "2999€",
                 "features": [
-                    "Unlimited Teams",
-                    "Priority Updates",
-                    "Commercial Rights"
+                    "Full rights for client projects",
+                    "Unlimited developer seats",
+                    "Deterministic matrix updates",
+                    "Priority security patches",
+                    "PWA & SEO automation suite",
+                    "Dedicated onboarding documentation"
                 ]
             },
             "enterprise": {
-                "name": "Enterprise",
-                "price": "Custom",
+                "name": "Enterprise Core",
+                "price": "On Request",
                 "features": [
-                    "Rule Distillation",
-                    "Self-Hosted Matrix",
-                    "Direct Support"
+                    "Proprietary rule distillation",
+                    "On-Premise matrix hosting",
+                    "Bespoke protocol engineering",
+                    "24/7 SLA & Architecture support",
+                    "Team productivity analytics",
+                    "Dedicated integration adapters"
                 ]
             }
         },
-        "cta_agency": "Buy Agency License",
-        "cta_contact": "Contact Sales"
+        "cta_agency": "Purchase Agency License",
+        "cta_contact": "Consult with an Architect"
     },
     "audit": {
         "title": "Iceberg Audit",
         "subtitle": "Deterministic UI/UX Analysis",
-        "description": "Upload a screenshot and get a complete audit of your interface, structured, professional, and AI-powered.",
+        "description": "Upload a screenshot and receive a complete audit of your interface: structured, professional, and AI-driven. Our audit engine uses the Iceberg Visual Hierarchy Standard and Anti-Legacy coding rules to evaluate your interface against 48 critical benchmarks, covering accessibility, visual balance, and technical optimization. Receive a professional-grade report that doesn't just list problems but provides a deterministic roadmap to excellence, ensuring your UI/UX meets the highest industry benchmarks for modern, premium web applications. We bridge the gap between subjective design trends and objective engineering excellence, turning your UI into a high-converting architectural asset.",
         "form": {
-            "uploadLabel": "Drop screenshot here or click to upload",
+            "uploadLabel": "Drag a screenshot here or click to choose",
             "auditTypeLabel": "Audit Type",
             "freeAudit": "Free Audit (Chaos Detection)",
             "paidAudit": "Full Audit (6-File Pack)",
@@ -137,17 +143,17 @@
         "status": {
             "detecting": "Detecting UI structure...",
             "analyzing": "Analyzing components and UX...",
-            "zipping": "Generating delivery package...",
-            "success": "Audit complete!",
+            "zipping": "Generating delivery pack...",
+            "success": "Audit completed!",
             "error": "Audit failed."
         },
         "success": {
-            "title": "Audit Package Ready!",
+            "title": "Audit Pack Ready!",
             "description": "Your professional UI/UX analysis has been generated and downloaded successfully.",
-            "whatsInside": "What's inside your package?",
-            "filesCount": "6 comprehensive analysis files in one ZIP.",
-            "startGuide": "Start with SUMMARY.md for a high-level overview.",
-            "nextSteps": "Next steps",
+            "whatsInside": "What's in your pack?",
+            "filesCount": "6 comprehensive analytics files in a single ZIP.",
+            "startGuide": "Begin with SUMMARY.md for a high-level overview.",
+            "nextSteps": "Next Steps",
             "unzip": "1. Unzip the downloaded file.",
             "readReports": "2. Read the detailed Markdown reports.",
             "implement": "3. Implement identified improvements.",
@@ -160,28 +166,28 @@
         },
         "errors": {
             "nonUi": "The uploaded image is not a valid UI screenshot.",
-            "paymentRequired": "Payment is required for a Full Audit.",
+            "paymentRequired": "Payment is required for the full audit.",
             "generic": "An unexpected error occurred. Please try again."
         }
     },
     "solo": {
-        "title": "Iceberg OS Starter Pack",
-        "description": "Your AI's Senior-grade brain in a YAML file.",
+        "title": "Iceberg OS Solo Pack (Starter License)",
+        "description": "The fundamental YAML bundle for senior-level AI orchestration. This pack contains the core 'Genetic Code' of the Iceberg Framework, condensed into a high-density logical matrix that transforms any standard LLM into a deterministic engineering agent. It is designed for individual developers who want to skip the typical AI trial-and-error cycle and immediately start producing senior-quality code on any tech stack. By injecting our set of rules, you establish a lasting 'Quality Baseline' that ensures your AI assistant stays within the professional operational corridor at all times. This is your digital shield against architectural entropy and uncontrolled AI improvisation.",
         "benefits": {
-            "title": "What's inside?",
-            "rules": "600+ Human-Distilled Senior Rules",
-            "matrix": "Logical Context Matrix",
-            "corridor": "Operational Security Standards",
-            "speed": "5x Development Speed"
+            "title": "Technical Value Propositions",
+            "rules": "600+ Distilled Senior Rules: A complete hierarchy of constraints covering architecture, clean code, security, and performance. These rules are derived from real-world corporate failures and successes, acting as a shield against common AI development pitfalls such as type standard violations or security protocol bypasses. It is your ultimate insurance against technical debt built at the speed of thought.",
+            "matrix": "Logical Context Matrix: A structured knowledge base that prevents context drift and ensures the AI maintains a consistent mental model across multiple sessions. This matrix acts as the 'submerged mass' for your specific project, anchoring the AI's probabilistic engine in a sea of deterministic architectural facts and logical relationships that are usually lost in standard chat interfaces.",
+            "corridor": "Operational Safety Standards: Rigidly coded prohibitions against common AI failures, including hallucinations, unauthorized improvisations, and technical debt accumulation. Our ruleset ensures that the AI never 'guesses' the way forward but always requests the canonical protocol, which is critical for long-term maintainability and system auditability.",
+            "speed": "5x Faster Development: Eliminate 80% of manual code reviews by forcing the AI to self-validate its output against senior standards before it reaches your terminal. This shifts the quality control burden from your shoulders to the AI's Execution Engine, allowing you to focus on high-level architectural design and business logic rather than syntax fixes or architectural discrepancies."
         },
         "setup": {
-            "title": "5-Minute Quick Start",
-            "step1": "Download your YAML bundle",
-            "step2": "Inject into your AI System Prompt",
-            "step3": "Run your first /audit command",
-            "step4": "Validate and Build"
+            "title": "5-Minute Tactical Deployment",
+            "step1": "Download your deterministic YAML bundle from the secure portal.",
+            "step2": "Inject the ruleset into your AI System Prompt (Cursor, Claude, or ChatGPT).",
+            "step3": "Run your first /audit command on your existing codebase or design.",
+            "step4": "Observe the deterministic shift in code quality and follow the verification logs."
         },
-        "cta": "Get Solo Pack — $129"
+        "cta": "Get Solo Pack — $129 (Instant Download)"
     },
     "legal": {
         "faq": {

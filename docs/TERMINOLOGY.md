@@ -22,6 +22,14 @@ Unified glossary of terms for the Iceberg Framework Landing Website.
 - **Deterministic Matrix:** The core logical engine (binary or YAML) that provides the "Submerged Mass" logic to an AI model.
 - **Signed URL (TTL):** A temporary, secure link for downloading assets from R2, valid for exactly 10 minutes.
 
+## 5. SEO MACHINE TERMS (CARD 5)
+- **SEO Machine:** The unified system of automation engines (Metadata, Sitemap, Schema) that controls project indexability.
+- **Metadata Engine:** An automated server-side generator for `title`, `description`, `canonical`, and `hreflang` tags.
+- **Hreflang Cluster:** A complete set of cross-language link tags required for all 8 supported locales.
+- **x-default:** The fall-back language reference in hreflang clusters, pointing to the primary English version.
+- **Self-Canonical:** A canonical tag on a localized page that points to its own URL (e.g., /fr -> /fr).
+- **Thin Content:** A page with < 300 words that poses a risk for search engine de-indexing.
+
 ---
 
 ## STOP‑CHECK

@@ -19,6 +19,8 @@ export async function generateMetadata({
     );
 }
 
+import { generateSchema } from "@/shared/utils/seo";
+
 export default async function SoloPackPage({
     params,
 }: {
@@ -27,8 +29,21 @@ export default async function SoloPackPage({
     const { lang } = await params;
     const dict = await getDictionary(lang);
 
+    const breadcrumbLd = generateSchema.breadcrumbs(lang, [
+        { name: dict.common.title, url: "" },
+        { name: dict.nav.solo, url: "/solo-pack" },
+    ]);
+
+    const productLd = generateSchema.product(lang, "solo");
+
     return (
         <main className="min-h-screen pt-24 md:pt-40 pb-20 px-6 max-w-6xl mx-auto">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify([breadcrumbLd, productLd])
+                }}
+            />
             {/* Hero Section */}
             <div className="flex flex-col items-center text-center mb-24">
                 <div className="inline-block px-4 py-1 mb-6 rounded-full border border-accent-brand/30 bg-accent-brand/5 text-accent-brand text-sm font-mono uppercase tracking-widest">

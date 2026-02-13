@@ -19,6 +19,8 @@ export async function generateMetadata({
     );
 }
 
+import { generateSchema } from "@/shared/utils/seo";
+
 export default async function EnterprisePage({
     params,
 }: {
@@ -27,8 +29,21 @@ export default async function EnterprisePage({
     const { lang } = await params;
     const dict = await getDictionary(lang);
 
+    const breadcrumbLd = generateSchema.breadcrumbs(lang, [
+        { name: dict.common.title, url: "" },
+        { name: dict.nav.enterprise, url: "/enterprise" },
+    ]);
+
+    const productLd = generateSchema.product(lang, "agency");
+
     return (
         <main className="min-h-screen pt-24 md:pt-40 pb-20 px-6 max-w-6xl mx-auto">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify([breadcrumbLd, productLd])
+                }}
+            />
             {/* Section: Header */}
             <div className="mb-24 text-center">
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-text-brand mb-8">

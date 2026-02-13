@@ -76,7 +76,25 @@ src/
 - **Feature Blocks:** Logical sections in `features/`.
 - **Page Layouts:** Structural wrappers in `app/`.
 
-## 5. REVENUE & DELIVERY PIPELINES
+## 5. SEO & CONTENT ENGINE (CARD 5)
+The project implements a deterministic **SEO Machine** following CARD 5 standards.
+
+- **Metadata Engine:** Centralized, server-side generator for all SEO tags.
+- **I18N Cluster Management:** Automated hreflang cluster generation (8 languages).
+- **Content Expansion:** Mandatory 300-600 word depth per localized page.
+- **Semantic Structure:** Strict adherence to H1->H2->H3 hierarchy.
+
+### SEO Data Flow
+```mermaid
+graph TD
+    Page[Page Component] --> |params| Engine[Metadata Engine]
+    Engine --> |fetch| Dict[Dictionary]
+    Engine --> |generate| Tags[Title, Description, Alternates]
+    Engine --> |generate| Schema[JSON-LD Schema]
+    Tags --> |SSR| Header[HTML Head]
+```
+
+## 6. REVENUE & DELIVERY PIPELINES
 
 ### A. Audit Pipeline
 The `/audit` feature uses an orchestrator pattern to manage the UI analysis workflow:
@@ -138,3 +156,4 @@ Following the Enterprise Hardening phase, the following vectors are active:
 - [x] No conflicts with Repo B
 - [x] Terminology consistent
 - [x] Security Layer formally defined
+- [x] SEO Machine Architecture integrated (CARD 5)

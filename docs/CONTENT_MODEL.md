@@ -6,6 +6,8 @@ Content structure definition for the Iceberg Framework Landing Website.
 - **Navigation:** Header (links to all pages), Footer (legal, social, copyright).
 - **Internationalization:** 8 languages (EN, UA, PL, DE, ES, FR, IT, PT).
 - **SEO:** Global metadata base, OpenGraph defaults, Twitter defaults.
+- **SEO Metadata Clusters (CARD 5):** Specialized metadata per page/locale.
+- **I18N Content Shards:** Structured localized content blocks for expansion.
 
 ## 2. PAGE‑SPECIFIC CONTENT
 
@@ -53,10 +55,14 @@ Content structure definition for the Iceberg Framework Landing Website.
   - `chaosFound`: "Chaos Mode: Unstructured UI Detected."
   - `uiValid`: "Valid UI: Ready for Deep Audit."
 
-## 3. MEDIA ASSETS
-- `/public/images/iceberg-symbol.svg` (parallax layers)
-- `/public/favicons/*`
 - `/public/og-image.png`
+
+## 4. CONTENT EXPANSION (E-E-A-T)
+Every page must follow the **Evidence-Based Statement** policy:
+- **Depth:** 300-600 words of relevant, high-quality content.
+- **Hierarchy:** Strict H1 -> H2 -> H3 semantic flow.
+- **Tone:** Technical, authoritative, and deterministic.
+- **Isolation:** No language mixing (Language Isolation Rule).
 
 ---
 

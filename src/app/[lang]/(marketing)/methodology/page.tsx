@@ -19,6 +19,8 @@ export async function generateMetadata({
     );
 }
 
+import { generateSchema } from "@/shared/utils/seo";
+
 export default async function MethodologyPage({
     params,
 }: {
@@ -28,8 +30,17 @@ export default async function MethodologyPage({
     const dict = await getDictionary(lang);
     const icons = [<Shield key="0" />, <Layers key="1" />, <Box key="2" />];
 
+    const jsonLd = generateSchema.breadcrumbs(lang, [
+        { name: dict.common.title, url: "" },
+        { name: dict.nav.methodology, url: "/methodology" },
+    ]);
+
     return (
         <main className="min-h-screen pt-40 pb-20 px-6 max-w-6xl mx-auto">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <header className="mb-16 text-center">
                 <h1 className="text-5xl md:text-6xl font-bold tracking-tighter text-text-brand mb-4">
                     {dict.methodology.title}

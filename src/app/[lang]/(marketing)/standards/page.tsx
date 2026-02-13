@@ -19,6 +19,8 @@ export async function generateMetadata({
     );
 }
 
+import { generateSchema } from "@/shared/utils/seo";
+
 export default async function StandardsPage({
     params,
 }: {
@@ -27,10 +29,17 @@ export default async function StandardsPage({
     const { lang } = await params;
     const dict = await getDictionary(lang);
 
-
+    const jsonLd = generateSchema.breadcrumbs(lang, [
+        { name: dict.common.title, url: "" },
+        { name: dict.nav.standards, url: "/standards" },
+    ]);
 
     return (
         <main className="min-h-screen pt-40 pb-20 px-6 max-w-6xl mx-auto">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <header className="mb-16">
                 <h1 className="text-5xl md:text-6xl font-bold tracking-tighter text-text-brand mb-4">
                     {dict.standards.title}

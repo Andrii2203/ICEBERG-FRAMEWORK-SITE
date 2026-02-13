@@ -29,6 +29,12 @@ This document ensures code consistency, quality, and maintainability across the 
 - **Adapters:** Use adapters to convert raw API data to domain models.
 - **No DTOs in UI:** UI components receive only domain models.
 
+## 6. SEO & METADATA RULES (CARD 5)
+- **Server-Only:** Metadata and canonical tags MUST be generated on the server.
+- **Absolute URLs:** All SEO URLs (canonical, hreflang, OG) MUST be absolute.
+- **Per-Page Explicit:** Layouts must not handle page-specific alternates.
+- **No Client-Side SEO:** Forbidden to use `<Head>` or metadata in client components.
+
 ## 6. IMPORT RULES (Iceberg Canonical Paths)
 **MANDATORY:** All imports MUST use canonical paths from the 5-layer architecture:
 

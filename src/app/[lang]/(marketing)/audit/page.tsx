@@ -55,14 +55,25 @@ export async function generateMetadata(
     );
 }
 
+import { generateSchema } from "@/shared/utils/seo";
+
 export default async function AuditPage({ params }: { params: Promise<{ lang: string }> }) {
     const { lang } = await params;
     const dict = await getDictionary(lang as SupportedLanguage);
     const caseStudyFiles = await getCaseStudyFiles();
     const privacyPolicy = await getPrivacyPolicy();
 
+    const jsonLd = generateSchema.breadcrumbs(lang, [
+        { name: dict.common.title, url: "" },
+        { name: dict.nav.audit, url: "/audit" },
+    ]);
+
     return (
         <CleanPageLayout lang={lang} dict={dict}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <section className="min-h-screen pt-32 pb-20 px-4">
                 <div className="max-w-6xl mx-auto flex flex-col gap-20">
                     <AuditClient featureDict={dict.audit} privacyPolicy={privacyPolicy} />
