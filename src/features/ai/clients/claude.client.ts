@@ -55,6 +55,8 @@ export class ClaudeClient {
             throw new Error("Uploaded file is not an image");
         }
 
+        console.log(`[ClaudeClient] Media type detected: ${mediaType}`);
+
         if (!config.claude.apiKey) {
             throw new IcebergError("config-error", "Anthropic API Key is missing. Please add it to your .env file.");
         }

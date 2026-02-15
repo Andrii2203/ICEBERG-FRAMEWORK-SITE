@@ -40,40 +40,65 @@ export function isValidBase64Image(input: string): boolean {
 }
 
 /**
+ * Detects the real MIME type by looking at Base64 magic bytes.
+ * This is the ultimate "Truth" layer.
+ */
+export function getMimeTypeFromBase64(base64: string): ClaudeImageType | null {
+  // Take the first 10-20 characters to check magic signatures
+  const header = base64.substring(0, 20);
+
+  if (header.startsWith("iVBORw0KGgo")) return "image/png";
+  if (header.startsWith("/9j/")) return "image/jpeg";
+  if (header.startsWith("UklGR")) return "image/webp";
+  if (header.startsWith("R0lGOD")) return "image/gif";
+
+  return null;
+}
+
+/**
  * Extracts media type and Base64 data.
  * Supports:
  *   - Full data URLs: data:image/png;base64,AAAA...
- *   - Raw Base64 (assumes PNG by default)
+ *   - Raw Base64
+ *   - PERFORMANCE: Sniffs magic bytes to override incorrect declared MIME types.
  */
 export function extractImageData(
   input: string
 ): { mediaType: ClaudeImageType; base64Data: string } {
-  // Case 1: full data URL
+  let declaredMediaType: ClaudeImageType | null = null;
+  let base64Data = "";
+
+  // 1. Parse Input
   if (input.startsWith("data:")) {
     const match = input.match(
       /^data:(image\/(?:jpeg|png|gif|webp));base64,(.+)$/
     );
 
-    if (!match) {
-      throw new Error("Unsupported or invalid image data URL");
+    if (match) {
+      declaredMediaType = match[1] as ClaudeImageType;
+      base64Data = match[2];
+    } else {
+      // Fallback for malformed data URLs
+      base64Data = cleanBase64(input);
     }
-
-    return {
-      mediaType: match[1] as ClaudeImageType,
-      base64Data: match[2],
-    };
+  } else {
+    base64Data = cleanBase64(input);
   }
 
-  // Case 2: raw Base64
-  const cleaned = cleanBase64(input);
+  // 2. SNIFF REAL TYPE (The Customs Control)
+  const realMediaType = getMimeTypeFromBase64(base64Data);
 
-  if (!isValidBase64(cleaned)) {
+  // 3. RESOLUTION LOGIC
+  // We prioritize real bytes over declared strings to prevent Claude 400 errors.
+  const finalMediaType = realMediaType || declaredMediaType || "image/png";
+
+  if (!isValidBase64(base64Data)) {
     throw new Error("Invalid Base64 string");
   }
 
   return {
-    mediaType: "image/png", // default fallback
-    base64Data: cleaned,
+    mediaType: finalMediaType,
+    base64Data: base64Data,
   };
 }
 

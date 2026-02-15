@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams, useRouter, useParams } from "next/navigation";
 import { Loader2, Download, AlertCircle, ShieldCheck, Clock } from "lucide-react";
 import Link from "next/link";
 
@@ -10,6 +10,9 @@ export function SuccessClient() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const sessionId = searchParams.get("session_id");
+    const params = useParams();
+    const lang = params?.lang as string;
+    const homeLink = lang === 'en' ? '/' : `/${lang}`;
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -76,6 +79,25 @@ export function SuccessClient() {
         return () => clearInterval(timer);
     }, [downloadUrl, router]);
 
+    // Automated Download Trigger
+    useEffect(() => {
+        if (!downloadUrl || !sessionId) return;
+
+        // CHECK: Have we already triggered auto-download in this tab session?
+        const hasTriggered = sessionStorage.getItem(`auto_dl_${sessionId}`);
+        if (hasTriggered) return;
+
+        const autoTimer = setTimeout(() => {
+            // Trigger download automatically
+            window.location.href = downloadUrl;
+
+            // MARK: Remember that we triggered it to prevent duplicates on refresh
+            sessionStorage.setItem(`auto_dl_${sessionId}`, "true");
+        }, 3000);
+
+        return () => clearTimeout(autoTimer);
+    }, [downloadUrl, sessionId]);
+
     if (loading) {
         return (
             <div className="flex flex-col items-center gap-4 py-12">
@@ -93,7 +115,7 @@ export function SuccessClient() {
                 <AlertCircle className="w-8 h-8 text-red-500 mx-auto mb-4" />
                 <p className="text-text-brand font-medium mb-2">Access Denied</p>
                 <p className="text-text-brand/60 text-sm mb-6">{error}</p>
-                <Link href="/" className="text-accent-brand hover:underline font-mono text-xs">Back to Home</Link>
+                <Link href={homeLink} className="text-accent-brand hover:underline font-mono text-xs">Back to Home</Link>
             </div>
         );
     }
@@ -107,7 +129,7 @@ export function SuccessClient() {
                     Professional security requires download links to expire.
                     If you missed your window, please check your email for the original receipt or contact support.
                 </p>
-                <Link href="/" className="text-accent-brand hover:underline font-mono text-xs">Back to Home</Link>
+                <Link href={homeLink} className="text-accent-brand hover:underline font-mono text-xs">Back to Home</Link>
             </div>
         );
     }
@@ -128,9 +150,16 @@ export function SuccessClient() {
                     {productType === 'solo_pack' ? 'Iceberg OS Solo Pack' : 'Iceberg Agency Assets'}
                 </h3>
 
-                <div className="flex items-center justify-center gap-2 mb-8 text-text-brand/40 font-mono text-[10px] uppercase">
-                    <Clock className="w-3 h-3 text-orange-500" />
-                    <span>Link expires in: <span className="text-orange-500 font-bold">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</span></span>
+                <div className="flex flex-col items-center justify-center gap-2 mb-8">
+                    <div className="flex items-center gap-2 text-text-brand/40 font-mono text-[10px] uppercase">
+                        <Clock className="w-3 h-3 text-orange-500" />
+                        <span>Link expires in: <span className="text-orange-500 font-bold">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</span></span>
+                    </div>
+                    {timeLeft > 590 && (
+                        <p className="text-accent-brand font-mono text-[9px] uppercase animate-pulse">
+                            Download starting automatically in 3s...
+                        </p>
+                    )}
                 </div>
 
                 <a

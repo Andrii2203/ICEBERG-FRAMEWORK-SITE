@@ -44,7 +44,8 @@ export const Navbar = ({ dict }: NavbarProps) => {
     }, []);
 
     const handleLangChange = (langId: string) => {
-        const newPathname = pathname.replace(`/${currentLang}`, `/${langId}`);
+        const searchParams = window.location.search;
+        const newPathname = pathname.replace(`/${currentLang}`, `/${langId}`) + searchParams;
         router.push(newPathname);
         setIsLangOpen(false);
     };

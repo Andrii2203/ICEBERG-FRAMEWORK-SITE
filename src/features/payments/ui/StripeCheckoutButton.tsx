@@ -16,12 +16,16 @@ export function StripeCheckoutButton({ product, label, className = "" }: StripeC
     const handleCheckout = async () => {
         setLoading(true);
         try {
+            // Get locale from pathname (e.g., /ua/solo-pack -> ua)
+            const locale = window.location.pathname.split('/')[1] || 'en';
+
             const response = await fetch("/api/checkout", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     product,
                     origin: window.location.origin,
+                    locale,
                 }),
             });
 

@@ -10,10 +10,11 @@ import { config } from "@/config/env";
  */
 export async function POST(req: NextRequest) {
     try {
-        const { product, origin } = await req.json();
+        const { product, origin, locale } = await req.json();
 
         const stripeService = new StripeService();
         const safeOrigin = origin || "https://iceberg-framework-site.vercel.app";
+        const langPrefix = locale && locale !== 'en' ? `/${locale}` : "";
 
         let priceId = "";
         let metadata = {};
@@ -33,7 +34,8 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ status: "error", message: "Price ID not configured" }, { status: 500 });
         }
 
-        const sessionUrl = await stripeService.createCheckoutSession(safeOrigin, priceId, metadata);
+        const successPath = `${langPrefix}/success`;
+        const sessionUrl = await stripeService.createCheckoutSession(safeOrigin, priceId, metadata, successPath);
 
         return NextResponse.json({ status: "success", url: sessionUrl });
 

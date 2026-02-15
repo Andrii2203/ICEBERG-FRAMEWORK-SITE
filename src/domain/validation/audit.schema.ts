@@ -15,11 +15,13 @@ export const AuditRequestSchema = z.object({
             const allowedPrefixes = [
                 "data:image/png;base64,",
                 "data:image/jpeg;base64,",
-                "data:image/webp;base64,"
+                "data:image/jpg;base64,",
+                "data:image/webp;base64,",
+                "data:image/gif;base64,"
             ];
             return allowedPrefixes.some(prefix => val.startsWith(prefix));
         }, {
-            message: "Invalid file format. Only PNG, JPEG, and WEBP are allowed.",
+            message: "Invalid file format. Only PNG, JPEG, WEBP, and GIF are allowed.",
         }),
 
     auditType: z.enum(["chaos", "ui"]),

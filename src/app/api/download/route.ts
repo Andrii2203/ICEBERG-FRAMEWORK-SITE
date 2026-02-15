@@ -29,19 +29,27 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ status: "error", message: "Payment not verified" }, { status: 403 });
         }
 
-        // 2. CHECK EXPIRATION (10 Minutes from Payment Success)
-        // We use status_transitions.finished_at if available, otherwise fallback to session.created
-        const tempSession = session as unknown as { status_transitions: { finished_at: number } };
-        const paymentTime = tempSession.status_transitions?.finished_at || session.created;
+        // 2. CHECK EXPIRATION (10 Minutes from First Activation/Visit)
         const now = Math.floor(Date.now() / 1000);
-        const sessionAge = now - paymentTime;
         const MAX_AGE = 600; // Exactly 10 minutes (600 seconds)
 
+        let activatedAt = parseInt(session.metadata?.activated_at || "0");
+        let shouldUpdateMetadata = false;
+
+        if (!activatedAt) {
+            // First time accessing the link - ACTIVATE IT
+            activatedAt = now;
+            shouldUpdateMetadata = true;
+            console.log(`[API/download] Activating session ${sessionId} at ${activatedAt}`);
+        }
+
+        const sessionAge = now - activatedAt;
+
         if (sessionAge > MAX_AGE) {
-            console.error(`[API/download] Session expired. Age: ${sessionAge}s (from payment success)`);
+            console.error(`[API/download] Session expired. Age: ${sessionAge}s (from activation)`);
             return NextResponse.json({
                 status: "error",
-                message: "Download window has expired (10 minutes after purchase). Please contact support for a new link."
+                message: "Download window has expired (10 minutes after first visit). Please contact support for a new link."
             }, { status: 403 });
         }
 
@@ -49,27 +57,22 @@ export async function POST(req: NextRequest) {
         // 3. SECURE SESSION LOCKING (Anti-Sharing)
         // We use an HttpOnly cookie to "bind" this session to the first browser that accesses it.
         const cookieStore = await cookies();
-        const lockCookieName = `iceberg_s_${sessionId}`; // Unique cookie execution per session
+        const lockCookieName = `iceberg_s_${sessionId}`;
         const existingLock = cookieStore.get(lockCookieName);
 
-        // Check if this session is already claimed in Stripe Metadata
-        let shouldSetCookie = false;
+        // If it was already activated (claimed), the user MUST have the cookie.
+        if (session.metadata?.activated_at && (!existingLock || existingLock.value !== 'authorized')) {
+            console.error(`[API/download] Session Locked. Already activated, Cookie=${existingLock ? 'Mismatch' : 'Missing'}`);
+            return NextResponse.json({
+                status: "error",
+                message: "Security Alert: This download link is locked to the original device. Please use the device you used for the first visit."
+            }, { status: 403 });
+        }
 
-        if (session.metadata?.claimed === 'true') {
-            // If claimed, the user MUST have the cookie.
-            if (!existingLock || existingLock.value !== 'authorized') {
-                console.error(`[API/download] Session Locked. Metadata=claimed, Cookie=${existingLock ? 'Mismatch' : 'Missing'}`);
-                return NextResponse.json({
-                    status: "error",
-                    message: "Security Alert: This download link is locked to the original device. Please use the device you purchased with."
-                }, { status: 403 });
-            }
-        } else {
-            // If NOT claimed, we claim it now.
-            shouldSetCookie = true;
-            // Note: We don't await this to speed up the response, but it's safer to await.
+        // Update metadata if this is the first visit
+        if (shouldUpdateMetadata) {
             await stripe.checkout.sessions.update(sessionId, {
-                metadata: { ...session.metadata, claimed: 'true' }
+                metadata: { ...session.metadata, activated_at: activatedAt.toString(), claimed: 'true' }
             });
         }
 
@@ -91,7 +94,7 @@ export async function POST(req: NextRequest) {
         });
 
         // Set the lock cookie if this was the first access
-        if (shouldSetCookie) {
+        if (shouldUpdateMetadata) {
             response.cookies.set(lockCookieName, 'authorized', {
                 httpOnly: true,
                 secure: true,
